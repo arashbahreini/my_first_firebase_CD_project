@@ -1,28 +1,18 @@
-<table>
-  <tr>
-    <th>Id</th>
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Manage</th>
-  </tr>
-  <tr *ngFor="let student of students;let i = index">
-    <td>{{i}}</td>
-    <td>{{student.firstName}}</td>
-    <td>{{student.lastName}}</td>
-    <td>
-      <button (click)="delete(student)">Delete</button>
-    </td>
-  </tr>
-</table>
-<hr>
-<div class="form_div">
-  <div class="element">
-    <input type="text" [(ngModel)]="student.firstName" placeholder="first name"/>
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/Students">Students</a>
+      </li>
+    </ul>
   </div>
-  <div class="element">
-    <input type="text" [(ngModel)]="student.lastName" placeholder="last name"/>
-  </div>
-  <div>
-    <button (click)="submit()">Submit</button>
-  </div>
-</div>
+</nav>
+
+<router-outlet></router-outlet>
+

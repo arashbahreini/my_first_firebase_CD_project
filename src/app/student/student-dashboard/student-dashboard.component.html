@@ -1,0 +1,28 @@
+<table>
+    <tr>
+      <th>Id</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Manage</th>
+    </tr>
+    <tr *ngFor="let student of students;let i = index">
+      <td>{{i}}</td>
+      <td>{{student.firstName}}</td>
+      <td>{{student.lastName}}</td>
+      <td>
+        <button (click)="delete(student)">Delete</button>
+      </td>
+    </tr>
+  </table>
+  <hr>
+  <div class="form_div">
+    <div class="element">
+      <input type="text" [(ngModel)]="student.firstName" placeholder="first name" />
+    </div>
+    <div class="element">
+      <input type="text" [(ngModel)]="student.lastName" placeholder="last name" />
+    </div>
+    <div>
+      <button (click)="submit()">Submit</button>
+    </div>
+  </div>
