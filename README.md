@@ -1,6 +1,7 @@
 # Installation  
 
 - Just get the application and run npm install. 
+- Ng serve
 - Apply any change into the application
 - Push into master directly.
 
