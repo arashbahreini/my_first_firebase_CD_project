@@ -1,1 +1,17 @@
 @import "~bootstrap/dist/css/bootstrap.css";
+
+body {
+  background-image: url('/assets/images/site-background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.about_us_section {
+  // box-shadow: inset 0 0 50px 3px white
+}
+
+
+h2, p {
+  font-family: 'Comic Sans MS'
+}
