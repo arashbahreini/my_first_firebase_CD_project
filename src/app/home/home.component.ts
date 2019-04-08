@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements OnInit {
-  public showFixedNav: boolean = false;
+  public showFixedNav: boolean;
   public routes = [
     {
       route: 'about-me',
@@ -51,9 +51,4 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  onScroll(event) {
-    debugger;
-  }
-
 }
