@@ -1,0 +1,16 @@
+<div class="navbar_div" *ngIf="!showFixedNav">
+  <a [routerLink]="route.route" [ngClass]="route.isActive ? 'active' : ''"
+    *ngFor="let route of routes">{{route.caption}}</a>
+</div>
+<div style="z-index:1;background-color: white">
+  <div class="navbar_fixed_div" *ngIf="showFixedNav">
+    <div class="nav_div">
+      <a [routerLink]="route.route" [ngClass]="route.isActive ? 'active' : ''"
+        *ngFor="let route of routes">{{route.caption}}</a>
+    </div>
+  </div>
+</div>
+
+<div class="outlet_div">
+  <router-outlet></router-outlet>
+</div>
