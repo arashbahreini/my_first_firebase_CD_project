@@ -8,7 +8,10 @@
       <img style="-webkit-user-select: none;" class="circle_photo"
         src="https://avatars.githubusercontent.com/u/25605112">
     </div>
-    <table class="table">
+    <div class="fa-3x text-center" *ngIf="isLoading">
+        <i class="fa fa-spinner fa-spin mt-5"></i>
+    </div>
+    <table class="table" *ngIf="!isLoading">
       <tr class="d-flex">
         <th class="col-sm-3">
           Repository
@@ -28,8 +31,10 @@
           <a [href]="git.repositoryUrl">{{git.repositoryName}}</a>
         </td>
         <td class="col-sm-5">{{git.commitMessage}}</td>
-        <td class="col-sm-2">
-          <a [href]="git.commitLink">Commit link</a>
+        <td class="col-sm-2 text-center">
+          <a [href]="git.commitLink">
+            <i class="fa fa-link btn btn-success"></i>
+          </a>
         </td>
         <td class="col-sm-2">
           {{git.date | date:'medium'}}

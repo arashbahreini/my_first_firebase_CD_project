@@ -1,8 +1,10 @@
 <div class="row m-3">
   <div class="d-inline p-2 col-sm-2">
     <div class="position-fixed">
-      <a [ngClass]="'list-group-item list-group-item-action ' + (route.isActive ? 'active' : '')"
-        (click)="internalRoute(route.route)" *ngFor="let route of routes">{{route.caption}}</a>
+      <div *ngFor="let route of routes" class="text-center">
+        <p [ngClass]="(route.isActive ? 'btn btn-success ' : 'btn btn-primary ') + route.icon + ' btn_menu'"
+          (click)="internalRoute(route.route)"></p>
+      </div>
     </div>
   </div>
   <div class="d-inline col-sm-10">

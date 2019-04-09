@@ -9,16 +9,16 @@ import { GithubService } from 'src/app/services/github.service';
 export class GithubComponent implements OnInit {
 
   public githubData: any[] = [];
+  public isLoading: boolean;
 
   constructor(private githubService: GithubService) { }
 
   ngOnInit() {
     this.getGithubData();
-    console.log(this.githubData);
-
   }
 
   getGithubData() {
+    this.isLoading = true;
     this.githubData = [];
     this.githubService.getGithubEvents().subscribe((res: any) => {
       res.forEach(element => {
@@ -28,15 +28,18 @@ export class GithubComponent implements OnInit {
               this.githubData.push({
                 date: element.created_at,
                 repositoryName: element.repo.name.substr(14),
-                repositoryUrl: element.repo.url,
+                repositoryUrl: 'https://github.com/' + element.repo.name,
                 commitMessage: commit.message,
                 commitLink: 'https://github.com/' + element.repo.name + '/commit/' + commit.sha
               });
             }
           });
         }
+        this.isLoading = false;
       });
-    }, (error: any) => { });
+    }, (error: any) => {
+      this.isLoading = false;
+    });
   }
 
 }

@@ -18,16 +18,19 @@ export class AboutMeComponent implements OnInit {
       route: 'bio',
       isActive: true,
       caption: 'Bio',
+      icon: 'fa fa-info-circle'
     },
     {
       route: 'contact',
       isActive: false,
       caption: 'Contact',
+      icon: 'fa fa-id-card'
     },
     {
       route: 'github',
       isActive: false,
       caption: 'Github',
+      icon: 'fa fa-github'
     }
   ];
 
