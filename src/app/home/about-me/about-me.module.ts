@@ -7,13 +7,15 @@ import { AboutMeComponent } from './about-me.component';
 import { ContactComponent } from './contact/contact.component';
 import { GithubComponent } from './github/github.component';
 import { FormsModule } from '@angular/forms';
+import { StackoverflowComponent } from './stackoverflow/stackoverflow.component';
 
 @NgModule({
   declarations: [
     BioComponent,
     AboutMeComponent,
     ContactComponent,
-    GithubComponent
+    GithubComponent,
+    StackoverflowComponent
   ],
   imports: [
     CommonModule,

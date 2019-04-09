@@ -11,6 +11,7 @@ export class AboutMeComponent implements OnInit {
   @ViewChild('contact') public contact: ElementRef;
   @ViewChild('bio') public bio: ElementRef;
   @ViewChild('github') public github: ElementRef;
+  @ViewChild('stackoverflow') public stackoverflow: ElementRef;
 
 
   public routes = [
@@ -31,6 +32,12 @@ export class AboutMeComponent implements OnInit {
       isActive: false,
       caption: 'Github',
       icon: 'fa fa-github'
+    },
+    {
+      route: 'stackoverflow',
+      isActive: false,
+      caption: 'Stackoverflow',
+      icon: 'fa fa-stack-overflow'
     }
   ];
 
@@ -53,6 +60,9 @@ export class AboutMeComponent implements OnInit {
         break;
       case 'github':
         this.github.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' });
+        break;
+      case 'stackoverflow':
+        this.stackoverflow.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' });
         break;
       default:
         break;
