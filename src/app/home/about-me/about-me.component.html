@@ -2,7 +2,7 @@
   <div class="d-inline p-2 col-sm-2">
     <div class="position-fixed">
       <a [ngClass]="'list-group-item list-group-item-action ' + (route.isActive ? 'active' : '')"
-      (click)="internalRoute(route.route)" *ngFor="let route of routes">{{route.caption}}</a>
+        (click)="internalRoute(route.route)" *ngFor="let route of routes">{{route.caption}}</a>
     </div>
   </div>
   <div class="d-inline col-sm-10">
@@ -11,6 +11,9 @@
     </div>
     <div #contact class="section">
       <app-contact></app-contact>
+    </div>
+    <div #github class="section">
+      <app-github></app-github>
     </div>
   </div>
 </div>

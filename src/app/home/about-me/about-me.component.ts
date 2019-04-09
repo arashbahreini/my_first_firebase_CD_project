@@ -10,6 +10,7 @@ export class AboutMeComponent implements OnInit {
 
   @ViewChild('contact') public contact: ElementRef;
   @ViewChild('bio') public bio: ElementRef;
+  @ViewChild('github') public github: ElementRef;
 
 
   public routes = [
@@ -17,13 +18,16 @@ export class AboutMeComponent implements OnInit {
       route: 'bio',
       isActive: true,
       caption: 'Bio',
-      id: 'bio'
     },
     {
       route: 'contact',
       isActive: false,
       caption: 'Contact',
-      id: 'bio'
+    },
+    {
+      route: 'github',
+      isActive: false,
+      caption: 'Github',
     }
   ];
 
@@ -43,6 +47,9 @@ export class AboutMeComponent implements OnInit {
         break;
       case 'bio':
         this.bio.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' });
+        break;
+      case 'github':
+        this.github.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' });
         break;
       default:
         break;

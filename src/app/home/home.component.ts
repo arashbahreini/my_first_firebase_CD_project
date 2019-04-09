@@ -28,8 +28,6 @@ export class HomeComponent implements OnInit {
 
 
   @HostListener('window:scroll', ['$event']) onScrollEvent($event) {
-    console.log($event);
-    console.log(window.pageYOffset);
     if (window.pageYOffset > 0) {
       this.showFixedNav = true;
     } else {
