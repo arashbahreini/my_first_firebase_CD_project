@@ -17,7 +17,8 @@ import {
     trigger('openClose', [
       state('open', style({
         opacity: 1,
-        marginTop: '10px',
+        // marginTop: '10px',
+        zIndex: 1
       })),
       state('closed', style({
         opacity: 0,
@@ -45,7 +46,7 @@ export class HomeComponent implements OnInit {
       caption: 'House'
     },
     {
-      route: '../admin',
+      route: 'login',
       isActive: false,
       caption: 'Admin'
     }
