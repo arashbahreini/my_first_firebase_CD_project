@@ -13,4 +13,5 @@ script:
 - ng lint
 - ng build
 after_success: 
+- firebase use me-arash
 - firebase deploy --token $FIREBASE_TOKEN
