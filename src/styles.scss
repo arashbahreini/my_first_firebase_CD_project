@@ -6,7 +6,27 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+
 }
+
+::-webkit-scrollbar {
+  width: 0.3em;
+  height: 0.2em
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,.2);
+}
+
+::-webkit-scrollbar-button {
+  background: #ccc
+}
+::-webkit-scrollbar-track-piece {
+  background: #888
+}
+::-webkit-scrollbar-thumb {
+  background: #eee
+}​
 
 h2, p {
   font-family: 'Comic Sans MS'
