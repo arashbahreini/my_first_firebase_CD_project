@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
 })
 export class AboutMeComponent implements OnInit {
 
-  @ViewChild('contact') public contact: ElementRef;
   @ViewChild('bio') public bio: ElementRef;
   @ViewChild('github') public github: ElementRef;
   @ViewChild('stackoverflow') public stackoverflow: ElementRef;
@@ -20,12 +19,6 @@ export class AboutMeComponent implements OnInit {
       isActive: true,
       caption: 'Bio',
       icon: 'fa fa-info-circle'
-    },
-    {
-      route: 'contact',
-      isActive: false,
-      caption: 'Contact',
-      icon: 'fa fa-id-card'
     },
     {
       route: 'github',
@@ -52,17 +45,14 @@ export class AboutMeComponent implements OnInit {
     this.routes.find(x => x.route === segmantName).isActive = true;
 
     switch (segmantName) {
-      case 'contact':
-        this.contact.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' });
-        break;
       case 'bio':
-        this.bio.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' });
+        this.bio.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
         break;
       case 'github':
-        this.github.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' });
+        this.github.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
         break;
       case 'stackoverflow':
-        this.stackoverflow.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' });
+        this.stackoverflow.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
         break;
       default:
         break;
