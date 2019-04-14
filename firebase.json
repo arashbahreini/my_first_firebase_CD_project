@@ -11,7 +11,15 @@
     ],
     "rewrites": [
       {
-        "source": "/arash",
+        "source": "/user/create",
+        "function": "app"
+      },
+      {
+        "source": "/user/login",
+        "function": "app"
+      },
+      {
+        "source": "/user/createCustomToken",
         "function": "app"
       },
       {
