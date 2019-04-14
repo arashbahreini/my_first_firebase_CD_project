@@ -14,11 +14,11 @@ export class AppComponent implements OnInit {
   public student: any = {};
 
   constructor(db: AngularFireDatabase) {
-    this.studentDb = db.list('/Students');
+    // this.studentDb = db.list('/Students');
   }
 
   ngOnInit() {
-    this.getStudents();
+    // this.getStudents();
   }
 
   getStudents() {

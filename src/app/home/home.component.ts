@@ -1,10 +1,36 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  // ...
+} from '@angular/animations';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.sass']
+  styleUrls: ['./home.component.sass'],
+  animations: [
+    trigger('openClose', [
+      state('open', style({
+        opacity: 1,
+        // marginTop: '10px',
+        zIndex: 1
+      })),
+      state('closed', style({
+        opacity: 0,
+      })),
+      transition('open => closed', [
+        animate('0s')
+      ]),
+      transition('closed => open', [
+        animate('0.5s')
+      ]),
+    ]),
+  ],
 })
 export class HomeComponent implements OnInit {
   public showFixedNav: boolean;
@@ -12,7 +38,7 @@ export class HomeComponent implements OnInit {
     {
       route: 'about-me',
       isActive: true,
-      caption: 'About me'
+      caption: 'Me'
     },
     {
       route: 'house',
@@ -20,7 +46,7 @@ export class HomeComponent implements OnInit {
       caption: 'House'
     },
     {
-      route: '../admin',
+      route: 'login',
       isActive: false,
       caption: 'Admin'
     }

@@ -2,8 +2,8 @@
   <a [routerLink]="route.route" [ngClass]="route.isActive ? 'active' : ''"
     *ngFor="let route of routes">{{route.caption}}</a>
 </div>
-<div style="z-index:1;background-color: white">
-  <div class="navbar_fixed_div" *ngIf="showFixedNav">
+<div style="background-color: white;margin-top:10px;">
+  <div class="navbar_fixed_div" [@openClose]="showFixedNav ? 'open' : 'closed'">
     <div class="nav_div">
       <a [routerLink]="route.route" [ngClass]="route.isActive ? 'active' : ''"
         *ngFor="let route of routes">{{route.caption}}</a>

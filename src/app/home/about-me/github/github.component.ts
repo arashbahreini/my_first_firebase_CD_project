@@ -24,7 +24,7 @@ export class GithubComponent implements OnInit {
       res.forEach(element => {
         if (element.payload.commits) {
           element.payload.commits.forEach(commit => {
-            if (this.githubData.length < 10) {
+            if (this.githubData.length < 5) {
               this.githubData.push({
                 date: element.created_at,
                 repositoryName: element.repo.name.substr(14),
