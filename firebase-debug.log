@@ -1,0 +1,36 @@
+[debug] [2019-04-14T12:23:25.322Z] ----------------------------------------------------------------------
+[debug] [2019-04-14T12:23:25.325Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\a.bahreini\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-04-14T12:23:25.326Z] CLI Version:   6.6.0
+[debug] [2019-04-14T12:23:25.326Z] Platform:      win32
+[debug] [2019-04-14T12:23:25.326Z] Node Version:  v11.10.0
+[debug] [2019-04-14T12:23:25.351Z] Time:          Sun Apr 14 2019 16:53:25 GMT+0430 (Iran Daylight Time)
+[debug] [2019-04-14T12:23:25.351Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-04-14T12:23:25.367Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-04-14T12:23:25.367Z] > authorizing via signed-in user
+[debug] [2019-04-14T12:23:25.367Z] [iam] checking project angular-cd for permissions ["firebase.projects.get"]
+[debug] [2019-04-14T12:23:25.370Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/angular-cd:testIamPermissions  
+
+[debug] [2019-04-14T12:23:26.576Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-14T12:23:26.578Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/angular-cd  
+ 
+[debug] [2019-04-14T12:23:27.403Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Work\me'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2019-04-14T12:23:29.212Z] Fetching environment
+[debug] [2019-04-14T12:23:29.216Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/849012328057:getServerAppConfig  
+ 
+[debug] [2019-04-14T12:23:29.216Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/849012328057/clients/_:getWebAppConfig  
+ 
+[debug] [2019-04-14T12:23:31.762Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-14T12:23:31.762Z] Starting @google-cloud/functions-emulator
+[debug] [2019-04-14T12:23:31.790Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist/firebase-CD-project
+[info] +  hosting: Local server: http://localhost:5000
+[info] [hosting] Rewriting /arash to local function app
+[debug] [2019-04-14T12:23:35.464Z] Parsing function triggers
+[info] [hosting] Rewriting /arash to local function app
+[info] +  functions: app: http://localhost:5001/angular-cd/us-central1/app
+[info] [hosting] Rewriting /arash to local function app
