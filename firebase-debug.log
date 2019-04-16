@@ -1,0 +1,137 @@
+[debug] [2019-04-16T13:04:17.164Z] ----------------------------------------------------------------------
+[debug] [2019-04-16T13:04:17.168Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\a.bahreini\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-04-16T13:04:17.168Z] CLI Version:   6.6.0
+[debug] [2019-04-16T13:04:17.168Z] Platform:      win32
+[debug] [2019-04-16T13:04:17.168Z] Node Version:  v11.10.0
+[debug] [2019-04-16T13:04:17.172Z] Time:          Tue Apr 16 2019 17:34:17 GMT+0430 (Iran Daylight Time)
+[debug] [2019-04-16T13:04:17.172Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-04-16T13:04:17.186Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-04-16T13:04:17.187Z] > authorizing via signed-in user
+[debug] [2019-04-16T13:04:17.187Z] [iam] checking project me-arash for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2019-04-16T13:04:17.189Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/me-arash:testIamPermissions  
+
+[debug] [2019-04-16T13:04:18.531Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-16T13:04:18.534Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/me-arash  
+ 
+[debug] [2019-04-16T13:04:19.860Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'me-arash'...
+[info] 
+[info] i  deploying database, functions, hosting
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] +  functions: Finished running predeploy script.
+[info] i  database: checking rules syntax...
+[debug] [2019-04-16T13:04:29.754Z] >>> HTTP REQUEST PUT https://me-arash.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+[debug] [2019-04-16T13:04:30.716Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database me-arash is valid
+[debug] [2019-04-16T13:04:30.722Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "body-parser": "1.18.2",
+    "express": "4.16.2",
+    "firebase": "^5.9.4",
+    "firebase-admin": "^7.0.0",
+    "firebase-functions": "^2.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-plugin-promise": "^4.0.1"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2019-04-16T13:04:30.730Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/me-arash?view=CONSUMER_VIEW  
+ 
+[debug] [2019-04-16T13:04:30.730Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/me-arash?view=CONSUMER_VIEW  
+ 
+[debug] [2019-04-16T13:04:32.369Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-16T13:04:32.784Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2019-04-16T13:04:32.785Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/me-arash  
+ 
+[debug] [2019-04-16T13:04:33.826Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-16T13:04:33.826Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/305977168091:getServerAppConfig  
+ 
+[debug] [2019-04-16T13:04:34.772Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-16T13:04:34.775Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/me-arash/versions  
+
+[debug] [2019-04-16T13:04:36.108Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2019-04-16T13:04:36.111Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/me-arash/configs  
+ 
+[debug] [2019-04-16T13:04:37.429Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (44.99 KB) for uploading
+[debug] [2019-04-16T13:04:38.892Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/me-arash/locations/us-central1/functions:generateUploadUrl  
+ 
+[debug] [2019-04-16T13:04:39.875Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-16T13:04:39.876Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-2f681ae5-e071-4bc7-9d9d-db3b8d65e4a9/ab85de35-830a-4da7-9a60-b4f6605738f5.zip?GoogleAccessId=service-305977168091@gcf-admin-robot.iam.gserviceaccount.com&Expires=1555421679&Signature=M9CXHrJW5ARFrZNHn10Q%2BRhJDuXoyRw6to4Qd9gvcRzdO0ThRjmRrxtyefcRplM2cazGaBvjWixkrWRRBifO4Fg9i6HX%2Fd36TdImQ6bJmAuPShS4bGufO1zVhibun6ZZ8J9eMJY%2FVI0z6ePZNVO%2BXSuBRgASFs6R1wp47FTelk1lyKs8qZK1FhykoOTeeAGyMigRvxlGwSfHSbnJgmgJHXzAhgRPlriewuqAA2QckFDxw78e%2F1RohDtY1xBuK14cgTbB3P%2FvWHL5iPtNubt1Oj36O6bJHz2fUaytIcLPB2UElqGnl%2FnZlahu2FP2R83Me02JBBY5KmJJ%2BOuBfNbUhg%3D%3D  
+
+[debug] [2019-04-16T13:04:41.337Z] <<< HTTP RESPONSE 200
+[info] +  functions: functions folder uploaded successfully
+[info] i  hosting[me-arash]: beginning deploy...
+[info] i  hosting[me-arash]: found 38 files in dist/firebase-CD-project
+[debug] [2019-04-16T13:04:41.364Z] [hosting] hash cache [ZGlzdFxmaXJlYmFzZS1DRC1wcm9qZWN0] load error: lines is not defined
+[debug] [2019-04-16T13:04:41.951Z] [hosting] hash cache [ZGlzdFxmaXJlYmFzZS1DRC1wcm9qZWN0] stored for 38 files
+[debug] [2019-04-16T13:04:41.951Z] [hosting][hash queue][FINAL]
+[debug] [2019-04-16T13:04:41.952Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/me-arash/versions/5fbc6fdadc5b8dce:populateFiles  
+ <request body omitted>
+[debug] [2019-04-16T13:04:43.277Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-16T13:04:43.277Z] [hosting][populate queue][FINAL]
+[debug] [2019-04-16T13:04:43.277Z] [hosting] uploads queued: 0
+[debug] [2019-04-16T13:04:43.277Z] [hosting][upload queue][FINAL]
+[info] +  hosting[me-arash]: file upload complete
+[debug] [2019-04-16T13:04:43.278Z] [hosting] deploy completed after 1938ms
+[info] i  database: releasing rules...
+[debug] [2019-04-16T13:04:44.336Z] >>> HTTP REQUEST PUT https://me-arash.firebaseio.com/.settings/rules.json  
+ {
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+[debug] [2019-04-16T13:04:45.190Z] <<< HTTP RESPONSE 200
+[info] +  database: rules for database me-arash released successfully
+[debug] [2019-04-16T13:04:45.192Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/me-arash/locations/-/functions  
+ 
+[debug] [2019-04-16T13:04:46.093Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating Node.js 6 function app(us-central1)...
+[debug] [2019-04-16T13:04:46.101Z] Trigger is:  {"httpsTrigger":{}}
+[info] i  functions: updating Node.js 6 function userApp(us-central1)...
+[debug] [2019-04-16T13:04:46.115Z] Trigger is:  {"httpsTrigger":{}}
+[debug] [2019-04-16T13:04:46.119Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/me-arash/locations/us-central1/functions/app {"updateMask":"sourceUploadUrl,name,labels,httpsTrigger"} 
+
+[debug] [2019-04-16T13:04:46.123Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/me-arash/locations/us-central1/functions/userApp {"updateMask":"sourceUploadUrl,name,labels,httpsTrigger"} 
+
+[debug] [2019-04-16T13:04:47.109Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-16T13:04:47.161Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-16T13:04:47.162Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/me-arash/locations/-/functions  
+ 
+[debug] [2019-04-16T13:04:48.039Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-16T13:04:48.040Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/bWUtYXJhc2gvdXMtY2VudHJhbDEvYXBwL3pzQkstS0xESnQw  
+ 
+[debug] [2019-04-16T13:04:48.041Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/bWUtYXJhc2gvdXMtY2VudHJhbDEvdXNlckFwcC81Z2hIeGRoM3NoRQ  
+ 
+[debug] [2019-04-16T13:04:48.736Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-16T13:04:48.739Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-16T13:04:50.737Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/bWUtYXJhc2gvdXMtY2VudHJhbDEvYXBwL3pzQkstS0xESnQw  
+ 
+[debug] [2019-04-16T13:04:50.740Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/bWUtYXJhc2gvdXMtY2VudHJhbDEvdXNlckFwcC81Z2hIeGRoM3NoRQ  
+ 
+[debug] [2019-04-16T13:04:51.456Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-16T13:04:51.457Z] <<< HTTP RESPONSE 200
