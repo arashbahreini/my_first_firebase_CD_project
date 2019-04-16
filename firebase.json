@@ -11,15 +11,19 @@
     ],
     "rewrites": [
       {
-        "source": "/user/create",
-        "function": "app"
+        "source": "/user/test",
+        "function": "userApp"
+      },
+      {
+        "source": "/user/getToken",
+        "function": "userApp"
       },
       {
         "source": "/user/login",
-        "function": "app"
+        "function": "userApp"
       },
       {
-        "source": "/user/createCustomToken",
+        "source": "/test",
         "function": "app"
       },
       {
