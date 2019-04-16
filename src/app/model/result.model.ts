@@ -6,8 +6,14 @@ export class ResultModel<T> {
   public success: boolean;
   public hasError: boolean;
 
+  load() {
+    this.hasResult = false;
+    this.isLoading = true;
+    this.success = false;
+    this.hasError = false;
+  }
   setData(data: T) {
-    data = data;
+    this.data = data;
     this.hasResult = true;
     this.isLoading = false;
     this.success = true;

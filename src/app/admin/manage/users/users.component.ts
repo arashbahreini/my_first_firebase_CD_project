@@ -18,6 +18,7 @@ export class UsersComponent implements OnInit {
   }
 
   getUsers() {
+    this.users.load();
     this.userService.getUsers().subscribe(
       (res: any) => {
         this.users.setData(res);
