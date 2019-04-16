@@ -8,7 +8,8 @@ var hostConfig = {
   messagingSenderId: "305977168091"
 };
 const admin = require('firebase-admin');
-const firebase = require('firebase').initializeApp(hostConfig);
+const firebase = require('firebase');
+firebase.initializeApp(hostConfig);
 const serviceAccount = require('./me-arash-firebase-adminsdk.json');
 const functions = require('firebase-functions');
 const express = require('express');
