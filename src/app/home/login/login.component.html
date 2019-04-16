@@ -1,13 +1,20 @@
 <div style="width: 30%;margin-left:35%;margin-top: 100px;" class="background_light">
-  <form class="border p-2 mt-5">
-    <div class="form-group">
-      <input type="text" placeholder="Username" class="form-control" />
+  <form class="p-2 mt-3">
+    <div *ngIf="loginResult.hasError" class="alert alert-danger">
+      <i >{{loginResult.errorMessage}}</i>
     </div>
     <div class="form-group">
-      <input type="password" placeholder="Password" class="form-control" />
+      <input type="text" placeholder="Username" class="form-control" name="email" [(ngModel)]="user.email" />
+    </div>
+    <div class="form-group">
+      <input type="password" placeholder="Password" class="form-control" name="password" [(ngModel)]="user.password" />
     </div>
     <div class="text-center">
-      <button type="submit" class="btn btn-primary">Login</button>
+      <button type="submit" class="btn btn-primary" (click)="login()" *ngIf="!loginResult.isLoading"
+      [disabled]="!user.email || !user.password">Login</button>
+      <div class="fa-3x text-center" *ngIf="loginResult.isLoading" >
+        <i class="fa fa-spinner fa-spin"></i>
+    </div>
     </div>
   </form>
 </div>

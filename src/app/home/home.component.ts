@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
       caption: 'House'
     },
     {
-      route: 'login',
+      route: '../admin',
       isActive: false,
       caption: 'Admin'
     }

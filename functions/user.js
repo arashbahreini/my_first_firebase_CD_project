@@ -34,6 +34,14 @@ userApp.post('/user/login', (req, res) => {
   })
 })
 
+userApp.get('/user/getUsers', (req, res) => {
+  admin.auth().listUsers().then((listResult) => {
+    res.send(listResult);
+  }, (error) => {
+    res.send(error);
+  })
+})
+
 userApp.post('/user/getToken', (req, res) => {
   admin.auth().createCustomToken(req.body.uid, claims)
   .then((customToken) => {

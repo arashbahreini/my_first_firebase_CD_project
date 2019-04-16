@@ -11,7 +11,8 @@ export const environment = {
     projectId: 'me-arash',
     storageBucket: 'me-arash.appspot.com',
     messagingSenderId: '305977168091'
-  }
+  },
+  apiUrl: 'http://localhost:5000/'
 };
 
 /*

@@ -1,22 +1,8 @@
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="../">Site<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="">Home<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="content">content</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="manage">setting</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/login">Login/Logout</a>
-      </li>
-    </ul>
-  </div>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end">
+  <a class="nav-link navbar-brand" routerLink="../">Site<span class="sr-only">(current)</span></a>
+  <a class="nav-link navbar-brand" routerLink="dashboard">Home</a>
+  <a class="nav-link navbar-brand" routerLink="content">content</a>
+  <a class="nav-link navbar-brand" routerLink="manage">setting</a>
+  <button class="btn btn-danger ml-auto mr-1" (click)="exit()">Exit</button>
 </nav>
 <router-outlet></router-outlet>
