@@ -2,5 +2,9 @@
   "/user": {
     "target": "http://localhost:5000",
     "secure": false
+  },
+  "/log": {
+    "target": "http://localhost:5000",
+    "secure": false
   }
 }
