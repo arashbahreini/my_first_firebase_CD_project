@@ -11,6 +11,6 @@ export class CommonService {
   constructor(private http: HttpClient) { }
 
   getIp(): Observable<LogModel> {
-    return this.http.get<LogModel>('http://api.ipify.org/?format=json');
+    return this.http.get<LogModel>('https://api.ipify.org/?format=json');
   }
 }
