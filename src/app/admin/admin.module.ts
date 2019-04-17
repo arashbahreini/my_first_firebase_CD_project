@@ -1,3 +1,4 @@
+import { PrimeNgModule } from './../shared/prime-ng/prime-ng.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -11,7 +12,8 @@ import { AdminComponent } from './admin.component';
     AdminComponent],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    PrimeNgModule,
   ]
 })
 export class AdminModule { }

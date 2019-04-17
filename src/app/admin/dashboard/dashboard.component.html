@@ -1,3 +1,31 @@
-<h1>
-  Welcome dear guest.
-</h1>
+<div class="background_light m-2 p-2 text-center">
+  <h3>
+    Welcome dear guest.
+  </h3>
+</div>
+<div class="background_light m-2">
+  <div class="row">
+    <div class="col-sm-10">
+      <div class="fa-3x text-center" *ngIf="chartData.isLoading">
+        <i class="fa fa-spinner fa-spin mt-5"></i>
+      </div>
+      <div class="m-4 " *ngIf="!chartData.isLoading">
+        <p-chart type="bar" [data]="chartData.data"></p-chart>
+      </div>
+    </div>
+    <div class="col-sm-2 p-2 text-center">
+      <div class="mt-2">
+        <button [ngClass]="'btn ' + (days === 7 ? 'btn-success ' : 'btn-primary ') + 'col-sm-9'"
+          (click)="getLogs(7)">A week ago</button>
+      </div>
+      <div class="mt-2">
+        <button [ngClass]="'btn ' + (days === 30 ? 'btn-success ' : 'btn-primary ') + 'col-sm-9'"
+          (click)="getLogs(30)">Month ({{getlastMonths()}})</button>
+      </div>
+      <div class="mt-2">
+        <button [ngClass]="'btn ' + (days === 365 ? 'btn-success ' : 'btn-primary ') + 'col-sm-9'"
+          (click)="getLogs(365)">A year ago</button>
+      </div>
+    </div>
+  </div>
+</div>

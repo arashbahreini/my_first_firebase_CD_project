@@ -5,6 +5,7 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 import { LogService } from './services/log.service';
 import { LogModel } from './model/log.model';
 import { CommonService } from './services/common.service';
+import { UserPlatformModel } from './model/user-platform';
 
 @Component({
   selector: 'app-root',
@@ -18,13 +19,15 @@ export class AppComponent implements OnInit {
   public students: any[];
   public student: any = {};
   public log: LogModel = new LogModel();
+  public userPlatform: UserPlatformModel;
 
   constructor(
     db: AngularFireDatabase,
     private deviceService: DeviceDetectorService,
     private logService: LogService,
     private commonService: CommonService) {
-    // this.studentDb = db.list('/Students');
+    this.userPlatform = new UserPlatformModel(null);
+    this.userPlatform.setValue(this.deviceService);
   }
 
   ngOnInit() {
@@ -32,14 +35,13 @@ export class AppComponent implements OnInit {
   }
 
   addLog() {
-    console.log(this.deviceService);
     this.log = {
-      browser: this.deviceService.browser,
-      browserVersion: this.deviceService.browser_version,
+      browser: this.userPlatform.browser,
+      browserVersion: this.userPlatform.browser_version,
       date: new Date(),
-      device: this.deviceService.device,
-      os: this.deviceService.os,
-      osVersion: this.deviceService.os_version,
+      device: this.userPlatform.device,
+      os: this.userPlatform.os,
+      osVersion: this.userPlatform.os_version,
       id: 'Not set yet',
       ip: '',
     };
