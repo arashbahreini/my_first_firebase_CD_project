@@ -277,3 +277,64 @@
 [info] [hosting] Rewriting /log/add to local function logApp
 [info] [hosting] Rewriting /log/add to local function logApp
 [info] [hosting] Rewriting /log/add to local function logApp
+[debug] [2019-04-17T20:39:25.948Z] ----------------------------------------------------------------------
+[debug] [2019-04-17T20:39:25.950Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Administrator\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-04-17T20:39:25.951Z] CLI Version:   6.6.0
+[debug] [2019-04-17T20:39:25.951Z] Platform:      win32
+[debug] [2019-04-17T20:39:25.951Z] Node Version:  v11.12.0
+[debug] [2019-04-17T20:39:25.951Z] Time:          Thu Apr 18 2019 01:09:25 GMT+0430 (Iran Daylight Time)
+[debug] [2019-04-17T20:39:25.952Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-04-17T20:39:25.964Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-04-17T20:39:25.964Z] > authorizing via signed-in user
+[debug] [2019-04-17T20:39:25.964Z] [iam] checking project me-arash for permissions ["firebase.projects.get"]
+[debug] [2019-04-17T20:39:25.967Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-04-17T20:39:25.967Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-04-17T20:39:27.525Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-17T20:39:27.537Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/me-arash:testIamPermissions  
+
+[debug] [2019-04-17T20:39:30.071Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-17T20:39:30.074Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/me-arash  
+ 
+[debug] [2019-04-17T20:39:31.907Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\work\me'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2019-04-17T20:39:32.821Z] Fetching environment
+[debug] [2019-04-17T20:39:32.823Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/305977168091:getServerAppConfig  
+ 
+[debug] [2019-04-17T20:39:32.824Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/305977168091/clients/_:getWebAppConfig  
+ 
+[debug] [2019-04-17T20:39:34.746Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist/firebase-CD-project
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-04-17T20:39:35.283Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-17T20:39:35.283Z] Starting @google-cloud/functions-emulator
+[debug] [2019-04-17T20:39:36.813Z] Parsing function triggers
+[info] +  functions: app: http://localhost:5001/me-arash/us-central1/app
+[info] +  functions: userApp: http://localhost:5001/me-arash/us-central1/userApp
+[info] +  functions: logApp: http://localhost:5001/me-arash/us-central1/logApp
+[info] [hosting] Rewriting /log/add to local function logApp
+[info] [hosting] Rewriting /log/add to local function logApp
+[info] [hosting] Rewriting /log/add to local function logApp
+[info] [hosting] Rewriting /log/add to local function logApp
+[info] [hosting] Rewriting /log/add to local function logApp
+[info] [hosting] Rewriting /log/add to local function logApp
+[info] [hosting] Rewriting /log/add to local function logApp
+[info] [hosting] Rewriting /log/add to local function logApp
+[info] [hosting] Rewriting /log/add to local function logApp
+[info] [hosting] Rewriting /log/add to local function logApp
+[info] [hosting] Rewriting /log/add to local function logApp
+[info] [hosting] Rewriting /log/add to local function logApp
+[info] [hosting] Rewriting /log/add to local function logApp
+[info] [hosting] Rewriting /log/add to local function logApp
+[info] [hosting] Rewriting /log/add to local function logApp
+[info] [hosting] Rewriting /log/add to local function logApp
+[info] [hosting] Rewriting /log/add to local function logApp
+[info] [hosting] Rewriting /log/add to local function logApp
+[info] [hosting] Rewriting /log/add to local function logApp
+[info] [hosting] Rewriting /log/add to local function logApp
+[info] [hosting] Rewriting /log/add to local function logApp
+[info] [hosting] Rewriting /log/add to local function logApp

@@ -44,8 +44,8 @@ export class DashboardComponent implements OnInit {
         const data = new ChartModel();
         data.datasets[0] = {
           label: 'Visit',
-          backgroundColor: '#9CCC65',
-          borderColor: '#7CB342',
+          backgroundColor: '#FF6347',
+          borderColor: '#FF8C00',
           data: []
         };
         if (days === 7) {
@@ -64,7 +64,7 @@ export class DashboardComponent implements OnInit {
             if (lastMonthDay <= new Date(new Date().getFullYear(), new Date().getMonth(), 0).getDate()) {
               data.labels.push(lastMonthDay.toString());
               data.datasets[0].data.push(
-                res.filter(x => +this.datePipe.transform(x.date, 'mm') === new Date().getMonth()
+                res.filter(x => +this.datePipe.transform(x.date, 'mm') - 1 === new Date().getMonth()
                   && +this.datePipe.transform(x.date, 'dd') === new Date().getDate() - 1).length
               );
               lastMonthDay = lastMonthDay + 1;
