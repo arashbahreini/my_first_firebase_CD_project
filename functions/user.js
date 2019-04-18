@@ -1,6 +1,5 @@
-// const config = require('./config');
 const functions = require('firebase-functions');
-console.log(functions.config().someservice);
+console.log('my config is '+ JSON.stringify(functions.config()));
 
 var hostConfig = {
   apiKey: "AIzaSyDlib_eSWxnRwHnABW8YwxyUo-uHD3EMPg",
@@ -14,8 +13,8 @@ const admin = require('firebase-admin');
 const firebase = require('firebase');
 firebase.initializeApp(hostConfig);
 const serviceAccountttt = require('./me-arash-firebase-adminsdk.json');
-require('dotenv').config();
 
+require('dotenv').config();
 
 const serviceAccount = {
   "type": process.env.type,
@@ -30,15 +29,14 @@ const serviceAccount = {
   "client_x509_cert_url": process.env.client_x509_cert_url
 };
 
-
-
-
 const express = require('express');
 const userApp = express();
 
-
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
+  credential: admin.credential.cert(
+    functions.config().privatekey ?
+    functions.config().privatekey :
+    serviceAccount),
 });
 
 const claims = {
@@ -69,6 +67,7 @@ userApp.post('/user/login', (req, res) => {
 })
 
 userApp.get('/user/getUsers', (req, res) => {
+  // res.send(JSON.stringify(functions.config()))
   admin.auth().listUsers().then((listResult) => {
     res.send(listResult.users);
     return listResult.users;
