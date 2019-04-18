@@ -2,17 +2,17 @@ const functions = require('firebase-functions');
 console.log('my config is '+ JSON.stringify(functions.config()));
 
 var hostConfig = {
-  apiKey: "AIzaSyDlib_eSWxnRwHnABW8YwxyUo-uHD3EMPg",
+  apiKey:functions.config().api ? functions.config().api.key : process.env.type,
   authDomain: "me-arash.firebaseapp.com",
   databaseURL: "https://me-arash.firebaseio.com",
   projectId: "me-arash",
   storageBucket: "me-arash.appspot.com",
   messagingSenderId: "305977168091"
 };
+
 const admin = require('firebase-admin');
 const firebase = require('firebase');
 firebase.initializeApp(hostConfig);
-const serviceAccountttt = require('./me-arash-firebase-adminsdk.json');
 
 require('dotenv').config();
 
