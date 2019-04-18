@@ -1,4 +1,7 @@
 // const config = require('./config');
+const functions = require('firebase-functions');
+console.log(functions.config().someservice);
+
 var hostConfig = {
   apiKey: "AIzaSyDlib_eSWxnRwHnABW8YwxyUo-uHD3EMPg",
   authDomain: "me-arash.firebaseapp.com",
@@ -10,10 +13,29 @@ var hostConfig = {
 const admin = require('firebase-admin');
 const firebase = require('firebase');
 firebase.initializeApp(hostConfig);
-const serviceAccount = require('./me-arash-firebase-adminsdk.json');
-const functions = require('firebase-functions');
+const serviceAccountttt = require('./me-arash-firebase-adminsdk.json');
+require('dotenv').config();
+
+
+const serviceAccount = {
+  "type": process.env.type,
+  "project_id": process.env.project_id,
+  "private_key_id": process.env.private_key_id,
+  "private_key": process.env.private_key,
+  "client_email": process.env.client_email,
+  "client_id": process.env.client_id,
+  "auth_uri": process.env.auth_uri,
+  "token_uri": process.env.token_uri,
+  "auth_provider_x509_cert_url": process.env.auth_provider_x509_cert_url,
+  "client_x509_cert_url": process.env.client_x509_cert_url
+};
+
+
+
+
 const express = require('express');
 const userApp = express();
+
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
