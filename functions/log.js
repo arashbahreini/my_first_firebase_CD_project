@@ -8,7 +8,6 @@ var hostConfig = {
 };
 
 const firebase = require('firebase');
-// firebase.initializeApp(hostConfig);
 const functions = require('firebase-functions');
 const express = require('express');
 const logApp = express();
