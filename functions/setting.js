@@ -18,7 +18,7 @@ module.exports.getServiceAccount = function() {
 
 module.exports.getHostConfig = function() {
   return {
-    apiKey: functions.config().api ? functions.config().api.key : process.env.type,
+    apiKey: functions.config().api ? functions.config().api.config : process.env.apikey,
     authDomain: "me-arash.firebaseapp.com",
     databaseURL: "https://me-arash.firebaseio.com",
     projectId: "me-arash",

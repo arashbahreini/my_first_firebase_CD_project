@@ -1,0 +1,70 @@
+[debug] [2019-04-19T07:58:59.410Z] ----------------------------------------------------------------------
+[debug] [2019-04-19T07:58:59.414Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Administrator\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-04-19T07:58:59.414Z] CLI Version:   6.6.0
+[debug] [2019-04-19T07:58:59.414Z] Platform:      win32
+[debug] [2019-04-19T07:58:59.414Z] Node Version:  v11.11.0
+[debug] [2019-04-19T07:58:59.415Z] Time:          Fri Apr 19 2019 12:28:59 GMT+0430 (Iran Daylight Time)
+[debug] [2019-04-19T07:58:59.416Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-04-19T07:58:59.437Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-04-19T07:58:59.437Z] > authorizing via signed-in user
+[debug] [2019-04-19T07:58:59.438Z] [iam] checking project me-arash for permissions ["firebase.projects.get"]
+[debug] [2019-04-19T07:58:59.441Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/me-arash:testIamPermissions  
+
+[debug] [2019-04-19T07:59:00.433Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-19T07:59:00.435Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/me-arash  
+ 
+[debug] [2019-04-19T07:59:01.741Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\work\me'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2019-04-19T07:59:02.543Z] Fetching environment
+[debug] [2019-04-19T07:59:02.546Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/305977168091:getServerAppConfig  
+ 
+[debug] [2019-04-19T07:59:02.547Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/305977168091/clients/_:getWebAppConfig  
+ 
+[debug] [2019-04-19T07:59:03.542Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-19T07:59:03.543Z] Starting @google-cloud/functions-emulator
+[debug] [2019-04-19T07:59:04.093Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist/firebase-CD-project
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-04-19T07:59:06.070Z] Parsing function triggers
+[warn] !  functions: Failed to load functions source code. Ensure that you have the latest SDK by running npm i --save firebase-functions inside the functions directory.
+[debug] [2019-04-19T07:59:06.917Z] Error during trigger parsing:  Error occurred while parsing your function triggers.
+
+TypeError: Cannot read property 'replace' of undefined
+    at Object.module.exports.getServiceAccount (C:\work\me\functions\setting.js:10:44)
+    at Object.<anonymous> (C:\work\me\functions\user.js:14:15)
+    at Module._compile (internal/modules/cjs/loader.js:799:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:810:10)
+    at Module.load (internal/modules/cjs/loader.js:666:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:606:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:598:3)
+    at Module.require (internal/modules/cjs/loader.js:705:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.<anonymous> (C:\work\me\functions\index.js:4:14)
+[warn] !  functions: Error from emulator. Error occurred while parsing your function triggers.
+
+TypeError: Cannot read property 'replace' of undefined
+    at Object.module.exports.getServiceAccount (C:\work\me\functions\setting.js:10:44)
+    at Object.<anonymous> (C:\work\me\functions\user.js:14:15)
+    at Module._compile (internal/modules/cjs/loader.js:799:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:810:10)
+    at Module.load (internal/modules/cjs/loader.js:666:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:606:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:598:3)
+    at Module.require (internal/modules/cjs/loader.js:705:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.<anonymous> (C:\work\me\functions\index.js:4:14)
+[debug] [2019-04-19T07:59:06.920Z] 
+[info] [hosting] Rewriting /user/login to local function userApp
+[info] [hosting] Rewriting /user/login to local function userApp
+[info] [hosting] Rewriting /user/login to local function userApp
+[info] Shutting down...
+[info] Shutting down...
+[info] Shutting down...
+[info] Shutting down...
+[info] Shutting down...
+[info] Shutting down...
+[info] Shutting down...

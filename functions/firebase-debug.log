@@ -1,0 +1,170 @@
+[debug] [2019-04-19T08:21:49.701Z] ----------------------------------------------------------------------
+[debug] [2019-04-19T08:21:49.704Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Administrator\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-04-19T08:21:49.706Z] CLI Version:   6.7.0
+[debug] [2019-04-19T08:21:49.707Z] Platform:      win32
+[debug] [2019-04-19T08:21:49.707Z] Node Version:  v11.11.0
+[debug] [2019-04-19T08:21:49.708Z] Time:          Fri Apr 19 2019 12:51:49 GMT+0430 (Iran Daylight Time)
+[debug] [2019-04-19T08:21:49.709Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-04-19T08:21:49.730Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-04-19T08:21:49.732Z] > authorizing via signed-in user
+[debug] [2019-04-19T08:21:49.732Z] [iam] checking project me-arash for permissions ["firebase.projects.get"]
+[debug] [2019-04-19T08:21:49.735Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/me-arash:testIamPermissions  
+
+[debug] [2019-04-19T08:21:50.987Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-19T08:21:50.989Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/me-arash  
+ 
+[debug] [2019-04-19T08:21:51.761Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\work\me'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2019-04-19T08:21:52.490Z] Fetching environment
+[debug] [2019-04-19T08:21:52.493Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/305977168091:getServerAppConfig  
+ 
+[debug] [2019-04-19T08:21:52.493Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/305977168091/clients/_:getWebAppConfig  
+ 
+[debug] [2019-04-19T08:21:53.719Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-19T08:21:53.720Z] Starting @google-cloud/functions-emulator
+[debug] [2019-04-19T08:21:53.816Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist/firebase-CD-project
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-04-19T08:21:55.756Z] Parsing function triggers
+[info] +  functions: app: http://localhost:5001/me-arash/us-central1/app
+[info] +  functions: userApp: http://localhost:5001/me-arash/us-central1/userApp
+[info] +  functions: logApp: http://localhost:5001/me-arash/us-central1/logApp
+[info] [hosting] Rewriting /user/login to http://localhost:5001/me-arash/us-central1/userApp for local Function userApp
+[info] [hosting] Rewriting /user/login to http://localhost:5001/me-arash/us-central1/userApp for local Function userApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp

@@ -9,12 +9,11 @@ const userApp = express();
 
 admin.initializeApp({
   credential: admin.credential.cert(
-    functions.config().privatekey !== undefined ?
+    functions.config().privatekey ?
       setting.getPrivatekey() :
       setting.getServiceAccount()),
 });
 
-console.log(functions.config().privatekey);
 
 const claims = {
   premiumAccount: true

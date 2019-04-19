@@ -3,32 +3,4 @@
     Welcome dear guest.
   </h3>
 </div>
-<div class="background_light m-2">
-  <div class="row col-sm-12 text-center">
-    <div class="fa-3x ml-5 mb-5 col-sm-12" *ngIf="chartData.isLoading && !chartData.data">
-      <i class="fa fa-spinner fa-spin mt-5"></i>
-    </div>
-    <div class="col-sm-8">
-      <div class="">
-        <p-chart type="bar" [data]="chartData.data" *ngIf="!chartData.isLoading"></p-chart>
-        <div class="fa-3x ml-5" *ngIf="chartData.isLoading && chartData.data">
-          <i class="fa fa-spinner fa-spin mt-5"></i>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4 p-2 text-right" *ngIf="chartData.data" style="border-left:solid 1px lightgray">
-      <div class="mt-2 col-sm-9">
-        <button [ngClass]="'btn ' + (days === 7 ? 'btn-success ' : 'btn-primary ') + 'col-sm-9'" (click)="getLogs(7)">A
-          week ago</button>
-      </div>
-      <div class="mt-2 col-sm-9">
-        <button [ngClass]="'btn ' + (days === 30 ? 'btn-success ' : 'btn-primary ') + 'col-sm-9'"
-          (click)="getLogs(30)">Month ({{getlastMonths()}})</button>
-      </div>
-      <div class="mt-2 col-sm-9">
-        <button [ngClass]="'btn ' + (days === 365 ? 'btn-success ' : 'btn-primary ') + 'col-sm-9'"
-          (click)="getLogs(365)">A year ago</button>
-      </div>
-    </div>
-  </div>
-</div>
+<app-statistics></app-statistics>
