@@ -11,8 +11,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from 'src/environments/environment';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule  } from '@angular/common/http';
-import { DeviceDetectorModule } from 'ngx-device-detector';
+import { HttpClientModule } from '@angular/common/http';
+import { DeviceDetectorModule, DeviceDetectorService } from 'ngx-device-detector';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { DeviceDetectorModule } from 'ngx-device-detector';
     HttpClientModule,
     DeviceDetectorModule,
   ],
-  providers: [DeviceDetectorModule],
+  providers: [DeviceDetectorModule, DeviceDetectorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

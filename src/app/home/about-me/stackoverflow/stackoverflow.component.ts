@@ -1,6 +1,7 @@
 import { GithubService } from 'src/app/services/github.service';
 import { Component, OnInit } from '@angular/core';
 import { debug } from 'util';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-stackoverflow',
@@ -12,8 +13,13 @@ export class StackoverflowComponent implements OnInit {
   public stackData: any[] = [];
   public isLoading: boolean;
   public showAnswers: boolean;
+  public isWithMobile: boolean;
 
-  constructor(private githubService: GithubService) { }
+  constructor(
+    private githubService: GithubService,
+    private commonService: CommonService) {
+    this.isWithMobile = commonService.getUserPlatform().isWithMobile;
+  }
 
   ngOnInit() {
     this.getAnswers();

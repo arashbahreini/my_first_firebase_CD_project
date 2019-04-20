@@ -1,17 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { map } from 'rxjs/operators';
-import { DeviceDetectorService } from 'ngx-device-detector';
 import { LogService } from './services/log.service';
 import { LogModel } from './model/log.model';
 import { CommonService } from './services/common.service';
-import { UserPlatformModel } from './model/user-platform';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [DeviceDetectorService]
 })
 export class AppComponent implements OnInit {
 
@@ -19,16 +16,11 @@ export class AppComponent implements OnInit {
   public students: any[];
   public student: any = {};
   public log: LogModel = new LogModel();
-  public userPlatform: UserPlatformModel;
 
   constructor(
     db: AngularFireDatabase,
-    private deviceService: DeviceDetectorService,
     private logService: LogService,
-    private commonService: CommonService) {
-    this.userPlatform = new UserPlatformModel(null);
-    this.userPlatform.setValue(this.deviceService);
-  }
+    private commonService: CommonService) { }
 
   ngOnInit() {
     this.addLog();
@@ -36,12 +28,12 @@ export class AppComponent implements OnInit {
 
   addLog() {
     this.log = {
-      browser: this.userPlatform.browser,
-      browserVersion: this.userPlatform.browser_version,
+      browser: this.commonService.getUserPlatform().browser,
+      browserVersion: this.commonService.getUserPlatform().browser_version,
       date: new Date(),
-      device: this.userPlatform.device,
-      os: this.userPlatform.os,
-      osVersion: this.userPlatform.os_version,
+      device: this.commonService.getUserPlatform().device,
+      os: this.commonService.getUserPlatform().os,
+      osVersion: this.commonService.getUserPlatform().os_version,
       id: 'Not set yet',
       ip: '',
     };

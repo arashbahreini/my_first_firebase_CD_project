@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-about-me',
@@ -7,12 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./about-me.component.sass']
 })
 export class AboutMeComponent implements OnInit {
-
   @ViewChild('bio') public bio: ElementRef;
   @ViewChild('github') public github: ElementRef;
   @ViewChild('stackoverflow') public stackoverflow: ElementRef;
-
-
+  public isWithMobile: boolean;
 
   public routes = [
     {
@@ -48,7 +47,9 @@ export class AboutMeComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  constructor(private commonService: CommonService) {
+    this.isWithMobile = commonService.getUserPlatform().isWithMobile;
+  }
 
   activeButton(route: string) {
     this.routes.forEach(element => {

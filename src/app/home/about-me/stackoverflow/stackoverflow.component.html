@@ -17,7 +17,7 @@
       <div class="fa-3x text-center" *ngIf="isLoading">
         <i class="fa fa-spinner fa-spin mt-5"></i>
       </div>
-      <table class="table" *ngIf="!isLoading && showAnswers">
+      <table class="table" *ngIf="!isLoading && showAnswers && !isWithMobile">
         <tr class="d-flex">
           <th class="col-sm-3">
             Is accepted
@@ -50,7 +50,34 @@
         </tr>
       </table>
 
-      <table class="table" *ngIf="!isLoading && !showAnswers">
+      <table class="table" *ngIf="!isLoading && showAnswers && isWithMobile">
+        <tr class="d-flex">
+          <th class="col-sm-3">
+            Score
+          </th>
+          <th class="col-sm-3">
+            Link
+          </th>
+          <th class="col-sm-3">
+            Date
+          </th>
+        </tr>
+        <tr *ngFor="let stack of stackData" class="d-flex">
+          <td class="col-sm-3 text-center">
+            <h4>{{stack.score}}</h4>
+          </td>
+          <td class="col-sm-3 text-center">
+            <a [href]="stack.link">
+              <i class="fa fa-link btn btn-success"></i>
+            </a>
+          </td>
+          <td class="col-sm-3 text=center">
+            {{stack.date * 1000 | date:'yyyy/MM/dd'}}
+          </td>
+        </tr>
+      </table>
+
+      <table class="table" *ngIf="!isLoading && !showAnswers && !isWithMobile">
         <tr class="d-flex">
           <th class="col-sm-4">
             Score
@@ -73,6 +100,33 @@
           </td>
           <td class="col-sm-4 text=center">
             {{stack.date * 1000 | date:'medium'}}
+          </td>
+        </tr>
+      </table>
+
+      <table class="table" *ngIf="!isLoading && !showAnswers && isWithMobile">
+        <tr class="d-flex">
+          <th class="col-sm-4">
+            Score
+          </th>
+          <th class="col-sm-4">
+            Link
+          </th>
+          <th class="col-sm-4">
+            Date
+          </th>
+        </tr>
+        <tr *ngFor="let stack of stackData" class="d-flex">
+          <td class="col-sm-4 text-center">
+            <h4>{{stack.score}}</h4>
+          </td>
+          <td class="col-sm-4 text-center">
+            <a [href]="stack.link">
+              <i class="fa fa-link btn btn-success"></i>
+            </a>
+          </td>
+          <td class="col-sm-4 text=center">
+            {{stack.date * 1000 | date:'yyyy/MM/dd'}}
           </td>
         </tr>
       </table>

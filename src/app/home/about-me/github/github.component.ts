@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubService } from 'src/app/services/github.service';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-github',
@@ -10,8 +11,13 @@ export class GithubComponent implements OnInit {
 
   public githubData: any[] = [];
   public isLoading: boolean;
+  public isWithMobile: boolean;
 
-  constructor(private githubService: GithubService) { }
+  constructor(
+    private githubService: GithubService,
+    private commonService: CommonService) {
+      this.isWithMobile = commonService.getUserPlatform().isWithMobile;
+    }
 
   ngOnInit() {
     this.getGithubData();
