@@ -8,79 +8,86 @@
         <button [ngClass]="'col-sm-6 btn ' + (showTable ? 'btn-success' : 'btn-info')">Table</button>
       </div>
       <div [ngClass]="'header-tabs col-sm-6 text-left '" (click)="loadGraph()">
-          <button [ngClass]="'col-sm-6 btn ' + (!showTable ? 'btn-success' : 'btn-info')">Graph</button>
+        <button [ngClass]="'col-sm-6 btn ' + (!showTable ? 'btn-success' : 'btn-info')">Graph</button>
       </div>
     </div>
   </div>
 
   <div class="div-container">
-      <div *ngIf="showTable" class="row col-sm-12 text-center">
-          <div class="fa-3x ml-5 mb-5 col-sm-12" *ngIf="tableData.isLoading">
-            <i class="fa fa-spinner fa-spin mt-5"></i>
-          </div>
-          <table class="table table-hover col-sm-12" *ngIf="!tableData.isLoading">
-            <tr>
-              <th>No</th>
-              <th>Browser</th>
-              <th>Date</th>
-              <th>Country</th>
-              <th>City</th>
-              <th>OS</th>
-              <th>OS version</th>
-            </tr>
-            <tr *ngFor="let log of tableData.data;let i=index">
-              <td>{{i+1}}</td>
-              <td>{{log.browser}}</td>
-              <td>{{log.date | date:"medium"}}</td>
-              <td>
-                <div class="fa-1x" *ngIf="log.country.isLoading">
-                  <i class="fa fa-spinner fa-spin"></i>
-                </div>
-                <div *ngIf="!log.country.isLoading">
-                  {{log.country.data}}
-                </div>
-              </td>
-              <td>
-                <div class="fa-1x" *ngIf="log.city.isLoading">
-                  <i class="fa fa-spinner fa-spin"></i>
-                </div>
-                <div *ngIf="!log.city.isLoading">
-                    {{log.city.data}}
-                </div>
-              </td>
-              <td>{{log.os}}</td>
-              <td>{{log.osVersion}}</td>
-            </tr>
-          </table>
-        </div>
-
-        <div *ngIf="!showTable" class="row col-sm-12 text-center">
-          <div class="fa-3x ml-5 mb-5 col-sm-12" *ngIf="chartData.isLoading && !chartData.data">
-            <i class="fa fa-spinner fa-spin mt-5"></i>
-          </div>
-          <div class="col-sm-8">
-            <div class="">
-              <p-chart type="bar" [data]="chartData.data" *ngIf="!chartData.isLoading"></p-chart>
-              <div class="fa-3x ml-5" *ngIf="chartData.isLoading && chartData.data">
-                <i class="fa fa-spinner fa-spin mt-5"></i>
+    <div *ngIf="showTable" class="row col-sm-12 text-center">
+      <div class="fa-3x ml-5 mb-5 col-sm-12" *ngIf="tableData.isLoading">
+        <i class="fa fa-spinner fa-spin mt-5"></i>
+      </div>
+      <table class="table table-hover col-sm-12" *ngIf="!tableData.isLoading">
+        <tr>
+          <th>No</th>
+          <th>Browser</th>
+          <th>Date</th>
+          <th>Country</th>
+          <th>City</th>
+          <th>OS</th>
+          <th>OS version</th>
+        </tr>
+        <tr *ngFor="let log of tableData.data;let i=index">
+          <td>{{i+1}}</td>
+          <td>{{log.browser}}</td>
+          <td>{{log.date | date:"medium"}}</td>
+          <td>
+            <div class="fa-1x" *ngIf="log.country.isLoading">
+              <i class="fa fa-spinner fa-spin"></i>
+            </div>
+            <div *ngIf="!log.country.isLoading && !log.country.hasError">
+              {{log.country.data}}
+            </div>
+            <div *ngIf="!log.country.isLoading && log.country.hasError">
+                {{log.country.errorMessage}}
               </div>
+          </td>
+          <td>
+            <div class="fa-1x" *ngIf="log.city.isLoading">
+              <i class="fa fa-spinner fa-spin"></i>
             </div>
-          </div>
-          <div class="col-sm-4 p-2 text-right" *ngIf="chartData.data" style="border-left:solid 1px lightgray">
-            <div class="mt-2 col-sm-9">
-              <button [ngClass]="'btn ' + (days === 7 ? 'btn-success ' : 'btn-primary ') + 'col-sm-9'" (click)="getLogsInGraph(7)">A
-                week ago</button>
+            <div *ngIf="!log.city.isLoading && !log.city.hasError">
+              {{log.city.data}}
             </div>
-            <div class="mt-2 col-sm-9">
-              <button [ngClass]="'btn ' + (days === 30 ? 'btn-success ' : 'btn-primary ') + 'col-sm-9'"
-                (click)="getLogsInGraph(30)">Month ({{getlastMonths()}})</button>
+            <div *ngIf="!log.city.isLoading && log.city.hasError">
+              {{log.city.errorMessage}}
             </div>
-            <div class="mt-2 col-sm-9">
-              <button [ngClass]="'btn ' + (days === 365 ? 'btn-success ' : 'btn-primary ') + 'col-sm-9'"
-                (click)="getLogsInGraph(365)">A year ago</button>
-            </div>
+          </td>
+          <td>{{log.os}}</td>
+          <td>{{log.osVersion}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div *ngIf="!showTable" class="row col-sm-12 text-center">
+      <div class="fa-3x ml-5 mb-5 col-sm-12" *ngIf="chartData.isLoading && !chartData.data">
+        <i class="fa fa-spinner fa-spin mt-5"></i>
+      </div>
+      <div class="col-sm-8">
+        <div class="">
+          <p-chart type="bar" [data]="chartData.data" *ngIf="!chartData.isLoading"></p-chart>
+          <div class="fa-3x ml-5" *ngIf="chartData.isLoading && chartData.data">
+            <i class="fa fa-spinner fa-spin mt-5"></i>
           </div>
         </div>
+      </div>
+      <div class="col-sm-4 p-2 text-right" *ngIf="chartData.data" style="border-left:solid 1px lightgray">
+        <div class="mt-2 col-sm-9">
+          <button [ngClass]="'btn ' + (days === 7 ? 'btn-success ' : 'btn-primary ') + 'col-sm-9'"
+            (click)="getLogsInGraph(7)">A
+            week ago</button>
+        </div>
+        <div class="mt-2 col-sm-9">
+          <button [ngClass]="'btn ' + (days === 30 ? 'btn-success ' : 'btn-primary ') + 'col-sm-9'"
+            (click)="getLogsInGraph(30)">Month ({{getlastMonths()}})</button>
+        </div>
+        <div class="mt-2 col-sm-9">
+          <button [ngClass]="'btn ' + (days === 365 ? 'btn-success ' : 'btn-primary ') + 'col-sm-9'"
+            (click)="getLogsInGraph(365)">A year ago</button>
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>

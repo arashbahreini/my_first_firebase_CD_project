@@ -75,8 +75,8 @@ export class StatisticsComponent implements OnInit {
         log.country.setData(res.country_name);
         log.city.setData(res.city);
       }, (error: any) => {
-        log.country.setError('error in API');
-        log.city.setError('error in API');
+        log.country.setError('Paid plan needed');
+        log.city.setError('Paid plan needed');
       });
     } else {
       return 'unknown';

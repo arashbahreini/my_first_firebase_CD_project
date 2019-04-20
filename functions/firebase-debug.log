@@ -1,38 +1,56 @@
-[debug] [2019-04-20T07:42:58.593Z] ----------------------------------------------------------------------
-[debug] [2019-04-20T07:42:58.596Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\a.bahreini\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
-[debug] [2019-04-20T07:42:58.596Z] CLI Version:   6.7.0
-[debug] [2019-04-20T07:42:58.596Z] Platform:      win32
-[debug] [2019-04-20T07:42:58.596Z] Node Version:  v11.10.0
-[debug] [2019-04-20T07:42:58.600Z] Time:          Sat Apr 20 2019 12:12:58 GMT+0430 (Iran Daylight Time)
-[debug] [2019-04-20T07:42:58.600Z] ----------------------------------------------------------------------
+[debug] [2019-04-20T09:09:37.102Z] ----------------------------------------------------------------------
+[debug] [2019-04-20T09:09:37.105Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\a.bahreini\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-04-20T09:09:37.106Z] CLI Version:   6.7.0
+[debug] [2019-04-20T09:09:37.106Z] Platform:      win32
+[debug] [2019-04-20T09:09:37.106Z] Node Version:  v11.10.0
+[debug] [2019-04-20T09:09:37.110Z] Time:          Sat Apr 20 2019 13:39:37 GMT+0430 (Iran Daylight Time)
+[debug] [2019-04-20T09:09:37.110Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2019-04-20T07:42:58.613Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2019-04-20T07:42:58.614Z] > authorizing via signed-in user
-[debug] [2019-04-20T07:42:58.614Z] [iam] checking project me-arash for permissions ["firebase.projects.get"]
-[debug] [2019-04-20T07:42:58.616Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/me-arash:testIamPermissions  
+[debug] [2019-04-20T09:09:37.129Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-04-20T09:09:37.129Z] > authorizing via signed-in user
+[debug] [2019-04-20T09:09:37.129Z] [iam] checking project me-arash for permissions ["firebase.projects.get"]
+[debug] [2019-04-20T09:09:37.131Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/me-arash:testIamPermissions  
 
-[debug] [2019-04-20T07:42:59.573Z] <<< HTTP RESPONSE 200
-[debug] [2019-04-20T07:42:59.574Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/me-arash  
+[debug] [2019-04-20T09:09:38.601Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-20T09:09:38.607Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/me-arash  
  
-[debug] [2019-04-20T07:43:00.362Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-20T09:09:39.412Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from 'C:\Work\me'...
 [info] 
 [info] i  functions: Preparing to emulate functions.
-[debug] [2019-04-20T07:43:02.104Z] Fetching environment
-[debug] [2019-04-20T07:43:02.114Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/305977168091:getServerAppConfig  
+[debug] [2019-04-20T09:09:40.920Z] Fetching environment
+[debug] [2019-04-20T09:09:40.924Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/305977168091:getServerAppConfig  
  
-[debug] [2019-04-20T07:43:02.114Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/305977168091/clients/_:getWebAppConfig  
+[debug] [2019-04-20T09:09:40.924Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/305977168091/clients/_:getWebAppConfig  
  
-[debug] [2019-04-20T07:43:03.046Z] <<< HTTP RESPONSE 200
-[debug] [2019-04-20T07:43:03.046Z] Starting @google-cloud/functions-emulator
-[debug] [2019-04-20T07:43:03.227Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-20T09:09:42.064Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-20T09:09:42.066Z] Starting @google-cloud/functions-emulator
+[debug] [2019-04-20T09:09:42.124Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: dist/firebase-CD-project
 [info] +  hosting: Local server: http://localhost:5000
-[debug] [2019-04-20T07:43:06.606Z] Parsing function triggers
-[info] +  functions: userApp: http://localhost:5001/me-arash/us-central1/userApp
+[debug] [2019-04-20T09:09:45.190Z] Parsing function triggers
 [info] +  functions: app: http://localhost:5001/me-arash/us-central1/app
+[info] +  functions: userApp: http://localhost:5001/me-arash/us-central1/userApp
 [info] +  functions: logApp: http://localhost:5001/me-arash/us-central1/logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
 [info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
 [info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
 [info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
@@ -64,6 +82,7 @@
 [info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
 [info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
 [info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
 [info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
 [info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
 [info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
@@ -76,6 +95,53 @@
 [info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
 [info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
 [info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
-[info] [hosting] Rewriting /user/login to http://localhost:5001/me-arash/us-central1/userApp for local Function userApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
 [info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
 [info] [hosting] Rewriting /log/getIpInformation to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp

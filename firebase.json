@@ -11,19 +11,7 @@
     ],
     "rewrites": [
       {
-        "source": "/user/test",
-        "function": "userApp"
-      },
-      {
-        "source": "/user/getUsers",
-        "function": "userApp"
-      },
-      {
-        "source": "/user/getToken",
-        "function": "userApp"
-      },
-      {
-        "source": "/user/login",
+        "source": "/user/**",
         "function": "userApp"
       },
       {
@@ -31,11 +19,7 @@
         "function": "app"
       },
       {
-        "source": "/log/add",
-        "function": "logApp"
-      },
-      {
-        "source": "/log/getIpInformation",
+        "source": "/log/**",
         "function": "logApp"
       },
       {
