@@ -126,17 +126,31 @@ export class StatisticsComponent implements OnInit {
       (res: LogModel[]) => {
         const data = new ChartModel();
         data.datasets[0] = {
-          label: 'Totla',
+          label: 'PC',
           backgroundColor: '#FF6347',
           borderColor: '#FF8C00',
           data: []
         };
+        data.datasets[1] = {
+          label: 'Phone',
+          backgroundColor: '#3CB371',
+          borderColor: '#3CB371',
+          data: []
+        };
+        console.log(res);
         if (days === 7) {
           for (let i = 6; i >= 0; i--) {
             data.labels.push((this.datePipe.transform(
               new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() - i), 'EEEE')).toString());
             data.datasets[0].data.push(
-              res.filter(x => +this.datePipe.transform(x.date, 'dd') === new Date().getDate() - i).length
+              res.filter(x =>
+                (x.os === 'Windows' || x.os === 'Linux' || x.os === 'Mac') &&
+                +this.datePipe.transform(x.date, 'dd') === new Date().getDate() - i).length
+            );
+            data.datasets[1].data.push(
+              res.filter(x =>
+                (x.os === 'iOS' || x.os === 'Android') &&
+                +this.datePipe.transform(x.date, 'dd') === new Date().getDate() - i).length
             );
           }
         } else if (days === 30) {
@@ -146,15 +160,33 @@ export class StatisticsComponent implements OnInit {
           for (let i = 29; i >= 0; i--) {
             if (lastMonthDay <= new Date(new Date().getFullYear(), new Date().getMonth(), 0).getDate()) {
               data.labels.push(lastMonthDay.toString());
+              console.log(res);
               data.datasets[0].data.push(
-                res.filter(x => +this.datePipe.transform(x.date, 'mm') - 1 === new Date().getMonth()
+                res.filter(x =>
+                  (x.os === 'Windows' || x.os === 'Linux' || x.os === 'Mac') &&
+                  +this.datePipe.transform(x.date, 'mm') - 1 === new Date().getMonth()
+                  && +this.datePipe.transform(x.date, 'dd') === new Date().getDate() - 1).length
+              );
+              data.datasets[1].data.push(
+                res.filter(x =>
+                  (x.os === 'iOS' || x.os === 'Android') &&
+                  +this.datePipe.transform(x.date, 'mm') - 1 === new Date().getMonth()
                   && +this.datePipe.transform(x.date, 'dd') === new Date().getDate() - 1).length
               );
               lastMonthDay = lastMonthDay + 1;
             } else {
               data.labels.push(newMonthDate.toString());
+
               data.datasets[0].data.push(
-                res.filter(x => +this.datePipe.transform(x.date, 'dd') === new Date().getDate() - i).length
+                res.filter(x =>
+                  (x.os === 'Windows' || x.os === 'Linux' || x.os === 'Mac') &&
+                  +this.datePipe.transform(x.date, 'dd') === new Date().getDate() - i).length
+              );
+
+              data.datasets[1].data.push(
+                res.filter(x =>
+                  (x.os === 'iOS' || x.os === 'Android') &&
+                  +this.datePipe.transform(x.date, 'dd') === new Date().getDate() - i).length
               );
               newMonthDate = newMonthDate + 1;
             }
@@ -171,8 +203,18 @@ export class StatisticsComponent implements OnInit {
           dates.forEach(element => {
             const month = this.datePipe.transform(element, 'MMM');
             data.labels.push(month);
+
             data.datasets[0].data.push(
-              res.filter(x => +this.datePipe.transform(x.date, 'yyyy') === new Date().getFullYear()
+              res.filter(x =>
+                (x.os === 'Windows' || x.os === 'Linux' || x.os === 'Mac') &&
+                +this.datePipe.transform(x.date, 'yyyy') === new Date().getFullYear()
+                && this.datePipe.transform(x.date, 'MMM') === month).length
+            );
+
+            data.datasets[1].data.push(
+              res.filter(x =>
+                (x.os === 'iOS' || x.os === 'Android') &&
+                +this.datePipe.transform(x.date, 'yyyy') === new Date().getFullYear()
                 && this.datePipe.transform(x.date, 'MMM') === month).length
             );
           });
