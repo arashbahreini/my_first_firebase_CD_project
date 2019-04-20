@@ -1,16 +1,12 @@
-<div class="background_light m-2">
-  <div class="text-center header-badge">
-    <p>Site statistics</p>
+<div class="background_light">
+  <div style="text-align: center">
+    <h2 style="border-bottom: 1px solid lightgray; padding-bottom: 15px;">Site statistics</h2>
   </div>
-  <div class="col-sm-12 mb-2">
-    <div class="row">
-      <div [ngClass]="'header-tabs col-sm-6 text-right'" (click)="loadTable()">
-        <button [ngClass]="'col-sm-6 btn ' + (showTable ? 'btn-success' : 'btn-info')">Table</button>
-      </div>
-      <div [ngClass]="'header-tabs col-sm-6 text-left '" (click)="loadGraph()">
-        <button [ngClass]="'col-sm-6 btn ' + (!showTable ? 'btn-success' : 'btn-info')">Graph</button>
-      </div>
-    </div>
+  <div class="text-center m-2">
+    <button [ngClass]="'btn mr-1 ' + (showTable ? ' btn-success ' :' btn-info ')" (click)="loadTable()">Table
+      </button>
+    <button [ngClass]="'btn ' + (!showTable ? 'btn-success' :'btn-info')" (click)="loadGraph()">Graph
+      </button>
   </div>
 
   <div class="div-container">
@@ -18,7 +14,7 @@
       <div class="fa-3x ml-5 mb-5 col-sm-12" *ngIf="tableData.isLoading">
         <i class="fa fa-spinner fa-spin mt-5"></i>
       </div>
-      <table class="table table-hover col-sm-12" *ngIf="!tableData.isLoading">
+      <table class="table table-hover col-sm-12" *ngIf="!tableData.isLoading && !isWithMobile">
         <tr>
           <th>No</th>
           <th>Browser</th>
@@ -40,8 +36,8 @@
               {{log.country.data}}
             </div>
             <div *ngIf="!log.country.isLoading && log.country.hasError">
-                {{log.country.errorMessage}}
-              </div>
+              {{log.country.errorMessage}}
+            </div>
           </td>
           <td>
             <div class="fa-1x" *ngIf="log.city.isLoading">
@@ -56,6 +52,19 @@
           </td>
           <td>{{log.os}}</td>
           <td>{{log.osVersion}}</td>
+        </tr>
+      </table>
+
+      <table class="table table-hover col-sm-12" *ngIf="!tableData.isLoading && isWithMobile">
+        <tr>
+          <th>Browser</th>
+          <th>Date</th>
+          <th>OS</th>
+        </tr>
+        <tr *ngFor="let log of tableData.data;let i=index">
+          <td><i [ngClass]="getBrowserIcon(log.browser)"></i></td>
+          <td>{{log.date | date:"yyyy/MM/dd"}}</td>
+          <td><i [ngClass]="getOsIcon(log.os)"></i></td>
         </tr>
       </table>
     </div>

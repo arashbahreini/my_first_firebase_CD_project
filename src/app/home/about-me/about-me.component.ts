@@ -11,6 +11,7 @@ export class AboutMeComponent implements OnInit {
   @ViewChild('bio') public bio: ElementRef;
   @ViewChild('github') public github: ElementRef;
   @ViewChild('stackoverflow') public stackoverflow: ElementRef;
+  @ViewChild('statistics') public statistics: ElementRef;
   public isWithMobile: boolean;
 
   public routes = [
@@ -31,6 +32,12 @@ export class AboutMeComponent implements OnInit {
       isActive: false,
       caption: 'Stackoverflow',
       icon: 'fa fa-stack-overflow'
+    },
+    {
+      route: 'statistics',
+      isActive: false,
+      caption: 'Stackoverflow',
+      icon: 'fa fa-line-chart'
     }
   ];
 
@@ -42,8 +49,10 @@ export class AboutMeComponent implements OnInit {
       this.activeButton('bio');
     } else if (window.pageYOffset < this.stackoverflow.nativeElement.offsetTop - 400) {
       this.activeButton('github');
-    } else {
+    } else if (window.pageYOffset < this.statistics.nativeElement.offsetTop - 400) {
       this.activeButton('stackoverflow');
+    } else {
+      this.activeButton('statistics');
     }
   }
 
@@ -76,6 +85,9 @@ export class AboutMeComponent implements OnInit {
         break;
       case 'stackoverflow':
         this.stackoverflow.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
+        break;
+      case 'statistics':
+        this.statistics.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
         break;
       default:
         break;

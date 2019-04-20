@@ -20,16 +20,50 @@ export class StatisticsComponent implements OnInit {
   public days: number;
   public showTable: boolean;
   public tableData: ResultModel<LogModel[]> = new ResultModel<LogModel[]>();
+  public isWithMobile: boolean;
 
   constructor(
     db: AngularFireDatabase,
     private datePipe: DatePipe,
     private commonService: CommonService) {
     this.logDb = db.list('/logs');
+    this.isWithMobile = commonService.getUserPlatform().isWithMobile;
   }
 
   ngOnInit() {
     this.loadTable();
+  }
+
+  getOsIcon(os) {
+    switch (os.toLowerCase()) {
+      case 'windows':
+        return 'fa fa-windows';
+      case 'mac':
+        return 'fa fa-apple';
+      case 'linux':
+        return 'fa fa-linux';
+      case 'ios':
+        return 'fa fa-apple';
+      case 'android':
+        return 'fa fa-android';
+      default:
+        return 'fa fa-exclamation';
+    }
+  }
+
+  getBrowserIcon(browser: string) {
+    switch (browser.toLowerCase()) {
+      case 'opera':
+        return 'fa fa-opera';
+      case 'safari':
+        return 'fa fa-safari';
+      case 'chrome':
+        return 'fa fa-chrome';
+      case 'ie':
+        return 'fa fa-internet-explorer';
+      default:
+        return 'fa fa-exclamation';
+    }
   }
 
   getlastMonths() {
@@ -92,14 +126,15 @@ export class StatisticsComponent implements OnInit {
       (res: LogModel[]) => {
         const data = new ChartModel();
         data.datasets[0] = {
-          label: 'Visit',
+          label: 'Totla',
           backgroundColor: '#FF6347',
           borderColor: '#FF8C00',
           data: []
         };
         if (days === 7) {
           for (let i = 6; i >= 0; i--) {
-            data.labels.push((new Date().getDate() - i).toString());
+            data.labels.push((this.datePipe.transform(
+              new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() - i), 'EEEE')).toString());
             data.datasets[0].data.push(
               res.filter(x => +this.datePipe.transform(x.date, 'dd') === new Date().getDate() - i).length
             );
