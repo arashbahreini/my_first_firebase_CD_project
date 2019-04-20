@@ -71,7 +71,7 @@ export class StatisticsComponent implements OnInit {
     if (typeof log.ip === 'string') {
       log.country.load();
       log.city.load();
-      this.commonService.getIpInformation(log.ip).subscribe((res: any) => {
+      this.commonService.getIpInformation(log).subscribe((res: any) => {
         log.country.setData(res.country_name);
         log.city.setData(res.city);
       }, (error: any) => {

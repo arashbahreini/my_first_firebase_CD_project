@@ -14,7 +14,7 @@ export class CommonService {
     return this.http.get<LogModel>('https://api.ipify.org/?format=json');
   }
 
-  getIpInformation(ip: string): Observable<any> {
-    return this.http.get<any>('http://api.ipstack.com/' + ip + '?access_key=9f79482ae6aca6a14914c07978b51b29');
+  getIpInformation(log: LogModel): Observable<any> {
+    return this.http.post<LogModel>('log/getIpInformation', { ip: log.ip });
   }
 }

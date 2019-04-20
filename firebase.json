@@ -35,6 +35,10 @@
         "function": "logApp"
       },
       {
+        "source": "/log/getIpInformation",
+        "function": "logApp"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }

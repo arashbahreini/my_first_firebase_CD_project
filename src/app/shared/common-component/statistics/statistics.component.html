@@ -4,11 +4,11 @@
   </div>
   <div class="col-sm-12 mb-2">
     <div class="row">
-      <div [ngClass]="'header-tabs col-sm-6 text-center ' + (showTable ? 'active-tab' : '')" (click)="loadTable()">
-        <h3>Table</h3>
+      <div [ngClass]="'header-tabs col-sm-6 text-right'" (click)="loadTable()">
+        <button [ngClass]="'col-sm-6 btn ' + (showTable ? 'btn-success' : 'btn-info')">Table</button>
       </div>
-      <div [ngClass]="'header-tabs col-sm-6 text-center ' + (!showTable ? 'active-tab' : '')" (click)="loadGraph()">
-        <h3>Graph</h3>
+      <div [ngClass]="'header-tabs col-sm-6 text-left '" (click)="loadGraph()">
+          <button [ngClass]="'col-sm-6 btn ' + (!showTable ? 'btn-success' : 'btn-info')">Graph</button>
       </div>
     </div>
   </div>
