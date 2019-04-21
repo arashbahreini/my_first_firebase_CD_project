@@ -2,7 +2,7 @@
   <div [ngClass]="'d-inline p-2 col-sm-2'" *ngIf="!isWithMobile">
     <div class="position-fixed">
       <div *ngFor="let route of routes" class="text-center">
-        <p [ngClass]="(route.isActive ? 'btn btn-success ' : 'btn btn-primary ') + route.icon + ' btn_menu'"
+        <p [ngClass]="(route.isActive ? 'btn btn-success ' : 'btn btn-info ') + route.icon + ' btn_menu'"
           (click)="internalRoute(route.route)"></p>
       </div>
     </div>

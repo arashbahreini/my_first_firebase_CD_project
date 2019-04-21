@@ -134,3 +134,16 @@ TypeError: Cannot read property 'replace' of undefined
 [debug] [2019-04-21T08:35:23.862Z] 
 [info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
 [info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /user/getUsers to http://localhost:5001/me-arash/us-central1/userApp for local Function userApp
+[info] [hosting] Rewriting /user/getUsers to http://localhost:5001/me-arash/us-central1/userApp for local Function userApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /user/getUsers to http://localhost:5001/me-arash/us-central1/userApp for local Function userApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /user/getUsers to http://localhost:5001/me-arash/us-central1/userApp for local Function userApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
