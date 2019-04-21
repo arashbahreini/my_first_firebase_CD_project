@@ -68,3 +68,69 @@ TypeError: Cannot read property 'replace' of undefined
 [info] Shutting down...
 [info] Shutting down...
 [info] Shutting down...
+[debug] [2019-04-21T08:35:11.300Z] ----------------------------------------------------------------------
+[debug] [2019-04-21T08:35:11.304Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Administrator\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-04-21T08:35:11.304Z] CLI Version:   6.7.0
+[debug] [2019-04-21T08:35:11.305Z] Platform:      win32
+[debug] [2019-04-21T08:35:11.305Z] Node Version:  v11.11.0
+[debug] [2019-04-21T08:35:11.307Z] Time:          Sun Apr 21 2019 13:05:11 GMT+0430 (Iran Daylight Time)
+[debug] [2019-04-21T08:35:11.307Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-04-21T08:35:11.338Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-04-21T08:35:11.338Z] > authorizing via signed-in user
+[debug] [2019-04-21T08:35:11.339Z] [iam] checking project me-arash for permissions ["firebase.projects.get"]
+[debug] [2019-04-21T08:35:11.344Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-04-21T08:35:11.345Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-04-21T08:35:15.050Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-21T08:35:15.056Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/me-arash:testIamPermissions  
+
+[debug] [2019-04-21T08:35:16.318Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-21T08:35:16.320Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/me-arash  
+ 
+[debug] [2019-04-21T08:35:17.118Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\work\me'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2019-04-21T08:35:18.458Z] Fetching environment
+[debug] [2019-04-21T08:35:18.463Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/305977168091:getServerAppConfig  
+ 
+[debug] [2019-04-21T08:35:18.463Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/305977168091/clients/_:getWebAppConfig  
+ 
+[debug] [2019-04-21T08:35:19.671Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-21T08:35:19.672Z] Starting @google-cloud/functions-emulator
+[debug] [2019-04-21T08:35:19.856Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist/firebase-CD-project
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-04-21T08:35:22.208Z] Parsing function triggers
+[warn] !  functions: Failed to load functions source code. Ensure that you have the latest SDK by running npm i --save firebase-functions inside the functions directory.
+[debug] [2019-04-21T08:35:23.859Z] Error during trigger parsing:  Error occurred while parsing your function triggers.
+
+TypeError: Cannot read property 'replace' of undefined
+    at Object.module.exports.getServiceAccount (C:\work\me\functions\setting.js:9:44)
+    at Object.<anonymous> (C:\work\me\functions\user.js:14:15)
+    at Module._compile (internal/modules/cjs/loader.js:799:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:810:10)
+    at Module.load (internal/modules/cjs/loader.js:666:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:606:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:598:3)
+    at Module.require (internal/modules/cjs/loader.js:705:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.<anonymous> (C:\work\me\functions\index.js:4:14)
+[warn] !  functions: Error from emulator. Error occurred while parsing your function triggers.
+
+TypeError: Cannot read property 'replace' of undefined
+    at Object.module.exports.getServiceAccount (C:\work\me\functions\setting.js:9:44)
+    at Object.<anonymous> (C:\work\me\functions\user.js:14:15)
+    at Module._compile (internal/modules/cjs/loader.js:799:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:810:10)
+    at Module.load (internal/modules/cjs/loader.js:666:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:606:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:598:3)
+    at Module.require (internal/modules/cjs/loader.js:705:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.<anonymous> (C:\work\me\functions\index.js:4:14)
+[debug] [2019-04-21T08:35:23.862Z] 
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
