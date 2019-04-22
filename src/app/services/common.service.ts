@@ -22,7 +22,8 @@ export class CommonService {
 
   getIpInformation(log: LogModel): Observable<any> {
     // return this.http.post<LogModel>('log/getIpInformation', { ip: log.ip });
-    return this.http.get<LogModel>('http://api.ipstack.com/' + log.ip + '?access_key=9f79482ae6aca6a14914c07978b51b29');
+    // return this.http.get<LogModel>('http://api.ipstack.com/' + log.ip + '?access_key=9f79482ae6aca6a14914c07978b51b29');
+    return this.http.get<LogModel>('https://ipapi.co/' + log.ip + '/json');
   }
 
   getUserPlatform() {
