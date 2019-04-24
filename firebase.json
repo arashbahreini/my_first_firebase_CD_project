@@ -3,7 +3,7 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "dist/firebase-CD-project",
+    "public": "client/dist/firebase-CD-project",
     "ignore": [
       "firebase.json",
       "**/.*",
