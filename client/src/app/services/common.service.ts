@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { LogModel } from '../model/log.model';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { UserPlatformModel } from '../model/user-platform';
+import { retry } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,7 @@ export class CommonService {
   getIpInformation(log: LogModel): Observable<any> {
     // return this.http.post<LogModel>('log/getIpInformation', { ip: log.ip });
     // return this.http.get<LogModel>('http://api.ipstack.com/' + log.ip + '?access_key=9f79482ae6aca6a14914c07978b51b29');
-    return this.http.get<LogModel>('https://ipapi.co/' + log.ip + '/json');
+    return this.http.get<LogModel>('https://ipapi.co/' + log.ip + '/json').pipe(retry(10));
   }
 
   getUserPlatform() {
