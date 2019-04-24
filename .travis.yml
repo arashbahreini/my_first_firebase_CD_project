@@ -11,7 +11,7 @@ before_script:
   - npm install -g firebase-tools
   - npm install --prefix ./functions
 script:
-- npm run lint --prefix client
-- npm run build --prefix client
+- npm run lint --prefix ./client
+- npm run build --prefix ./client
 after_success:
 - firebase deploy --token $FIREBASE_TOKEN
