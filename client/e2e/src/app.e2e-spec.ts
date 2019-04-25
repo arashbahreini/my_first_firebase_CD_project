@@ -36,6 +36,7 @@ describe('workspace-project App', () => {
     page.getMenuByNumber(2, 'a').click();
     expect(page.getTitleText('login', 'button')).toEqual('Login');
   });
+
   // afterEach(async () => {
   //   // Assert that there are no errors emitted from the browser
   //   const logs = await browser.manage().logs().get(logging.Type.BROWSER);
