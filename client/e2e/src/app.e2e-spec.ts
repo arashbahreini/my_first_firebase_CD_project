@@ -8,17 +8,34 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('Should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual(`Arash's biography`);
+    browser.ignoreSynchronization = true;
+    expect(page.getTitleText('bio', 'h2')).toEqual(`Arash's biography`);
   });
 
-  it('should display ME nav menu', () => {
+  it('Should display ME nav menu', () => {
     page.navigateTo();
-    expect(page.getMeMenu()).toEqual('Shangol');
+    expect(page.getMenuByNumber(0, 'a').getText()).toEqual('Me');
   });
 
+  it('Should display House nav menu', () => {
+    page.navigateTo();
+    browser.debugger();
+    expect(page.getMenuByNumber(1, 'a').getText()).toEqual('House');
+  });
 
+  it('Should show message when clicks on house menu', () => {
+    page.navigateTo();
+    page.getMenuByNumber(1, 'a').click();
+    expect(page.getTitleText('house', 'h2')).toEqual('This page is developing');
+  });
+
+  it('Should show Login button when click on Admin menu', () => {
+    page.navigateTo();
+    page.getMenuByNumber(2, 'a').click();
+    expect(page.getTitleText('login', 'button')).toEqual('Login');
+  });
   // afterEach(async () => {
   //   // Assert that there are no errors emitted from the browser
   //   const logs = await browser.manage().logs().get(logging.Type.BROWSER);
