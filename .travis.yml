@@ -26,6 +26,7 @@ script:
 - npm --prefix ./client install ./client
 - npm run lint --prefix ./client
 - npm run build --prefix ./client
-- npm run e2e --prefix ./client
+- npm run e2e --prefix ./client 
+
 after_success:
 - firebase deploy --token $FIREBASE_TOKEN
