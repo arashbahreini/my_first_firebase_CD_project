@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: client-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: ../client-{{ .Branch }}-{{ checksum "package-lock.json" }}
       - run: npm install
       - save_cache:
           key: client-{{ .Branch }}-{{ checksum "package-lock.json" }}
