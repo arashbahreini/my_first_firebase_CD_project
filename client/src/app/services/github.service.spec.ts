@@ -21,7 +21,6 @@ describe('GithubService', () => {
     // Act
     httpClientSpy.get.and.returnValue(of(expectedValue));
     gitHubService.getGithubEvents().subscribe(x => {
-      var a = 1;
     });
     // Aassert
   });
