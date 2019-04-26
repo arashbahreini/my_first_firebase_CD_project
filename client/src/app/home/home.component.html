@@ -1,6 +1,15 @@
 <div class="navbar_div" *ngIf="!showFixedNav">
-  <a [routerLink]="route.route" [ngClass]="route.isActive ? 'active' : ''"
-    *ngFor="let route of routes">{{route.caption}}</a>
+  <div *ngFor="let route of routes" class="d-inline">
+    <a *ngIf="!route.children" [routerLink]="route.route"
+      [ngClass]="route.isActive ? 'active' : ''">{{route.caption}}</a>
+    <a *ngIf="route.children" class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">
+      {{route.caption}}
+    </a>
+    <div *ngIf="route.children" class="dropdown-menu" style="padding-right: 10px;" aria-labelledby="navbarDropdown">
+      <a *ngFor="let child of route.children" style="color:black" class="dropdown-item" [routerLink]="child.route">{{child.caption}}</a>
+    </div>
+  </div>
 </div>
 <div style="background-color: white;margin-top:10px;">
   <div class="navbar_fixed_div" [@openClose]="showFixedNav ? 'open' : 'closed'">

@@ -1,0 +1,23 @@
+<div class="background_light m-2 p-2">
+  <p>
+    Some description will come here.
+  </p>
+</div>
+<div class="background_light m-2 p-2">
+  <table class="table table-hover">
+    <tr>
+      <th>No</th>
+      <th>
+        <button class="btn btn-success fa fa-plus mr-1" (click)="openAddEditDialog()"></button>
+        <button class="btn btn-info fa fa-refresh" [disabled]="true"></button>
+      </th>
+    </tr>
+    <tr>
+      <td>No</td>
+      <td>
+        <button class="btn btn-info fa fa-pencil mr-1"></button>
+        <button class="btn btn-danger fa fa-trash"></button>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -36,7 +36,19 @@ export class HomeComponent implements OnInit {
     {
       route: 'about-me',
       isActive: true,
-      caption: 'Me'
+      caption: 'Me',
+    },
+    {
+      route: 'aaa',
+      isActive: false,
+      caption: 'Work samples',
+      children: [
+        {
+          route: 'samples/student',
+          isActive: false,
+          caption: 'Student - CRUD'
+        },
+      ]
     },
     {
       route: 'house',

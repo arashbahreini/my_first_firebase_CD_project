@@ -10,7 +10,11 @@ const routes: Routes = [
       { path: '', redirectTo: 'about-me', pathMatch: 'full' },
       { path: 'about-me', loadChildren: './about-me/about-me.module#AboutMeModule' },
       { path: 'house', component: HouseComponent },
-      { path: 'login', component: LoginComponent},
+      { path: 'login', component: LoginComponent },
+      {
+        path: 'samples/student',
+        loadChildren: '../samples/student/student.module#StudentModule'
+      }
     ]
   }
 ];

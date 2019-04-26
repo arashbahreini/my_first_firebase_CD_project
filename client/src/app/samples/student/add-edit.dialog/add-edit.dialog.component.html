@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>Add - Edit Student</h1>
+<form class="form" [formGroup]="studentForm" (ngSubmit)="save()" (keydown.enter)="prevent($event)">
+  <div mat-dialog-content>
+    <div class="col-sm-12 mb-3">
+      <mat-form-field class="col-sm-12">
+        <input matInput placeholder="First name" name="firstName" formControlName="firstName">
+        <mat-error *ngIf="firstName?.errors?.required">First name is required</mat-error>
+        <mat-error *ngIf="firstName?.errors?.maxlength">First name length should be less than 30 character</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-12 mb-3">
+      <mat-form-field class="col-sm-12">
+        <input matInput placeholder="Last name" name="lastName" formControlName="lastName">
+        <mat-error *ngIf="lastName?.errors?.required">Last name is required</mat-error>
+        <mat-error *ngIf="lastName?.errors?.maxlength">Last name length should be less than 30 character</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-12 mb-3">
+      <mat-form-field class="col-sm-12">
+        <input type="number" matInput placeholder="Age" name="age" formControlName="age">
+        <mat-error *ngIf="age?.errors?.required">Age is required</mat-error>
+        <mat-error *ngIf="age?.errors?.max">Age length should be less than 100</mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button class="btn btn-danger" (click)="dialogRef.close()">Cancel</button>
+    <button type="submit" class="btn btn-success ml-1" (keydown.enter)="$event.preventDefault()" [disabled]="!studentForm.valid">Save</button>
+  </div>
+</form>

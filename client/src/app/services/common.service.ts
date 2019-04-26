@@ -22,7 +22,7 @@ export class CommonService {
   }
 
   getIpInformation(log: LogModel): Observable<any> {
-    return this.http.get<LogModel>('https://ipapi.co/' + log.ip + '/json').pipe(retry(10));
+    return this.http.get<LogModel>('https://ipapi.co/' + log.ip + '/json');
   }
 
   getUserPlatform() {
