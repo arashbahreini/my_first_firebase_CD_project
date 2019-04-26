@@ -22,7 +22,7 @@ describe('workspace-project App', () => {
   it('Should display House nav menu', () => {
     page.navigateTo();
     browser.debugger();
-    expect(page.getMenuByNumber(1, 'a').getText()).toEqual('House');
+    expect(page.getMenuByNumber(2, 'a').getText()).toEqual('House');
   });
 
   it('Should show message when clicks on house menu', () => {
@@ -33,7 +33,7 @@ describe('workspace-project App', () => {
 
   it('Should show Login button when click on Admin menu', () => {
     page.navigateTo();
-    page.getMenuByNumber(2, 'a').click();
+    page.getMenuByNumber(3, 'a').click();
     expect(page.getTitleText('login', 'button')).toEqual('Login');
   });
 
