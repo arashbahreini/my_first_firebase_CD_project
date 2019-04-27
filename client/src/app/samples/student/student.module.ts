@@ -7,6 +7,8 @@ import { StudentRoutingModule } from './student-routing.module';
 import { StudentComponent } from './student.component';
 import { AddEditDialogComponent } from './add-edit.dialog/add-edit.dialog.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DeleteDialogComponent } from 'src/app/shared/common-component/delete-dialog/delete-dialog.component';
+import { CommonComponentModule } from 'src/app/shared/common-component/common-component.module';
 
 @NgModule({
   declarations: [StudentComponent, AddEditDialogComponent],
@@ -15,9 +17,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     StudentRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    CommonComponentModule
   ], entryComponents: [
-    AddEditDialogComponent
+    AddEditDialogComponent,
+    DeleteDialogComponent
   ]
 })
 export class StudentModule { }

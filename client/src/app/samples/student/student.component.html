@@ -1,22 +1,59 @@
-<div class="background_light m-2 p-2">
-  <p>
-    Some description will come here.
-  </p>
+<div class="background_light m-2">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h5>Description about this page</h5>
+          <hr>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>This page has designed to apply CRUD operations with Angular 7 and connecting to the Firebase realtime database.</p>
+      <h5>Dependencies:</h5>
+      <p class="ml-2">
+        <span> 1. Angular material</span>
+        <br>
+        <span> 2. Font awesome</span>
+        <br>
+        <span> 3. Bootstrap</span>
+      </p>
+      <h5>Form technology</h5>
+      <p class="ml-2">
+        <span>1. Angular reactive form</span>
+        <br>
+        <span>2. Angular form validation</span>
+      </p>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>
 <div class="background_light m-2 p-2">
   <table class="table table-hover">
     <tr>
-      <th>No</th>
-      <th>
+      <th class="text-center">No</th>
+      <th class="text-center">First name</th>
+      <th class="text-center">Last name</th>
+      <th class="text-center">Age</th>
+      <th class="text-center">Grade</th>
+      <th class="text-center">Address</th>
+      <th class="text-center">workEligible</th>
+      <th class="text-center">Date of birth</th>
+      <th class="text-center">
         <button class="btn btn-success fa fa-plus mr-1" (click)="openAddEditDialog()"></button>
-        <button class="btn btn-info fa fa-refresh" [disabled]="true"></button>
       </th>
     </tr>
-    <tr>
-      <td>No</td>
-      <td>
-        <button class="btn btn-info fa fa-pencil mr-1"></button>
-        <button class="btn btn-danger fa fa-trash"></button>
+    <tr *ngFor="let student of students.data;let i = index">
+      <td class="text-center">{{i+1}}</td>
+      <td class="text-center">{{student.firstName}}</td>
+      <td class="text-center">{{student.lastName}}</td>
+      <td class="text-center">{{student.age}}</td>
+      <td class="text-center">{{student.grade}}</td>
+      <td class="text-center">{{student.address.city + ' , ' + student.address.street}}</td>
+      <td class="text-center">
+        <i [ngClass]="'fa ' + (student.workEligible ? 'fa-check' : 'fa-times')"></i>
+      </td>
+      <td class="text-center">{{student.dateOfBirth | date:'yyyy/MM/dd'}}</td>
+      <td class="text-center">
+        <button class="btn btn-info fa fa-pencil mr-1" (click)="openAddEditDialog(student)"></button>
+        <button class="btn btn-danger fa fa-trash" (click)="delete(student)"></button>
       </td>
     </tr>
   </table>

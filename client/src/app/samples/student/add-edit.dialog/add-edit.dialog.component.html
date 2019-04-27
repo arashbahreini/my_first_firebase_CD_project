@@ -22,9 +22,46 @@
         <mat-error *ngIf="age?.errors?.max">Age length should be less than 100</mat-error>
       </mat-form-field>
     </div>
+    <div class="col-sm-12 mb-3">
+      <mat-form-field class="col-sm-12">
+        <mat-label>Grade</mat-label>
+        <mat-select formControlName="grade">
+          <mat-option *ngFor="let grade of grades" [value]="grade">
+            {{grade}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="grade?.errors?.required">Grade is required</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-12 mb-3 p-2 border" formGroupName="address">
+      <h4>Address</h4>
+      <div class="col-sm-8">
+        <mat-form-field class="col-sm-12">
+          <input matInput placeholder="City" name="city" formControlName="city">
+          <mat-error *ngIf="address?.city?.errors?.max">City length should be less than 100</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-8">
+        <mat-form-field class="col-sm-12">
+          <input matInput placeholder="Street" name="street" formControlName="street">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col-sm-12 mb-3">
+      <mat-checkbox formControlName="workEligible">I am eligible to work.</mat-checkbox>
+    </div>
+    <div class="col-sm-12 mb-3">
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Date of birth" disabled formControlName="dateOfBirth">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker startView="year" #picker disabled="false"></mat-datepicker>
+        <mat-error *ngIf="dateOfBirth?.errors?.required">Date of birth is required</mat-error>
+      </mat-form-field>
+    </div>
   </div>
-  <div mat-dialog-actions>
-    <button class="btn btn-danger" (click)="dialogRef.close()">Cancel</button>
-    <button type="submit" class="btn btn-success ml-1" (keydown.enter)="$event.preventDefault()" [disabled]="!studentForm.valid">Save</button>
+  <div class="text-center">
+    <button type="button" class="btn btn-danger" (click)="closeDialog()">Cancel</button>
+    <button type="submit" class="btn btn-success ml-1" (keydown.enter)="$event.preventDefault()"
+      [disabled]="!studentForm.valid">Save</button>
   </div>
 </form>

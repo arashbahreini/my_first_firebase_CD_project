@@ -1,0 +1,9 @@
+<h2 mat-dialog-title>Delete item</h2>
+<div mat-dialog-content>
+  <h4>{{data.message}}</h4>
+</div>
+<hr>
+<div class="text-center">
+  <button class="btn btn-danger fa fa-times" (click)="dialogRef.close(false)"></button>
+  <button class="btn btn-success ml-1 fa fa-check" (click)="dialogRef.close(true)"></button>
+</div>
