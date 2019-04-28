@@ -14,6 +14,10 @@ const routes: Routes = [
       {
         path: 'samples/student',
         loadChildren: '../samples/student/student.module#StudentModule'
+      },
+      {
+        path: 'samples/chat',
+        loadChildren: '../samples/chat/chat.module#ChatModule'
       }
     ]
   }

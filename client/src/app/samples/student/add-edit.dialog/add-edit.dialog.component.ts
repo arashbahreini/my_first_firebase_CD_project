@@ -24,7 +24,7 @@ export class AddEditDialogComponent implements OnInit {
 
   public grades = ['A++', 'A+', 'A', 'B', 'C', 'D'];
   public studentForm = new FormGroup({
-    id: new FormControl(''),
+    key: new FormControl(''),
     firstName: new FormControl('', [Validators.required, Validators.maxLength(30)]),
     lastName: new FormControl('', [Validators.required, Validators.maxLength(30)]),
     age: new FormControl('', [Validators.required, Validators.max(100)]),
@@ -65,7 +65,7 @@ export class AddEditDialogComponent implements OnInit {
       });
     } else {
       this.studentForm.value.dateOfBirth = this.studentForm.value.dateOfBirth.toString();
-      this.db.list('students/').update(this.data.id, this.studentForm.value).then(() => {
+      this.db.list('students/').update(this.data.key, this.studentForm.value).then(() => {
         this.dialogRef.close();
       });
     }

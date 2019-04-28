@@ -48,6 +48,11 @@ export class HomeComponent implements OnInit {
           isActive: false,
           caption: 'Student - CRUD'
         },
+        {
+          route: 'samples/chat',
+          isActive: false,
+          caption: 'ChatBox - Web socket'
+        },
       ]
     },
     {

@@ -43,8 +43,8 @@ export class StudentComponent implements OnInit {
         map(changes => {
           return changes.map(x =>
             ({
-              id: x.key,
-              ...x.payload.val()
+              ...x.payload.val(),
+              key: x.key,
             })
           );
         })
@@ -66,7 +66,7 @@ export class StudentComponent implements OnInit {
     );
     dialog.afterClosed().subscribe((res: boolean) => {
       if (res) {
-        this.db.list(`/students/${student.id}`).remove();
+        this.db.list(`/students/${student.key}`).remove();
       }
     });
   }

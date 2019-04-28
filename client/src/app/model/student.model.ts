@@ -1,5 +1,5 @@
 export class StudentModel {
-  public id: string;
+  public key: string;
   public firstName: string;
   public lastName: string;
   public grade: string;

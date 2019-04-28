@@ -22,18 +22,18 @@ describe('workspace-project App', () => {
   it('Should display House nav menu', () => {
     page.navigateTo();
     browser.debugger();
-    expect(page.getMenuByNumber(3, 'a').getText()).toEqual('House');
+    expect(page.getMenuByNumber(4, 'a').getText()).toEqual('House');
   });
 
   it('Should show message when clicks on house menu', () => {
     page.navigateTo();
-    page.getMenuByNumber(3, 'a').click();
+    page.getMenuByNumber(4, 'a').click();
     expect(page.getTitleText('house', 'h2')).toEqual('This page is developing');
   });
 
   it('Should show Login button when click on Admin menu', () => {
     page.navigateTo();
-    page.getMenuByNumber(4, 'a').click();
+    page.getMenuByNumber(5, 'a').click();
     expect(page.getTitleText('login', 'button')).toEqual('Login');
   });
 
