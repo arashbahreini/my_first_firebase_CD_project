@@ -1,7 +1,7 @@
 export class ChatMessageModel {
   public message: string;
   public owner: string;
-  public position: Position;
+  public position?: Position;
 }
 
 export enum Position {
