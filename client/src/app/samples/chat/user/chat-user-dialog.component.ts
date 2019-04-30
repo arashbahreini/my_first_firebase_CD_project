@@ -9,7 +9,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class ChatUserDialogComponent implements OnInit {
 
   public name: string;
-  constructor(private dialog: MatDialogRef<ChatUserDialogComponent>) { }
+  constructor(public dialog: MatDialogRef<ChatUserDialogComponent>) { }
 
   ngOnInit() {
   }

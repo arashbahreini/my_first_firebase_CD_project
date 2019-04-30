@@ -38,3 +38,42 @@
 [info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
 [info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
 [info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[debug] [2019-04-30T12:59:19.878Z] ----------------------------------------------------------------------
+[debug] [2019-04-30T12:59:19.881Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\a.bahreini\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-04-30T12:59:19.881Z] CLI Version:   6.7.0
+[debug] [2019-04-30T12:59:19.881Z] Platform:      win32
+[debug] [2019-04-30T12:59:19.881Z] Node Version:  v11.10.0
+[debug] [2019-04-30T12:59:19.885Z] Time:          Tue Apr 30 2019 17:29:19 GMT+0430 (Iran Daylight Time)
+[debug] [2019-04-30T12:59:19.885Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-04-30T12:59:19.906Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-04-30T12:59:19.906Z] > authorizing via signed-in user
+[debug] [2019-04-30T12:59:19.906Z] [iam] checking project me-arash for permissions ["firebase.projects.get"]
+[debug] [2019-04-30T12:59:19.908Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-04-30T12:59:19.908Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-04-30T12:59:21.065Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-30T12:59:21.074Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/me-arash:testIamPermissions  
+
+[debug] [2019-04-30T12:59:22.297Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-30T12:59:22.298Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/me-arash  
+ 
+[debug] [2019-04-30T12:59:23.125Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Work\me'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2019-04-30T12:59:25.200Z] Fetching environment
+[debug] [2019-04-30T12:59:25.204Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/305977168091:getServerAppConfig  
+ 
+[debug] [2019-04-30T12:59:25.204Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/305977168091/clients/_:getWebAppConfig  
+ 
+[debug] [2019-04-30T12:59:26.501Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-30T12:59:26.501Z] Starting @google-cloud/functions-emulator
+[debug] [2019-04-30T12:59:26.641Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: client/dist/firebase-CD-project
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-04-30T12:59:30.040Z] Parsing function triggers
+[info] +  functions: userApp: http://localhost:5001/me-arash/us-central1/userApp
+[info] +  functions: app: http://localhost:5001/me-arash/us-central1/app
+[info] +  functions: logApp: http://localhost:5001/me-arash/us-central1/logApp

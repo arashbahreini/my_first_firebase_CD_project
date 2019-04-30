@@ -137,7 +137,6 @@ export class StatisticsComponent implements OnInit {
           borderColor: '#3CB371',
           data: []
         };
-        console.log(res);
         if (days === 7) {
           for (let i = 6; i >= 0; i--) {
             data.labels.push((this.datePipe.transform(
@@ -160,7 +159,6 @@ export class StatisticsComponent implements OnInit {
           for (let i = 29; i >= 0; i--) {
             if (lastMonthDay <= new Date(new Date().getFullYear(), new Date().getMonth(), 0).getDate()) {
               data.labels.push(lastMonthDay.toString());
-              console.log(res);
               data.datasets[0].data.push(
                 res.filter(x =>
                   (x.os === 'Windows' || x.os === 'Linux' || x.os === 'Mac') &&

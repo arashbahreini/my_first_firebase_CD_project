@@ -76,8 +76,6 @@ export class StackoverflowComponent implements OnInit {
           });
         });
         this.isLoading = false;
-        console.log(this.stackData);
-
       }, (error: any) => {
         this.isLoading = false;
 

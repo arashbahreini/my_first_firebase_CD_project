@@ -42,6 +42,12 @@ export class AddEditDialogComponent implements OnInit {
   get age() { return this.studentForm.get('age'); }
   get grade() { return this.studentForm.get('grade'); }
   get dateOfBirth() { return this.studentForm.get('dateOfBirth'); }
+  get address() {
+    return {
+      city: this.studentForm.get('address').get('city'),
+    };
+  }
+
   ngOnInit() {
   }
 

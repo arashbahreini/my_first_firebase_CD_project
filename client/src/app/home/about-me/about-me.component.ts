@@ -42,9 +42,6 @@ export class AboutMeComponent implements OnInit {
   ];
 
   @HostListener('window:scroll', ['$event']) onScrollEvent($event) {
-    console.log('Page ' + window.pageYOffset);
-    console.log('Section ' + this.bio.nativeElement.offsetTop);
-    // console.debug("Scroll Event", window.pageYOffset );
     if (window.pageYOffset < this.github.nativeElement.offsetTop - 400) {
       this.activeButton('bio');
     } else if (window.pageYOffset < this.stackoverflow.nativeElement.offsetTop - 400) {
