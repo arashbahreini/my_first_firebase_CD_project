@@ -20,6 +20,6 @@ describe('AddEdit.DialogComponent', () => {
   });
 
   // it('should create', () => {
-  //   expect(component).toBeTruthy();
+  //   expect(component.dialogRef).toBeDefined();
   // });
 });

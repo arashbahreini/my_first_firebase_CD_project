@@ -27,4 +27,10 @@ describe('GithubComponent', () => {
   it('Should show appropriate header.', () => {
     expect(h2.textContent).toEqual('Last github activities');
   });
+
+  // it('shoud test loading ...', () => {
+  //   component.isLoading = true;
+  //   component.getGithubData();
+  //   expect(component.isLoading).toBe(false);
+  // });
 });

@@ -22,7 +22,11 @@ export class ContentComponent implements OnInit {
   ];
 
   constructor(private router: Router) {
-    router.events.subscribe(e => {
+
+  }
+
+  ngOnInit() {
+    this.router.events.subscribe(e => {
       this.routes.forEach(x => {
         if (this.router.url.search(x.route) >= 0) {
           x.isActive = true;
@@ -31,9 +35,5 @@ export class ContentComponent implements OnInit {
         }
       });
     });
-  }
-
-  ngOnInit() {
-
   }
 }

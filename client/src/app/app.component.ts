@@ -11,14 +11,8 @@ import { CommonService } from './services/common.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-
-  public studentDb: AngularFireList<any> = null;
-  public students: any[];
-  public student: any = {};
   public log: LogModel = new LogModel();
-
   constructor(
-    db: AngularFireDatabase,
     private logService: LogService,
     private commonService: CommonService) { }
 
@@ -44,23 +38,5 @@ export class AppComponent implements OnInit {
       this.log.ip = error;
       this.logService.addLog(this.log).subscribe((res) => { }, (logError: any) => { });
     });
-  }
-
-  getStudents() {
-    this.studentDb.snapshotChanges().pipe(map(changes => {
-      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
-    }))
-      .subscribe((res) => {
-        this.students = res;
-      });
-  }
-
-  submit() {
-    this.studentDb.push(this.student);
-    this.student = {};
-  }
-
-  delete(student: any) {
-    this.studentDb.remove(student.key);
   }
 }
