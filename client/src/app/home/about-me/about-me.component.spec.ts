@@ -56,4 +56,50 @@ describe('AboutMeComponent', () => {
     component.activeButton('github');
     expect(bio.isActive).toEqual(true);
   });
+
+  it('Should InternalRoute', () => {
+    component.internalRoute('');
+    expect(component.routes.find(x => x.isActive)).toEqual(undefined);
+
+    let route: { route?: string; isActive: any; caption?: string; icon?: string; };
+    component.internalRoute('statistics');
+    route = component.routes.find(x => x.route === 'statistics');
+    expect(route.isActive).toEqual(true);
+
+    component.internalRoute('stackoverflow');
+    route = component.routes.find(x => x.route === 'stackoverflow');
+    expect(route.isActive).toEqual(true);
+
+    component.internalRoute('github');
+    route = component.routes.find(x => x.route === 'github');
+    expect(route.isActive).toEqual(true);
+
+    component.internalRoute('bio');
+    route = component.routes.find(x => x.route === 'bio');
+    expect(route.isActive).toEqual(true);
+  });
+
+  it('Should check onScrollEvent.', () => {
+    let route: { route?: string; isActive?: boolean; caption?: string; icon?: string; i?: any; };
+
+    window.scrollTo(0, component.github.nativeElement.offsetTop - 400 - 1);
+    route = component.routes.find(x => x.route === 'bio');
+    component.onScrollEvent('');
+    expect(route.isActive).toEqual(true);
+
+    window.scrollTo(0, component.stackoverflow.nativeElement.offsetTop - 400 - 1);
+    route = component.routes.find(x => x.route === 'github');
+    component.onScrollEvent('');
+    expect(route.isActive).toEqual(true);
+
+    window.scrollTo(0, component.statistics.nativeElement.offsetTop - 400 - 1);
+    route = component.routes.find(x => x.route === 'stackoverflow');
+    component.onScrollEvent('');
+    expect(route.isActive).toEqual(true);
+
+    window.scrollTo(0, component.statistics.nativeElement.offsetTop + 40000);
+    route = component.routes.find(x => x.route === 'statistics');
+    component.onScrollEvent('');
+    expect(route.isActive).toEqual(true);
+  });
 });
