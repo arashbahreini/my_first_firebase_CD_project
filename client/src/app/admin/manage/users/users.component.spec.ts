@@ -10,8 +10,8 @@ describe('UsersComponent', () => {
   let component: UsersComponent;
   let fixture: ComponentFixture<UsersComponent>;
   let h3: HTMLElement;
-  let userComponent;
-  let userService;
+  let userComponent: UsersComponent;
+  let userService: any;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [UsersComponent],
@@ -47,7 +47,6 @@ describe('UsersComponent', () => {
   }));
 
   it('Should set Error on failure of calling GetUser() method.', async(() => {
-    const users = [{ name: 'arash' }];
     const errorMessage = 'I am error';
     spyOn(userService, 'getUsers').and.returnValue(throwError(errorMessage));
     userComponent.getUsers();

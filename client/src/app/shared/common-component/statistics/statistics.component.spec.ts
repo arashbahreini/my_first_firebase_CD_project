@@ -49,4 +49,21 @@ describe('StatisticsComponent', () => {
     // Assert
     expect(component.showTable).toEqual(false);
   });
+
+  it('Should return appropriate os icon', () => {
+    expect(component.getOsIcon('windows')).toEqual('fa fa-windows');
+    expect(component.getOsIcon('mac')).toEqual('fa fa-apple');
+    expect(component.getOsIcon('linux')).toEqual('fa fa-linux');
+    expect(component.getOsIcon('ios')).toEqual('fa fa-apple');
+    expect(component.getOsIcon('android')).toEqual('fa fa-android');
+    expect(component.getOsIcon('def')).toEqual('fa fa-exclamation');
+  });
+
+  it('Should get appropriate browser icon', () => {
+    expect(component.getBrowserIcon('opera')).toEqual('fa fa-opera');
+    expect(component.getBrowserIcon('safari')).toEqual('fa fa-safari');
+    expect(component.getBrowserIcon('chrome')).toEqual('fa fa-chrome');
+    expect(component.getBrowserIcon('ie')).toEqual('fa fa-internet-explorer');
+    expect(component.getBrowserIcon('def')).toEqual('fa fa-exclamation');
+  });
 });

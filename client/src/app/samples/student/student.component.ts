@@ -15,7 +15,7 @@ import { DeleteDialogComponent } from 'src/app/shared/common-component/delete-di
 export class StudentComponent implements OnInit {
 
   constructor(
-    private dialog: MatDialog,
+    public dialog: MatDialog,
     private db: AngularFireDatabase) { }
 
   public students: ResultModel<StudentModel[]> = new ResultModel<StudentModel[]>();
@@ -25,10 +25,11 @@ export class StudentComponent implements OnInit {
   }
 
   openAddEditDialog(data?: StudentModel) {
+    const dialogInput = data ? data : null;
     const dialog = this.dialog.open(
       AddEditDialogComponent, {
         disableClose: true,
-        data: data ? JSON.parse(JSON.stringify(data)) : null,
+        data: dialogInput,
         width: '50%'
       }
     );
