@@ -16,10 +16,7 @@ export class AddEditDialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: StudentModel,
     private db: AngularFireDatabase
   ) {
-    if (this.data) {
-      this.data.dateOfBirth = new Date(this.data.dateOfBirth);
-      this.studentForm.setValue(this.data);
-    }
+
   }
 
   public grades = ['A++', 'A+', 'A', 'B', 'C', 'D'];
@@ -49,6 +46,10 @@ export class AddEditDialogComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.data) {
+      this.data.dateOfBirth = new Date(this.data.dateOfBirth);
+      this.studentForm.setValue(this.data);
+    }
   }
 
   closeDialog() {

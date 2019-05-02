@@ -13,8 +13,8 @@ describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
   let btn: HTMLElement;
-  let loginService;
-  let loginComponent;
+  let loginService: any;
+  let loginComponent: LoginComponent;
   let location: Location;
   beforeEach(async(() => {
     TestBed.configureTestingModule({

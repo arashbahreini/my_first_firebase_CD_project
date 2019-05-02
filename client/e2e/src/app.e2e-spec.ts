@@ -21,7 +21,6 @@ describe('workspace-project App', () => {
 
   it('Should display House nav menu', () => {
     page.navigateTo();
-    browser.debugger();
     expect(page.getMenuByNumber(4, 'a').getText()).toEqual('House');
   });
 
@@ -37,11 +36,18 @@ describe('workspace-project App', () => {
     expect(page.getTitleText('login', 'button')).toEqual('Login');
   });
 
-  // afterEach(async () => {
-  //   // Assert that there are no errors emitted from the browser
-  //   const logs = await browser.manage().logs().get(logging.Type.BROWSER);
-  //   expect(logs).not.toContain(jasmine.objectContaining({
-  //     level: logging.Level.SEVERE,
-  //   } as logging.Entry));
+  // it('Should show student menu', () => {
+  //   page.navigateTo();
+  //   expect(page.getMenuByName(0, 'app-home div a').getText()).toEqual('shangol');
+  //   expect(page.getMenuByName(1, 'a').getText()).toEqual('shangol');
+  //   expect(page.getMenuByName(2, 'a').getText()).toEqual('shangol');
+  //   expect(page.getMenuByName(3, 'a').getText()).toEqual('shangol');
+
+  // });
+
+  // it('Should show student dialog', () => {
+  //   page.navigateTo();
+  //   page.getMenuByNumber(3, 'a').click();
+  //   expect(page.getTitleText('student', 'h5')).toEqual('Description about this page');
   // });
 });

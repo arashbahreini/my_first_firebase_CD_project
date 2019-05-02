@@ -1,50 +1,51 @@
-import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture, inject } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { AppModule } from './app.module';
+import { CommonService } from './services/common.service';
+import { LogModel } from './model/log.model';
+import { of, throwError } from 'rxjs';
 
 let component: AppComponent;
 let fixture: ComponentFixture<AppComponent>;
-let h2: HTMLElement;
-
+let commonService;
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
+        AppModule,
+        RouterTestingModule,
+        HttpClientTestingModule,
       ],
       declarations: [
-        AppComponent
       ],
+      providers: [
+      ]
     }).compileComponents();
   }));
 
-  beforeEach(() => {
+  beforeEach(inject([CommonService], (s: any) => {
+    commonService = s;
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
+  }));
+
+  it('Should call addlog component on init. ', () => {
+    spyOn(component, 'addLog');
     fixture.detectChanges();
-    h2 = fixture.nativeElement.querySelector('h2');
+    expect(component.addLog).toHaveBeenCalled();
   });
 
-  // it('should create the app', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   const app = fixture.debugElement.componentInstance;
-  //   expect(app).toBeTruthy();
-  // });
+  it('Should get ip on calling addlog function.', () => {
+    spyOn(commonService, 'getIp').and.returnValue(of({ ip: '100' }));
+    component.addLog();
+    expect(component.log.ip).toEqual('100');
+  });
 
-  // it(`should have as title 'firebase-CD-project'`, () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   const app = fixture.debugElement.componentInstance;
-  //   expect(app.title).toEqual('firebase-CD-project');
-  // });
-
-  // it('should render title in a h1 tag', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.debugElement.nativeElement;
-  //   expect(compiled.querySelector('h1').textContent).toContain('Welcome to firebase-CD-project!');
-  // });
-
-  // it('should render title in a h1 tag', () => {
-  //   expect('a').toEqual('a');
-  // });
-
+  it('Should return appropriate error on failur of calling getIp method', () => {
+    spyOn(commonService, 'getIp').and.returnValue(throwError('I am error'));
+    component.addLog();
+    expect(component.log.ip).toEqual('I am error');
+  });
 });
