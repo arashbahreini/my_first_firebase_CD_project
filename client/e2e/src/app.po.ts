@@ -20,4 +20,8 @@ export class AppPage {
   getMenuByName(no: number, name: string) {
     return element.all(by.css(name)).get(no);
   }
+
+  getElementByClass(className: string, no: number) {
+    return element.all(by.className(className)).get(no);
+  }
 }
