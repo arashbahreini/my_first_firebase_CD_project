@@ -2,101 +2,105 @@
   <div style="text-align: center">
     <h2 style="border-bottom: 1px solid lightgray; padding-bottom: 15px;">Site statistics</h2>
   </div>
-  <div class="text-center m-2">
-    <button [ngClass]="'btn mr-1 ' + (showTable ? ' btn-success ' :' btn-info ')" (click)="loadTable()">Table
-      </button>
-    <button [ngClass]="'btn ' + (!showTable ? 'btn-success' :'btn-info')" (click)="loadGraph()">Graph
-      </button>
+  <div style="text-align: center" *ngIf="!hasInternet">
+    <h4 style="color: gray;padding-bottom: 15px;">Internet connection needed</h4>
   </div>
-
-  <div class="div-container">
-    <div *ngIf="showTable" class="row col-sm-12 text-center">
-      <div class="fa-3x ml-5 mb-5 col-sm-12" *ngIf="tableData.isLoading">
-        <i class="fa fa-spinner fa-spin mt-5"></i>
-      </div>
-      <table class="table table-hover col-sm-12" *ngIf="!tableData.isLoading && !isWithMobile">
-        <tr>
-          <th>No</th>
-          <th>Browser</th>
-          <th>Date</th>
-          <th>Country</th>
-          <th>City</th>
-          <th>OS</th>
-          <th>OS version</th>
-        </tr>
-        <tr *ngFor="let log of tableData.data;let i=index">
-          <td>{{i+1}}</td>
-          <td>{{log.browser}}</td>
-          <td>{{log.date | date:"medium"}}</td>
-          <td>
-            <div class="fa-1x" *ngIf="log.country.isLoading">
-              <i class="fa fa-spinner fa-spin"></i>
-            </div>
-            <div *ngIf="!log.country.isLoading && !log.country.hasError">
-              {{log.country.data}}
-            </div>
-            <div *ngIf="!log.country.isLoading && log.country.hasError">
-              {{log.country.errorMessage}}
-            </div>
-          </td>
-          <td>
-            <div class="fa-1x" *ngIf="log.city.isLoading">
-              <i class="fa fa-spinner fa-spin"></i>
-            </div>
-            <div *ngIf="!log.city.isLoading && !log.city.hasError">
-              {{log.city.data}}
-            </div>
-            <div *ngIf="!log.city.isLoading && log.city.hasError">
-              {{log.city.errorMessage}}
-            </div>
-          </td>
-          <td>{{log.os}}</td>
-          <td>{{log.osVersion}}</td>
-        </tr>
-      </table>
-
-      <table class="table table-hover col-sm-12" *ngIf="!tableData.isLoading && isWithMobile">
-        <tr>
-          <th>Browser</th>
-          <th>Date</th>
-          <th>OS</th>
-        </tr>
-        <tr *ngFor="let log of tableData.data;let i=index">
-          <td><i [ngClass]="getBrowserIcon(log.browser)"></i></td>
-          <td>{{log.date | date:"yyyy/MM/dd"}}</td>
-          <td><i [ngClass]="getOsIcon(log.os)"></i></td>
-        </tr>
-      </table>
+  <div *ngIf="hasInternet">
+    <div class="text-center m-2">
+      <button [ngClass]="'btn mr-1 ' + (showTable ? ' btn-success ' :' btn-info ')" (click)="loadTable()">Table
+      </button>
+      <button [ngClass]="'btn ' + (!showTable ? 'btn-success' :'btn-info')" (click)="loadGraph()">Graph
+      </button>
     </div>
 
-    <div *ngIf="!showTable" class="row col-sm-12 text-center">
-      <div class="fa-3x ml-5 mb-5 col-sm-12" *ngIf="chartData.isLoading && !chartData.data">
-        <i class="fa fa-spinner fa-spin mt-5"></i>
+    <div class="div-container">
+      <div *ngIf="showTable" class="row col-sm-12 text-center">
+        <div class="fa-3x ml-5 mb-5 col-sm-12" *ngIf="tableData.isLoading">
+          <i class="fa fa-spinner fa-spin mt-5"></i>
+        </div>
+        <table class="table table-hover col-sm-12" *ngIf="!tableData.isLoading && !isWithMobile">
+          <tr>
+            <th>No</th>
+            <th>Browser</th>
+            <th>Date</th>
+            <th>Country</th>
+            <th>City</th>
+            <th>OS</th>
+            <th>OS version</th>
+          </tr>
+          <tr *ngFor="let log of tableData.data;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{log.browser}}</td>
+            <td>{{log.date | date:"medium"}}</td>
+            <td>
+              <div class="fa-1x" *ngIf="log.country.isLoading">
+                <i class="fa fa-spinner fa-spin"></i>
+              </div>
+              <div *ngIf="!log.country.isLoading && !log.country.hasError">
+                {{log.country.data}}
+              </div>
+              <div *ngIf="!log.country.isLoading && log.country.hasError">
+                {{log.country.errorMessage}}
+              </div>
+            </td>
+            <td>
+              <div class="fa-1x" *ngIf="log.city.isLoading">
+                <i class="fa fa-spinner fa-spin"></i>
+              </div>
+              <div *ngIf="!log.city.isLoading && !log.city.hasError">
+                {{log.city.data}}
+              </div>
+              <div *ngIf="!log.city.isLoading && log.city.hasError">
+                {{log.city.errorMessage}}
+              </div>
+            </td>
+            <td>{{log.os}}</td>
+            <td>{{log.osVersion}}</td>
+          </tr>
+        </table>
+
+        <table class="table table-hover col-sm-12" *ngIf="!tableData.isLoading && isWithMobile">
+          <tr>
+            <th>Browser</th>
+            <th>Date</th>
+            <th>OS</th>
+          </tr>
+          <tr *ngFor="let log of tableData.data;let i=index">
+            <td><i [ngClass]="getBrowserIcon(log.browser)"></i></td>
+            <td>{{log.date | date:"yyyy/MM/dd"}}</td>
+            <td><i [ngClass]="getOsIcon(log.os)"></i></td>
+          </tr>
+        </table>
       </div>
-      <div class="col-sm-8">
-        <div class="">
-          <p-chart type="bar" [data]="chartData.data" *ngIf="!chartData.isLoading"></p-chart>
-          <div class="fa-3x ml-5" *ngIf="chartData.isLoading && chartData.data">
-            <i class="fa fa-spinner fa-spin mt-5"></i>
+
+      <div *ngIf="!showTable" class="row col-sm-12 text-center">
+        <div class="fa-3x ml-5 mb-5 col-sm-12" *ngIf="chartData.isLoading && !chartData.data">
+          <i class="fa fa-spinner fa-spin mt-5"></i>
+        </div>
+        <div class="col-sm-8">
+          <div class="">
+            <p-chart type="bar" [data]="chartData.data" *ngIf="!chartData.isLoading"></p-chart>
+            <div class="fa-3x ml-5" *ngIf="chartData.isLoading && chartData.data">
+              <i class="fa fa-spinner fa-spin mt-5"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 p-2 text-right" *ngIf="chartData.data" style="border-left:solid 1px lightgray">
+          <div class="mt-2 col-sm-9">
+            <button [ngClass]="'btn ' + (days === 7 ? 'btn-success ' : 'btn-primary ') + 'col-sm-9'"
+              (click)="getLogsInGraph(7)">A
+              week ago</button>
+          </div>
+          <div class="mt-2 col-sm-9">
+            <button [ngClass]="'btn ' + (days === 30 ? 'btn-success ' : 'btn-primary ') + 'col-sm-9'"
+              (click)="getLogsInGraph(30)">Month ({{getlastMonths()}})</button>
+          </div>
+          <div class="mt-2 col-sm-9">
+            <button [ngClass]="'btn ' + (days === 365 ? 'btn-success ' : 'btn-primary ') + 'col-sm-9'"
+              (click)="getLogsInGraph(365)">A year ago</button>
           </div>
         </div>
       </div>
-      <div class="col-sm-4 p-2 text-right" *ngIf="chartData.data" style="border-left:solid 1px lightgray">
-        <div class="mt-2 col-sm-9">
-          <button [ngClass]="'btn ' + (days === 7 ? 'btn-success ' : 'btn-primary ') + 'col-sm-9'"
-            (click)="getLogsInGraph(7)">A
-            week ago</button>
-        </div>
-        <div class="mt-2 col-sm-9">
-          <button [ngClass]="'btn ' + (days === 30 ? 'btn-success ' : 'btn-primary ') + 'col-sm-9'"
-            (click)="getLogsInGraph(30)">Month ({{getlastMonths()}})</button>
-        </div>
-        <div class="mt-2 col-sm-9">
-          <button [ngClass]="'btn ' + (days === 365 ? 'btn-success ' : 'btn-primary ') + 'col-sm-9'"
-            (click)="getLogsInGraph(365)">A year ago</button>
-        </div>
-      </div>
     </div>
   </div>
-
 </div>

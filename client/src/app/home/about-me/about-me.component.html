@@ -17,7 +17,7 @@
     <div #stackoverflow class="section">
       <app-stackoverflow></app-stackoverflow>
     </div>
-    <div #statistics class="section">
+    <div *ngIf="hasInternet" #statistics class="section">
       <app-statistics></app-statistics>
     </div>
   </div>

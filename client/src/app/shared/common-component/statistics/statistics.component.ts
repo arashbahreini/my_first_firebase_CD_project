@@ -4,7 +4,7 @@ import { LogModel } from 'src/app/model/log.model';
 import { ResultModel } from 'src/app/model/result.model';
 import { ChartModel } from 'src/app/model/chart.model';
 import { DatePipe } from '@angular/common';
-import { map, take } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { CommonService } from 'src/app/services/common.service';
 
 @Component({
@@ -21,17 +21,24 @@ export class StatisticsComponent implements OnInit {
   public showTable: boolean;
   public tableData: ResultModel<LogModel[]> = new ResultModel<LogModel[]>();
   public isWithMobile: boolean;
+  public hasInternet = true;
 
   constructor(
-    db: AngularFireDatabase,
+    private db: AngularFireDatabase,
     private datePipe: DatePipe,
     private commonService: CommonService) {
-    this.logDb = db.list('/logs');
     this.isWithMobile = commonService.getUserPlatform().isWithMobile;
   }
 
   ngOnInit() {
-    this.loadTable();
+    this.commonService.hasInternet().subscribe((res: boolean) => {
+      if (res) {
+        this.logDb = this.db.list('/logs');
+        this.loadTable();
+      } else {
+        this.hasInternet = false;
+      }
+    });
   }
 
   getOsIcon(os) {

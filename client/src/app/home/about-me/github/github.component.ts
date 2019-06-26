@@ -12,15 +12,22 @@ export class GithubComponent implements OnInit {
   public githubData: any[] = [];
   public isLoading: boolean;
   public isWithMobile: boolean;
+  public hasInternet = true;
 
   constructor(
     private githubService: GithubService,
     private commonService: CommonService) {
-      this.isWithMobile = commonService.getUserPlatform().isWithMobile;
-    }
+    this.isWithMobile = commonService.getUserPlatform().isWithMobile;
+  }
 
   ngOnInit() {
-    this.getGithubData();
+    this.commonService.hasInternet().subscribe((res: boolean) => {
+      if (res) {
+        this.getGithubData();
+      } else {
+        this.hasInternet = false;
+      }
+    });
   }
 
   getGithubData() {

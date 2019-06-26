@@ -4,73 +4,77 @@
     <div style="text-align: center">
       <h2 style="border-bottom: 1px solid lightgray; padding-bottom: 15px;">Last github activities</h2>
     </div>
-    <div class="photo_div">
-      <img style="-webkit-user-select: none;" class="circle_photo"
-        src="https://avatars.githubusercontent.com/u/25605112">
+    <div style="text-align: center" *ngIf="!hasInternet">
+      <h4 style="color: gray;padding-bottom: 15px;">Internet connection needed</h4>
     </div>
-    <div class="fa-3x text-center" *ngIf="isLoading">
-      <i class="fa fa-spinner fa-spin mt-5"></i>
+    <div *ngIf="hasInternet">
+      <div class="photo_div">
+        <img style="-webkit-user-select: none;" class="circle_photo"
+          src="https://avatars.githubusercontent.com/u/25605112">
+      </div>
+      <div class="fa-3x text-center" *ngIf="isLoading">
+        <i class="fa fa-spinner fa-spin mt-5"></i>
+      </div>
+      <table class="table" *ngIf="!isLoading && !isWithMobile">
+        <tr class="d-flex">
+          <th class="col-sm-3">
+            Repository
+          </th>
+          <th class="col-sm-5">
+            Commit message
+          </th>
+          <th class="col-sm-2">
+            Commit link
+          </th>
+          <th class="col-sm-2">
+            Date
+          </th>
+        </tr>
+        <tr *ngFor="let git of githubData" class="d-flex">
+          <td class="col-sm-3">
+            <a [href]="git.repositoryUrl">{{git.repositoryName}}</a>
+          </td>
+          <td class="col-sm-5">{{git.commitMessage}}</td>
+          <td class="col-sm-2 text-center">
+            <a [href]="git.commitLink">
+              <i class="fa fa-link btn btn-success"></i>
+            </a>
+          </td>
+          <td class="col-sm-2">
+            {{git.date | date:'medium'}}
+          </td>
+        </tr>
+      </table>
+      <table class="table" *ngIf="!isLoading && isWithMobile">
+        <tr class="d-flex">
+          <th class="col-sm-3">
+            Repo
+          </th>
+          <!-- <th class="col-sm-5">
+            Commit
+          </th> -->
+          <th class="col-sm-2">
+            link
+          </th>
+          <th class="col-sm-2">
+            Date
+          </th>
+        </tr>
+        <tr *ngFor="let git of githubData" class="d-flex text-center">
+          <td class="col-sm-3">
+            <a [href]="git.repositoryUrl">{{git.repositoryName}}</a>
+          </td>
+          <!-- <td class="col-sm-5">{{git.commitMessage}}</td> -->
+          <td class="col-sm-2 text-center">
+            <a [href]="git.commitLink">
+              <i class="fa fa-link btn btn-success"></i>
+            </a>
+          </td>
+          <td class="col-sm-2">
+            {{git.date | date:'yyyy/MM/dd'}}
+          </td>
+        </tr>
+      </table>
     </div>
-    <table class="table" *ngIf="!isLoading && !isWithMobile">
-      <tr class="d-flex">
-        <th class="col-sm-3">
-          Repository
-        </th>
-        <th class="col-sm-5">
-          Commit message
-        </th>
-        <th class="col-sm-2">
-          Commit link
-        </th>
-        <th class="col-sm-2">
-          Date
-        </th>
-      </tr>
-      <tr *ngFor="let git of githubData" class="d-flex">
-        <td class="col-sm-3">
-          <a [href]="git.repositoryUrl">{{git.repositoryName}}</a>
-        </td>
-        <td class="col-sm-5">{{git.commitMessage}}</td>
-        <td class="col-sm-2 text-center">
-          <a [href]="git.commitLink">
-            <i class="fa fa-link btn btn-success"></i>
-          </a>
-        </td>
-        <td class="col-sm-2">
-          {{git.date | date:'medium'}}
-        </td>
-      </tr>
-    </table>
-
-    <table class="table" *ngIf="!isLoading && isWithMobile">
-      <tr class="d-flex">
-        <th class="col-sm-3">
-          Repo
-        </th>
-        <!-- <th class="col-sm-5">
-          Commit
-        </th> -->
-        <th class="col-sm-2">
-          link
-        </th>
-        <th class="col-sm-2">
-          Date
-        </th>
-      </tr>
-      <tr *ngFor="let git of githubData" class="d-flex text-center">
-        <td class="col-sm-3">
-          <a [href]="git.repositoryUrl">{{git.repositoryName}}</a>
-        </td>
-        <!-- <td class="col-sm-5">{{git.commitMessage}}</td> -->
-        <td class="col-sm-2 text-center">
-          <a [href]="git.commitLink">
-            <i class="fa fa-link btn btn-success"></i>
-          </a>
-        </td>
-        <td class="col-sm-2">
-          {{git.date | date:'yyyy/MM/dd'}}
-        </td>
-      </tr>
-    </table>
   </div>
 </div>

@@ -7,6 +7,9 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import { Observable, merge, of, fromEvent } from 'rxjs';
+import { mapTo } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-home',
@@ -31,6 +34,8 @@ import {
   ],
 })
 export class HomeComponent implements OnInit {
+
+
   public showFixedNav: boolean;
   public routes = [
     {

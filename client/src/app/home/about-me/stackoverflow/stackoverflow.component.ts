@@ -14,6 +14,7 @@ export class StackoverflowComponent implements OnInit {
   public isLoading: boolean;
   public showAnswers: boolean;
   public isWithMobile: boolean;
+  public hasInternet = true;
 
   constructor(
     private githubService: GithubService,
@@ -22,7 +23,13 @@ export class StackoverflowComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getAnswers();
+    this.commonService.hasInternet().subscribe((res: boolean) => {
+      if (res) {
+        this.getAnswers();
+      } else {
+        this.hasInternet = false;
+      }
+    });
     this.showAnswers = true;
   }
 

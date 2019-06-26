@@ -13,6 +13,7 @@ import { environment } from 'src/environments/environment';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { DeviceDetectorModule, DeviceDetectorService } from 'ngx-device-detector';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { DeviceDetectorModule, DeviceDetectorService } from 'ngx-device-detector
     FormsModule,
     HttpClientModule,
     DeviceDetectorModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [DeviceDetectorModule, DeviceDetectorService],
   bootstrap: [AppComponent]

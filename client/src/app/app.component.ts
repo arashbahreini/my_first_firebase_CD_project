@@ -17,7 +17,11 @@ export class AppComponent implements OnInit {
     private commonService: CommonService) { }
 
   ngOnInit() {
-    this.addLog();
+    this.commonService.hasInternet().subscribe((res: any) => {
+      if (res) {
+        this.addLog();
+      }
+    });
   }
 
   addLog() {

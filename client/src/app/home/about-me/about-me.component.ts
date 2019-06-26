@@ -13,6 +13,7 @@ export class AboutMeComponent implements OnInit {
   @ViewChild('stackoverflow') public stackoverflow: ElementRef;
   @ViewChild('statistics') public statistics: ElementRef;
   public isWithMobile: boolean;
+  public hasInternet: boolean;
 
   public routes = [
     {
@@ -93,6 +94,8 @@ export class AboutMeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.commonService.hasInternet().subscribe((res: boolean) => {
+      this.hasInternet = res;
+    });
   }
-
 }
