@@ -1,4 +1,5 @@
-<div style="width: 30%;margin-left:35%;margin-top: 100px;" class="background_light">
+<!-- <div ngStyle="width: 90%;margin-left:5%;margin-top: 100px;" class="background_light"> -->
+<div [ngStyle]="{'width':isWithMobile ? '90%' : '60%','margin-left': isWithMobile ? '5%' : '20%','margin-top':'100px'}" class="background_light">
   <form class="p-2 mt-3">
     <div *ngIf="loginResult.hasError" class="alert alert-danger">
       <i>{{loginResult.errorMessage}}</i>

@@ -1,0 +1,131 @@
+[debug] [2019-07-08T05:45:35.971Z] ----------------------------------------------------------------------
+[debug] [2019-07-08T05:45:35.974Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\a.bahreini\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-07-08T05:45:35.974Z] CLI Version:   7.0.2
+[debug] [2019-07-08T05:45:35.974Z] Platform:      win32
+[debug] [2019-07-08T05:45:35.974Z] Node Version:  v12.4.0
+[debug] [2019-07-08T05:45:35.976Z] Time:          Mon Jul 08 2019 10:15:35 GMT+0430 (Iran Daylight Time)
+[debug] [2019-07-08T05:45:35.977Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-08T05:45:35.998Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-08T05:45:35.998Z] > authorizing via signed-in user
+[debug] [2019-07-08T05:45:35.998Z] [iam] checking project me-arash for permissions ["firebase.projects.get"]
+[debug] [2019-07-08T05:45:36.000Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-07-08T05:45:36.000Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-07-08T05:45:36.859Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-08T05:45:36.872Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/me-arash:testIamPermissions  
+
+[debug] [2019-07-08T05:45:37.818Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-08T05:45:37.820Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/me-arash  
+ 
+[debug] [2019-07-08T05:45:38.556Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Work\me'...
+[info] 
+[warn] !  Your requested "node" version "8" doesn't match your global version "12"
+[debug] [2019-07-08T05:45:38.575Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/305977168091/clients/_:getWebAppConfig  
+ 
+[debug] [2019-07-08T05:45:38.576Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/305977168091:getServerAppConfig  
+ 
+[debug] [2019-07-08T05:45:39.643Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: client/dist/firebase-CD-project
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-07-08T05:45:39.970Z] <<< HTTP RESPONSE 200
+[info] +  functions: Emulator started at http://localhost:5001
+[info] i  functions: Watching "C:\Work\me\functions" for Cloud Functions...
+[debug] [2019-07-08T05:45:40.678Z] Functions runtime initialized.
+[debug] [2019-07-08T05:45:40.678Z] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2019-07-08T05:45:40.814Z] firebase-admin has been stubbed.
+[info] i  functions: HTTP trigger initialized at http://localhost:5001/me-arash/us-central1/app
+[info] i  functions: HTTP trigger initialized at http://localhost:5001/me-arash/us-central1/userApp
+[info] i  functions: HTTP trigger initialized at http://localhost:5001/me-arash/us-central1/logApp
+[info] [hosting] Rewriting /user/login to http://localhost:5001/me-arash/us-central1/userApp for local Function userApp
+[debug] [2019-07-08T05:47:06.995Z] Accepted request POST /me-arash/us-central1/userApp/user/login --> userApp
+[debug] [2019-07-08T05:47:07.673Z] Functions runtime initialized.
+[info] i  functions: Beginning execution of "userApp"
+[debug] [2019-07-08T05:47:07.674Z] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2019-07-08T05:47:07.792Z] firebase-admin has been stubbed.
+[debug] [2019-07-08T05:47:09.176Z] Trigger "userApp" has been found, beginning invocation!
+[debug] [2019-07-08T05:47:09.176Z] 
+[debug] [2019-07-08T05:47:09.176Z] Running userApp in mode HTTPS
+[debug] [2019-07-08T05:47:09.189Z] {"socketPath":"\\\\?\\pipe\\C:\\Work\\me\\functions\\32228"}
+[debug] [2019-07-08T05:47:09.193Z] [functions] Runtime ready! Sending request! {"socketPath":"\\\\?\\pipe\\C:\\Work\\me\\functions\\32228"}
+[debug] [2019-07-08T05:47:09.225Z] Ephemeral server used!
+[debug] [2019-07-08T05:47:09.226Z] Body{"email":"vbhost.ir@gmail.com","password":"arashARASH1"}
+[debug] [2019-07-08T05:47:09.249Z] Ephemeral server survived.
+[info] i  functions: Finished "userApp" in ~1s
+[info] [hosting] Rewriting /user/getUsers to http://localhost:5001/me-arash/us-central1/userApp for local Function userApp
+[debug] [2019-07-08T05:47:44.907Z] Accepted request GET /me-arash/us-central1/userApp/user/getUsers --> userApp
+[debug] [2019-07-08T05:47:45.574Z] Functions runtime initialized.
+[info] i  functions: Beginning execution of "userApp"
+[debug] [2019-07-08T05:47:45.575Z] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2019-07-08T05:47:45.687Z] firebase-admin has been stubbed.
+[debug] [2019-07-08T05:47:47.130Z] Trigger "userApp" has been found, beginning invocation!
+[debug] [2019-07-08T05:47:47.131Z] 
+[debug] [2019-07-08T05:47:47.131Z] Running userApp in mode HTTPS
+[debug] [2019-07-08T05:47:47.145Z] {"socketPath":"\\\\?\\pipe\\C:\\Work\\me\\functions\\14004"}
+[debug] [2019-07-08T05:47:47.147Z] [functions] Runtime ready! Sending request! {"socketPath":"\\\\?\\pipe\\C:\\Work\\me\\functions\\14004"}
+[debug] [2019-07-08T05:47:47.153Z] Ephemeral server used!
+[debug] [2019-07-08T05:47:47.153Z] Bodyundefined
+[debug] [2019-07-08T05:47:47.270Z] Ephemeral server survived.
+[info] i  functions: Finished "userApp" in ~7s
+[info] [hosting] Rewriting /user/login to http://localhost:5001/me-arash/us-central1/userApp for local Function userApp
+[debug] [2019-07-08T06:23:54.161Z] Accepted request POST /me-arash/us-central1/userApp/user/login --> userApp
+[debug] [2019-07-08T06:23:54.886Z] Functions runtime initialized.
+[info] i  functions: Beginning execution of "userApp"
+[debug] [2019-07-08T06:23:54.887Z] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2019-07-08T06:23:55.000Z] firebase-admin has been stubbed.
+[debug] [2019-07-08T06:23:56.570Z] Trigger "userApp" has been found, beginning invocation!
+[debug] [2019-07-08T06:23:56.571Z] 
+[debug] [2019-07-08T06:23:56.571Z] Running userApp in mode HTTPS
+[debug] [2019-07-08T06:23:56.594Z] {"socketPath":"\\\\?\\pipe\\C:\\Work\\me\\functions\\12384"}
+[debug] [2019-07-08T06:23:56.596Z] [functions] Runtime ready! Sending request! {"socketPath":"\\\\?\\pipe\\C:\\Work\\me\\functions\\12384"}
+[debug] [2019-07-08T06:23:56.649Z] Ephemeral server used!
+[debug] [2019-07-08T06:23:56.649Z] Body{"email":"vbhost.ir@gmail.com","password":"arashARASH1"}
+[debug] [2019-07-08T06:23:56.692Z] Ephemeral server survived.
+[info] i  functions: Finished "userApp" in ~1s
+[info] [hosting] Rewriting /user/getUsers to http://localhost:5001/me-arash/us-central1/userApp for local Function userApp
+[debug] [2019-07-08T06:24:02.139Z] Accepted request GET /me-arash/us-central1/userApp/user/getUsers --> userApp
+[debug] [2019-07-08T06:24:02.872Z] Functions runtime initialized.
+[info] i  functions: Beginning execution of "userApp"
+[debug] [2019-07-08T06:24:02.874Z] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2019-07-08T06:24:02.998Z] firebase-admin has been stubbed.
+[debug] [2019-07-08T06:24:04.441Z] Trigger "userApp" has been found, beginning invocation!
+[debug] [2019-07-08T06:24:04.441Z] 
+[debug] [2019-07-08T06:24:04.442Z] Running userApp in mode HTTPS
+[debug] [2019-07-08T06:24:04.455Z] {"socketPath":"\\\\?\\pipe\\C:\\Work\\me\\functions\\30836"}
+[debug] [2019-07-08T06:24:04.456Z] [functions] Runtime ready! Sending request! {"socketPath":"\\\\?\\pipe\\C:\\Work\\me\\functions\\30836"}
+[debug] [2019-07-08T06:24:04.461Z] Ephemeral server used!
+[debug] [2019-07-08T06:24:04.462Z] Bodyundefined
+[debug] [2019-07-08T06:24:04.573Z] Ephemeral server survived.
+[info] i  functions: Finished "userApp" in ~1s
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[debug] [2019-07-08T06:24:29.847Z] Accepted request POST /me-arash/us-central1/logApp/log/add --> logApp
+[debug] [2019-07-08T06:24:30.545Z] Functions runtime initialized.
+[info] i  functions: Beginning execution of "logApp"
+[debug] [2019-07-08T06:24:30.546Z] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2019-07-08T06:24:30.679Z] firebase-admin has been stubbed.
+[debug] [2019-07-08T06:24:32.097Z] Trigger "logApp" has been found, beginning invocation!
+[debug] [2019-07-08T06:24:32.097Z] 
+[debug] [2019-07-08T06:24:32.097Z] Running logApp in mode HTTPS
+[debug] [2019-07-08T06:24:32.110Z] {"socketPath":"\\\\?\\pipe\\C:\\Work\\me\\functions\\20268"}
+[debug] [2019-07-08T06:24:32.112Z] [functions] Runtime ready! Sending request! {"socketPath":"\\\\?\\pipe\\C:\\Work\\me\\functions\\20268"}
+[debug] [2019-07-08T06:24:32.138Z] Ephemeral server used!
+[debug] [2019-07-08T06:24:32.138Z] Body{"browser":"Chrome","browserVersion":"73.0.3683.103","date":"2019-07-08T06:24:27.865Z","device":"Android","os":"Android","osVersion":"unknown","id":"Not set yet","ip":"77.111.247.198"}
+[debug] [2019-07-08T06:24:32.152Z] Ephemeral server survived.
+[info] i  functions: Finished "logApp" in ~1s
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[debug] [2019-07-08T06:24:57.957Z] Accepted request POST /me-arash/us-central1/logApp/log/add --> logApp
+[debug] [2019-07-08T06:24:58.729Z] Functions runtime initialized.
+[info] i  functions: Beginning execution of "logApp"
+[debug] [2019-07-08T06:24:58.730Z] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2019-07-08T06:24:58.846Z] firebase-admin has been stubbed.
+[debug] [2019-07-08T06:25:00.244Z] Trigger "logApp" has been found, beginning invocation!
+[debug] [2019-07-08T06:25:00.244Z] 
+[debug] [2019-07-08T06:25:00.244Z] Running logApp in mode HTTPS
+[debug] [2019-07-08T06:25:00.257Z] {"socketPath":"\\\\?\\pipe\\C:\\Work\\me\\functions\\19932"}
+[debug] [2019-07-08T06:25:00.258Z] [functions] Runtime ready! Sending request! {"socketPath":"\\\\?\\pipe\\C:\\Work\\me\\functions\\19932"}
+[debug] [2019-07-08T06:25:00.284Z] Ephemeral server used!
+[debug] [2019-07-08T06:25:00.284Z] Body{"browser":"Chrome","browserVersion":"73.0.3683.103","date":"2019-07-08T06:24:57.225Z","device":"Android","os":"Android","osVersion":"unknown","id":"Not set yet","ip":"77.111.247.198"}
+[debug] [2019-07-08T06:25:00.297Z] Ephemeral server survived.
+[info] i  functions: Finished "logApp" in ~1s
