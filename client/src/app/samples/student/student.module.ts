@@ -9,9 +9,10 @@ import { AddEditDialogComponent } from './add-edit.dialog/add-edit.dialog.compon
 import { ReactiveFormsModule } from '@angular/forms';
 import { DeleteDialogComponent } from 'src/app/shared/common-component/delete-dialog/delete-dialog.component';
 import { CommonComponentModule } from 'src/app/shared/common-component/common-component.module';
+import { SearchValueComponent } from './search-value/search-value.component';
 
 @NgModule({
-  declarations: [StudentComponent, AddEditDialogComponent],
+  declarations: [StudentComponent, AddEditDialogComponent, SearchValueComponent],
   imports: [
     CommonModule,
     StudentRoutingModule,

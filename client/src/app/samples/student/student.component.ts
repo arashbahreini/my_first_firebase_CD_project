@@ -19,6 +19,9 @@ export class StudentComponent implements OnInit {
     private db: AngularFireDatabase) { }
 
   public students: ResultModel<StudentModel[]> = new ResultModel<StudentModel[]>();
+  public studentsSearchResult: ResultModel<StudentModel[]> = new ResultModel<StudentModel[]>();
+  public searchValue: string;
+  public showSearchResult: boolean;
 
   ngOnInit() {
     this.getStudents();
@@ -52,9 +55,35 @@ export class StudentComponent implements OnInit {
       )
       .subscribe((res: StudentModel[]) => {
         this.students.setData(res);
+        this.studentsSearchResult.setData(res);
       }, (error: any) => {
         this.students.setError(error);
       });
+  }
+
+  clearSearch() {
+    this.searchValue = '';
+    this.showSearchResult = false;
+  }
+
+  search(e: KeyboardEvent) {
+    this.showSearchResult = true;
+    this.studentsSearchResult.setData([]);
+    if (this.searchValue === '') {
+      this.showSearchResult = false;
+      return;
+    }
+    this.students.data.forEach(element => {
+      if (element.firstName.toLocaleLowerCase().includes(this.searchValue.toLocaleLowerCase()) ||
+        element.lastName.toLocaleLowerCase().includes(this.searchValue.toLocaleLowerCase()) ||
+        element.grade.toLocaleLowerCase().includes(this.searchValue.toLocaleLowerCase()) ||
+        element.age.toString().includes(this.searchValue.toLocaleLowerCase()) ||
+        element.address.city.toLocaleLowerCase().includes(this.searchValue.toLocaleLowerCase()) ||
+        element.address.street.toLocaleLowerCase().includes(this.searchValue.toLocaleLowerCase()) ||
+        element.dateOfBirth.toString().includes(this.searchValue.toLocaleLowerCase())) {
+        this.studentsSearchResult.data.push(element);
+      }
+    });
   }
 
   delete(student: StudentModel) {

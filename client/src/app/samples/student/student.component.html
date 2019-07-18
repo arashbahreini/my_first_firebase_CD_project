@@ -7,7 +7,8 @@
           <hr>
         </mat-panel-title>
       </mat-expansion-panel-header>
-      <p>This page has designed to apply CRUD operations with Angular 7 and connecting to the Firebase realtime database.</p>
+      <p>This page has designed to apply CRUD operations with Angular 7 and connecting to the Firebase realtime
+        database.</p>
       <h5>Dependencies:</h5>
       <p class="ml-2">
         <span> 1. Angular material</span>
@@ -25,7 +26,39 @@
     </mat-expansion-panel>
   </mat-accordion>
 </div>
-<div class="background_light m-2 p-2">
+<div class="background_light m-2 d-flex justify-content-center">
+  <div class="col-sm-6">
+    <mat-form-field class="col-sm-11">
+      <input matInput placeholder="Search" name="search" [(ngModel)]="searchValue" (keyup)="search($event)">
+    </mat-form-field>
+    <button class="btn btn-danger fa fa-times" [disabled]="!searchValue" (click)="clearSearch()"></button>
+  </div>
+</div>
+<div class="d-flex justify-content-center panel panel-primary" *ngIf="showSearchResult">
+  <div class="background_light col-sm-6 panel-body" style="max-height: 300px;overflow-y: scroll;">
+    <div class="col-sm-12 mt-1" *ngFor="let student of studentsSearchResult.data;let i = index">
+      <p>
+        <span>Name: <app-search-value [value]="student.firstName + ' ' + student.lastName" [searchValue]="searchValue">
+          </app-search-value></span>
+      </p>
+      <p>
+        <span>Age: <app-search-value [value]="student.age" [searchValue]="searchValue"></app-search-value>
+          , Grade: <app-search-value [value]="student.grade" [searchValue]="searchValue"></app-search-value>
+          , Date of birth: <app-search-value [value]="student.dateOfBirth | date:'yyyy/MM/dd'"
+            [searchValue]="searchValue"></app-search-value>
+        </span>
+      </p>
+      <p>
+        <span>
+          Address: <app-search-value [value]="student.address.city + ', ' + student.address.street"
+            [searchValue]="searchValue"></app-search-value></span>
+      </p>
+      <hr>
+    </div>
+  </div>
+</div>
+
+<div class="background_light m-2 p-2" *ngIf="!showSearchResult">
   <table class="table table-hover">
     <tr>
       <th class="text-center">No</th>
