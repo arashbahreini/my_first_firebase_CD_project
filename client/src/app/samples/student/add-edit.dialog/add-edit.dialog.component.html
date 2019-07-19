@@ -50,11 +50,14 @@
     <div class="col-sm-12 mb-3">
       <mat-checkbox formControlName="workEligible">I am eligible to work.</mat-checkbox>
     </div>
-    <div class="mb-3 p-2 border">
+    <div class="mb-3 p-2">
       <h3 class="first">Photo</h3>
       <div class="custom-file">
-        <input type="file" class="custom-file-input" id="customFile" (change)="onSelectFile($event.target.files)">
+        <input type="file" class="custom-file-input" id="customFile" (change)="onSelectFile($event.target.files[0])">
         <label class="custom-file-label" for="customFile">Choose file</label>
+        <div *ngIf="photoUrl">
+            <img class="circle_photo" [src]="photoUrl" alt="Avatar">
+        </div>
       </div>
     </div>
     <div class="col-sm-12 mb-3">

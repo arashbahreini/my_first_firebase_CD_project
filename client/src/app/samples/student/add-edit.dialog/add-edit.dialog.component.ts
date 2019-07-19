@@ -79,11 +79,17 @@ export class AddEditDialogComponent implements OnInit {
     }
   }
 
-  onSelectFile(event) {
-    // const file = event;
-    // const reader = new FileReader();
-    // reader.onload = e => this.photoUrl = reader.result.toString();
-    // reader.readAsDataURL(file);
-    // debugger;
+  onSelectFile(file) {
+    const mimeType = file.type;
+    if (mimeType.match(/image\/*/) == null) {
+      return;
+    }
+
+    const reader = new FileReader();
+    const imagePath = file;
+    reader.readAsDataURL(file);
+    reader.onload = (event: any) => {
+      this.photoUrl = reader.result.toString();
+    };
   }
 }
