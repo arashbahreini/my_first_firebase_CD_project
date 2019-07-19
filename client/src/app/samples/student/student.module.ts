@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DeleteDialogComponent } from 'src/app/shared/common-component/delete-dialog/delete-dialog.component';
 import { CommonComponentModule } from 'src/app/shared/common-component/common-component.module';
 import { SearchValueComponent } from './search-value/search-value.component';
+import { PrimeNgModule } from 'src/app/shared/prime-ng/prime-ng.module';
 
 @NgModule({
   declarations: [StudentComponent, AddEditDialogComponent, SearchValueComponent],
@@ -19,6 +20,7 @@ import { SearchValueComponent } from './search-value/search-value.component';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    PrimeNgModule,
     CommonComponentModule
   ], entryComponents: [
     AddEditDialogComponent,

@@ -22,13 +22,13 @@ body {
 }
 
 ::-webkit-scrollbar-button {
-  background: #ccc
-}
-::-webkit-scrollbar-track-piece {
   background: #888
 }
+::-webkit-scrollbar-track-piece {
+  background: #ccc
+}
 ::-webkit-scrollbar-thumb {
-  background: #eee
+  background: #888
 }​
 
 h2, p {

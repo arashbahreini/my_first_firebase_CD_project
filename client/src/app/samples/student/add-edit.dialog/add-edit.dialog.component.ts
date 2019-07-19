@@ -19,6 +19,7 @@ export class AddEditDialogComponent implements OnInit {
 
   }
 
+  public photoUrl: string;
   public grades = ['A++', 'A+', 'A', 'B', 'C', 'D'];
   public studentForm = new FormGroup({
     key: new FormControl(''),
@@ -76,5 +77,13 @@ export class AddEditDialogComponent implements OnInit {
         this.dialogRef.close();
       });
     }
+  }
+
+  onSelectFile(event) {
+    // const file = event;
+    // const reader = new FileReader();
+    // reader.onload = e => this.photoUrl = reader.result.toString();
+    // reader.readAsDataURL(file);
+    // debugger;
   }
 }

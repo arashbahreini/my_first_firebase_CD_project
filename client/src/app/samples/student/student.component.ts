@@ -6,11 +6,34 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { map } from 'rxjs/operators';
 import { ResultModel } from 'src/app/model/result.model';
 import { DeleteDialogComponent } from 'src/app/shared/common-component/delete-dialog/delete-dialog.component';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-student',
   templateUrl: './student.component.html',
-  styleUrls: ['./student.component.sass']
+  styleUrls: ['./student.component.sass'],
+  animations: [
+    trigger('openClose', [
+      state('open', style({
+        maxHeight: '300px',
+      })),
+      state('closed', style({
+        height: '0px'
+      })),
+      transition('open => closed', [
+        animate('0.1s')
+      ]),
+      transition('closed => open', [
+        animate('0.5s')
+      ]),
+    ]),
+  ],
 })
 export class StudentComponent implements OnInit {
 
