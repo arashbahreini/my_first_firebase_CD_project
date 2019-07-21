@@ -1,7 +1,7 @@
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './../../shared/material/material.module';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 import { StudentRoutingModule } from './student-routing.module';
 import { StudentComponent } from './student.component';
@@ -25,6 +25,6 @@ import { PrimeNgModule } from 'src/app/shared/prime-ng/prime-ng.module';
   ], entryComponents: [
     AddEditDialogComponent,
     DeleteDialogComponent
-  ]
+  ], providers: [DatePipe]
 })
 export class StudentModule { }

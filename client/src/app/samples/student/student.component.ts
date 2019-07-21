@@ -13,6 +13,8 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import * as firebase from 'firebase';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-student',
@@ -39,6 +41,7 @@ export class StudentComponent implements OnInit {
 
   constructor(
     public dialog: MatDialog,
+    private datePipe: DatePipe,
     private db: AngularFireDatabase) { }
 
   public students: ResultModel<StudentModel[]> = new ResultModel<StudentModel[]>();
@@ -103,7 +106,7 @@ export class StudentComponent implements OnInit {
         element.age.toString().includes(this.searchValue.toLocaleLowerCase()) ||
         element.address.city.toLocaleLowerCase().includes(this.searchValue.toLocaleLowerCase()) ||
         element.address.street.toLocaleLowerCase().includes(this.searchValue.toLocaleLowerCase()) ||
-        element.dateOfBirth.toString().includes(this.searchValue.toLocaleLowerCase())) {
+        this.datePipe.transform(element.dateOfBirth, 'yyyy/MM/dd').toString().includes(this.searchValue.toLocaleLowerCase())) {
         this.studentsSearchResult.data.push(element);
       }
     });
@@ -119,7 +122,14 @@ export class StudentComponent implements OnInit {
     );
     dialog.afterClosed().subscribe((res: boolean) => {
       if (res) {
-        this.db.list(`/students/${student.key}`).remove();
+        if (student.photoUrl) {
+          const storageRef = firebase.storage().ref();
+          storageRef.child(student.photoDirectory + '/' + student.photoName).delete().then((result: any) => {
+            this.db.list(`/students/${student.key}`).remove();
+          });
+        } else {
+          this.db.list(`/students/${student.key}`).remove();
+        }
       }
     });
   }

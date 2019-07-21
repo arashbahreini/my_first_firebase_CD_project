@@ -35,24 +35,32 @@
   </div>
 </div>
 <div class="d-flex justify-content-center panel panel-primary" [@openClose]="showSearchResult ? 'open' : 'closed'">
-  <div class="background_light col-sm-6 panel-body" style="max-height: 300px;overflow-y: scroll;" *ngIf="showSearchResult">
-    <div class="col-sm-12 mt-1 search-result" *ngFor="let student of studentsSearchResult.data;let i = index">
-      <p>
-        <span>Name: <app-search-value [value]="student.firstName + ' ' + student.lastName" [searchValue]="searchValue">
-          </app-search-value></span>
-      </p>
-      <p>
-        <span>Age: <app-search-value [value]="student.age" [searchValue]="searchValue"></app-search-value>
-          , Grade: <app-search-value [value]="student.grade" [searchValue]="searchValue"></app-search-value>
-          , Date of birth: <app-search-value [value]="student.dateOfBirth | date:'yyyy/MM/dd'"
-            [searchValue]="searchValue"></app-search-value>
-        </span>
-      </p>
-      <p>
-        <span>
-          Address: <app-search-value [value]="student.address.city + ', ' + student.address.street"
-            [searchValue]="searchValue"></app-search-value></span>
-      </p>
+  <div class="background_light col-sm-6 panel-body" style="max-height: 300px;overflow-y: scroll;"
+    *ngIf="showSearchResult">
+
+    <div class="row mt-1 search-result" *ngFor="let student of studentsSearchResult.data;let i = index">
+      <div class="col-sm-2" *ngIf="student.photoUrl">
+        <img class="searched_photo" [src]="student.photoUrl" alt="Avatar">
+      </div>
+      <div class="col-sm-10">
+        <p>
+          <span>Name: <app-search-value [value]="student.firstName + ' ' + student.lastName"
+              [searchValue]="searchValue">
+            </app-search-value></span>
+        </p>
+        <p>
+          <span>Age: <app-search-value [value]="student.age" [searchValue]="searchValue"></app-search-value>
+            , Grade: <app-search-value [value]="student.grade" [searchValue]="searchValue"></app-search-value>
+            , Date of birth: <app-search-value [value]="student.dateOfBirth | date:'yyyy/MM/dd'"
+              [searchValue]="searchValue"></app-search-value>
+          </span>
+        </p>
+        <p>
+          <span>
+            Address: <app-search-value [value]="student.address.city + ', ' + student.address.street"
+              [searchValue]="searchValue"></app-search-value></span>
+        </p>
+      </div>
       <hr>
     </div>
   </div>
@@ -61,7 +69,7 @@
 <div class="background_light m-2 p-2" *ngIf="!showSearchResult">
   <table class="table table-hover">
     <tr>
-      <th class="text-center">No</th>
+      <th class="text-center" style="width: 10%;">...</th>
       <th class="text-center">First name</th>
       <th class="text-center">Last name</th>
       <th class="text-center">Age</th>
@@ -74,7 +82,10 @@
       </th>
     </tr>
     <tr *ngFor="let student of students.data;let i = index">
-      <td class="text-center">{{i+1}}</td>
+      <!-- <td class="text-center">{{i+1}}</td> -->
+      <td class="text-center">
+        <img class="circle_photo" *ngIf="student.photoUrl" [src]="student.photoUrl" alt="Avatar">
+      </td>
       <td class="text-center">{{student.firstName}}</td>
       <td class="text-center">{{student.lastName}}</td>
       <td class="text-center">{{student.age}}</td>

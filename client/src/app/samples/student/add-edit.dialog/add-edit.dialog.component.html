@@ -1,78 +1,98 @@
-<h1 mat-dialog-title>Add - Edit Student</h1>
-<form class="form" [formGroup]="studentForm" (ngSubmit)="save()" (keydown.enter)="prevent($event)">
-  <div mat-dialog-content>
-    <div class="col-sm-12 mb-3">
-      <mat-form-field class="col-sm-12">
-        <input matInput placeholder="First name" name="firstName" formControlName="firstName">
-        <mat-error *ngIf="firstName?.errors?.required">First name is required</mat-error>
-        <mat-error *ngIf="firstName?.errors?.maxlength">First name length should be less than 30 character</mat-error>
-      </mat-form-field>
-    </div>
-    <div class="col-sm-12 mb-3">
-      <mat-form-field class="col-sm-12">
-        <input matInput placeholder="Last name" name="lastName" formControlName="lastName">
-        <mat-error *ngIf="lastName?.errors?.required">Last name is required</mat-error>
-        <mat-error *ngIf="lastName?.errors?.maxlength">Last name length should be less than 30 character</mat-error>
-      </mat-form-field>
-    </div>
-    <div class="col-sm-12 mb-3">
-      <mat-form-field class="col-sm-12">
-        <input type="number" matInput placeholder="Age" name="age" formControlName="age">
-        <mat-error *ngIf="age?.errors?.required">Age is required</mat-error>
-        <mat-error *ngIf="age?.errors?.max">Age length should be less than 100</mat-error>
-      </mat-form-field>
-    </div>
-    <div class="col-sm-12 mb-3">
-      <mat-form-field class="col-sm-12">
-        <mat-label>Grade</mat-label>
-        <mat-select formControlName="grade" name="grade">
-          <mat-option *ngFor="let grade of grades" [value]="grade">
-            {{grade}}
-          </mat-option>
-        </mat-select>
-        <mat-error *ngIf="grade?.errors?.required">Grade is required</mat-error>
-      </mat-form-field>
-    </div>
-    <div class="col-sm-12 mb-3 p-2 border" formGroupName="address">
-      <h4>Address</h4>
-      <div class="col-sm-8">
+<mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+<div *ngIf="!isLoading">
+  <h1 mat-dialog-title>Add - Edit Student</h1>
+  <form class="form" [formGroup]="studentForm" (ngSubmit)="save()" (keydown.enter)="prevent($event)">
+    <div mat-dialog-content>
+      <div class="col-sm-12 mb-3">
         <mat-form-field class="col-sm-12">
-          <input matInput placeholder="City" name="city" formControlName="city">
-          <mat-error *ngIf="address?.city?.errors?.max">City length should be less than 100</mat-error>
+          <input matInput placeholder="First name" name="firstName" formControlName="firstName">
+          <mat-error *ngIf="firstName?.errors?.required">First name is required</mat-error>
+          <mat-error *ngIf="firstName?.errors?.maxlength">First name length should be less than 30 character</mat-error>
         </mat-form-field>
       </div>
-      <div class="col-sm-8">
+      <div class="col-sm-12 mb-3">
         <mat-form-field class="col-sm-12">
-          <input matInput placeholder="Street" name="street" formControlName="street">
+          <input matInput placeholder="Last name" name="lastName" formControlName="lastName">
+          <mat-error *ngIf="lastName?.errors?.required">Last name is required</mat-error>
+          <mat-error *ngIf="lastName?.errors?.maxlength">Last name length should be less than 30 character</mat-error>
         </mat-form-field>
       </div>
-    </div>
-    <div class="col-sm-12 mb-3">
-      <mat-checkbox formControlName="workEligible">I am eligible to work.</mat-checkbox>
-    </div>
-    <div class="mb-3 p-2">
-      <h3 class="first">Photo</h3>
-      <div class="custom-file">
-        <input type="file" class="custom-file-input" id="customFile" (change)="onSelectFile($event.target.files[0])">
-        <label class="custom-file-label" for="customFile">Choose file</label>
-        <div *ngIf="photoUrl">
-            <img class="circle_photo" [src]="photoUrl" alt="Avatar">
+      <div class="col-sm-12 mb-3">
+        <mat-form-field class="col-sm-12">
+          <input type="number" matInput placeholder="Age" name="age" formControlName="age">
+          <mat-error *ngIf="age?.errors?.required">Age is required</mat-error>
+          <mat-error *ngIf="age?.errors?.max">Age length should be less than 100</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-12 mb-3">
+        <mat-form-field class="col-sm-12">
+          <mat-label>Grade</mat-label>
+          <mat-select formControlName="grade" name="grade">
+            <mat-option *ngFor="let grade of grades" [value]="grade">
+              {{grade}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="grade?.errors?.required">Grade is required</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-12 mb-3 p-2 border" formGroupName="address">
+        <h4>Address</h4>
+        <div class="col-sm-8">
+          <mat-form-field class="col-sm-12">
+            <input matInput placeholder="City" name="city" formControlName="city">
+            <mat-error *ngIf="address?.city?.errors?.max">City length should be less than 100</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-8">
+          <mat-form-field class="col-sm-12">
+            <input matInput placeholder="Street" name="street" formControlName="street">
+          </mat-form-field>
         </div>
       </div>
+      <div class="col-sm-12 mb-3">
+        <mat-checkbox formControlName="workEligible">I am eligible to work.</mat-checkbox>
+      </div>
+      <div class="mb-3 p-2">
+        <h3 class="first">Photo</h3>
+        <div class="row">
+          <div class="col-sm-10">
+            <input type="file" class="custom-file-input" id="customFile"
+              (change)="onSelectFile($event.target.files[0])">
+            <label class="custom-file-label" for="customFile">Choose file</label>
+          </div>
+          <div class="col-sm-2">
+            <button class="btn btn-danger fa fa-trash" [disabled]="disableRemovePhoto()"
+              (click)="removePhoto()"></button>
+          </div>
+          <div class="col-sm-12 mt-3">
+            <div *ngIf="!data?.photoUrl && !photo.url" class="col-sm-12 text-center">
+              <img class="circle_photo"
+                src="https://firebasestorage.googleapis.com/v0/b/me-arash.appspot.com/o/images%2Fno-photo.jpg?alt=media&token=7ea5ade4-8695-431b-bbb8-f4866c1260a0"
+                alt="Avatar">
+            </div>
+            <div *ngIf="data?.photoUrl" class="col-sm-12 text-center">
+              <img class="circle_photo" [src]="data.photoUrl" alt="Avatar">
+            </div>
+            <div *ngIf="photo.url && !data?.photoUrl" class="col-sm-12 text-center">
+              <img class="circle_photo" [src]="photo.url" alt="Avatar">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 mb-3">
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Date of birth" name="dateOfBirth" disabled
+            formControlName="dateOfBirth">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker startView="year" #picker disabled="false"></mat-datepicker>
+          <mat-error *ngIf="dateOfBirth?.errors?.required">Date of birth is required</mat-error>
+        </mat-form-field>
+      </div>
     </div>
-    <div class="col-sm-12 mb-3">
-      <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Date of birth" name="dateOfBirth" disabled
-          formControlName="dateOfBirth">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker startView="year" #picker disabled="false"></mat-datepicker>
-        <mat-error *ngIf="dateOfBirth?.errors?.required">Date of birth is required</mat-error>
-      </mat-form-field>
+    <div class="text-center">
+      <button type="button" class="btn btn-danger" (click)="closeDialog()">Cancel</button>
+      <button type="submit" class="btn btn-success ml-1" (keydown.enter)="$event.preventDefault()"
+        [disabled]="!studentForm.valid">Save</button>
     </div>
-  </div>
-  <div class="text-center">
-    <button type="button" class="btn btn-danger" (click)="closeDialog()">Cancel</button>
-    <button type="submit" class="btn btn-success ml-1" (keydown.enter)="$event.preventDefault()"
-      [disabled]="!studentForm.valid">Save</button>
-  </div>
-</form>
+  </form>
+</div>

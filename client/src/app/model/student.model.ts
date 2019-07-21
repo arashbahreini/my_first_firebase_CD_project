@@ -7,6 +7,9 @@ export class StudentModel {
   public address: AddressModel;
   public workEligible: boolean;
   public dateOfBirth: Date;
+  public photoUrl: string;
+  public photoName: string;
+  public photoDirectory: string;
 }
 
 export class AddressModel {
