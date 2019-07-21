@@ -5,7 +5,7 @@ export class UploadModel {
   progress?: number;
   createdAt?: Date = new Date();
   url?: string;
-
+  errorMessage: string;
   // constructor(file: File) {
   //   this.file = file;
   // }

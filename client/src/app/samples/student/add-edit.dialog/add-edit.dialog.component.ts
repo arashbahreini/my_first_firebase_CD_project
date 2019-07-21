@@ -55,8 +55,9 @@ export class AddEditDialogComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       if (this.data) {
-        this.data.dateOfBirth = new Date(this.data.dateOfBirth);
-        this.studentForm.setValue(this.data);
+        const copyOfData = JSON.parse(JSON.stringify(this.data));
+        this.data.dateOfBirth = new Date(copyOfData.dateOfBirth);
+        this.studentForm.setValue(copyOfData);
       }
     }, 1);
   }
@@ -136,6 +137,7 @@ export class AddEditDialogComponent implements OnInit {
         this.studentForm.value.dateOfBirth = this.studentForm.value.dateOfBirth.toString();
         const storageRef = firebase.storage().ref();
         storageRef.child(this.data.photoDirectory + '/' + this.data.photoName).delete().then((result: any) => { });
+        this.studentForm.value.photoUrl = '';
         this.db.list('students/').update(this.data.key, this.studentForm.value).then(() => {
           this.dialogRef.close();
         });
@@ -146,9 +148,10 @@ export class AddEditDialogComponent implements OnInit {
   onSelectFile(selectedFile: File) {
     const mimeType = selectedFile.type;
     if (mimeType.match(/image\/*/) == null) {
+      this.photo.errorMessage = 'Selected file is not IMAGE';
       return;
     }
-
+    this.photo.errorMessage = null;
     const reader = new FileReader();
     reader.readAsDataURL(selectedFile);
     reader.onload = (event: any) => {

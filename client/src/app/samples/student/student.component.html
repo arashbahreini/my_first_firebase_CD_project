@@ -44,6 +44,11 @@
       <div class="col-sm-2" *ngIf="student.photoUrl">
         <img class="searched_photo" [src]="student.photoUrl" alt="Avatar">
       </div>
+      <div class="col-sm-2" *ngIf="!student.photoUrl">
+        <img class="searched_photo"
+          src="https://firebasestorage.googleapis.com/v0/b/me-arash.appspot.com/o/images%2Fno-photo.jpg?alt=media&token=7ea5ade4-8695-431b-bbb8-f4866c1260a0"
+          alt="Avatar">
+      </div>
       <div class="col-sm-10">
         <p>
           <span>Name: <app-search-value [value]="student.firstName + ' ' + student.lastName"
@@ -84,9 +89,11 @@
       </th>
     </tr>
     <tr *ngFor="let student of students.data;let i = index">
-      <!-- <td class="text-center">{{i+1}}</td> -->
       <td class="text-center">
         <img class="circle_photo" *ngIf="student.photoUrl" [src]="student.photoUrl" alt="Avatar">
+        <img class="circle_photo" *ngIf="!student.photoUrl"
+        src="https://firebasestorage.googleapis.com/v0/b/me-arash.appspot.com/o/images%2Fno-photo.jpg?alt=media&token=7ea5ade4-8695-431b-bbb8-f4866c1260a0"
+        alt="Avatar">
       </td>
       <td class="text-center">{{student.firstName}}</td>
       <td class="text-center">{{student.lastName}}</td>
