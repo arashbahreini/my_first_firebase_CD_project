@@ -73,7 +73,7 @@ describe('workspace-project App', () => {
     page.getMenuByNumber(1, 'a').click();
     page.getMenuByNumber(2, 'a').click();
     browser.waitForAngularEnabled(true);
-    expect(page.getElementByClass('text-center', 0).getText()).toEqual('No');
+    expect(page.getElementByClass('text-center', 0).getText()).toEqual('...');
     expect(page.getElementByClass('text-center', 1).getText()).toEqual('First name');
     expect(page.getElementByClass('text-center', 2).getText()).toEqual('Last name');
     expect(page.getElementByClass('text-center', 3).getText()).toEqual('Age');
