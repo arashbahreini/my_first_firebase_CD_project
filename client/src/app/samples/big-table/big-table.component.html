@@ -1,0 +1,104 @@
+<div class="background_light m-2">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h5>Description about this page</h5>
+          <hr>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>This page has designed to apply CRUD operations with Angular 7 and connecting to the Firebase realtime
+        database.</p>
+      <h5>Dependencies:</h5>
+      <p class="ml-2">
+        <span> 1. Angular material</span>
+        <br>
+        <span> 2. Font awesome</span>
+        <br>
+        <span> 3. Bootstrap</span>
+      </p>
+      <h5>Form technology</h5>
+      <p class="ml-2">
+        <span>1. Angular reactive form</span>
+        <br>
+        <span>2. Angular form validation</span>
+        <br>
+        <span>3. Files are uploaded and read by Firebase Storage</span>
+      </p>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+<div class="background_light m-2 d-flex justify-content-center">
+  <div class="col-sm-6">
+    <mat-form-field class="col-sm-11">
+      <input matInput placeholder="Search" name="search" [(ngModel)]="searchValue" (keyup)="search($event)">
+    </mat-form-field>
+    <button class="btn btn-danger fa fa-times" [disabled]="!searchValue" (click)="clearSearch()"></button>
+  </div>
+</div>
+<div class="d-flex justify-content-center panel panel-primary" [@openClose]="showSearchResult ? 'open' : 'closed'">
+  <div class="background_light col-sm-6 panel-body" style="max-height: 300px;overflow-y: scroll;" *ngIf="false">
+
+    <div class="row mt-1 search-result" *ngFor="let student of studentsSearchResult.data;let i = index">
+      <div class="col-sm-2" *ngIf="student.photoUrl">
+        <img class="searched_photo" [src]="student.photoUrl" alt="Avatar">
+      </div>
+      <div class="col-sm-2" *ngIf="!student.photoUrl">
+        <img class="searched_photo"
+          src="https://firebasestorage.googleapis.com/v0/b/me-arash.appspot.com/o/images%2Fno-photo.jpg?alt=media&token=7ea5ade4-8695-431b-bbb8-f4866c1260a0"
+          alt="Avatar">
+      </div>
+      <div class="col-sm-10">
+        <p>
+          <span>Name: <app-search-value [value]="student.firstName + ' ' + student.lastName"
+              [searchValue]="searchValue">
+            </app-search-value></span>
+        </p>
+        <p>
+          <span>Age: <app-search-value [value]="student.age" [searchValue]="searchValue"></app-search-value>
+            , Grade: <app-search-value [value]="student.grade" [searchValue]="searchValue"></app-search-value>
+            , Date of birth: <app-search-value [value]="student.dateOfBirth | date:'yyyy/MM/dd'"
+              [searchValue]="searchValue"></app-search-value>
+          </span>
+        </p>
+        <p>
+          <span>
+            Address: <app-search-value [value]="student.address.city + ', ' + student.address.street"
+              [searchValue]="searchValue"></app-search-value></span>
+        </p>
+      </div>
+      <hr>
+    </div>
+  </div>
+</div>
+
+<div class="background_light m-2 p-2" *ngIf="!showSearchResult">
+  <table class="table table-hover">
+    <tr>
+      <th class="text-center">Key</th>
+      <th class="text-center">Id</th>
+      <th class="text-center">Text</th>
+      <th class="text-center">Inserted Date</th>
+      <th class="text-center">
+        <button mat-button [matMenuTriggerFor]="menu">Options</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="addItems(10)">Add 10 random</button>
+          <button mat-menu-item (click)="addItems(100)">Add 100 random</button>
+          <button mat-menu-item (click)="addItems(1000)">Add 1000 random</button>
+          <button mat-menu-item (click)="deleteItems(10)">Delete last 10 random</button>
+          <button mat-menu-item (click)="deleteItems(100)">Delete last 100 random</button>
+          <button mat-menu-item (click)="deleteItems(1000)">Delete last 1000 random</button>
+        </mat-menu>
+      </th>
+    </tr>
+    <tr *ngFor="let d of dataResult.data;let i = index">
+      <td class="text-center">{{d.key}}</td>
+      <td class="text-center">{{d.id}}</td>
+      <td class="text-center">{{d.text}}</td>
+      <td class="text-center">{{d.insertDate}}</td>
+      <td class="text-center">
+        <button class="btn btn-danger fa fa-trash" (click)="delete(student)"></button>
+      </td>
+    </tr>
+  </table>
+</div>

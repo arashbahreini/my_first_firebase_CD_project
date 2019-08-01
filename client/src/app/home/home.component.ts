@@ -58,6 +58,11 @@ export class HomeComponent implements OnInit {
           isActive: false,
           caption: 'ChatBox - Web socket'
         },
+        {
+          route: 'samples/big-table',
+          isActive: false,
+          caption: 'Big table using firebase'
+        },
       ]
     },
     {
