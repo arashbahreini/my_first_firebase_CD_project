@@ -3,4 +3,5 @@ export class BigTableModel {
   public id: number;
   public text: string;
   public insertDate: Date;
+  public count: number;
 }

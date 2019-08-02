@@ -4,6 +4,7 @@ import { ResultModel } from 'src/app/model/result.model';
 import { BigTableModel } from 'src/app/model/big-table.model';
 import { map } from 'rxjs/operators';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { PageModel } from 'src/app/model/page.model';
 
 @Component({
   selector: 'app-big-table',
@@ -35,36 +36,74 @@ export class BigTableComponent implements OnInit {
   public searchValue: string;
   public showSearchResult: boolean;
   public isLoading: boolean;
+  public pagesInfo = [
+    5,
+    10,
+    50,
+    100
+  ];
+  public pageInfo: PageModel = new PageModel();
+  public targetPage = 5;
 
   ngOnInit() {
+    this.pageInfo.itemsPerPage = this.targetPage;
     this.getData();
   }
 
-  getData() {
-    this.dataResult.load();
+  onPageInfoChange() {
+    this.pageInfo.itemsPerPage = this.targetPage;
+    this.getData();
+  }
+
+  changePage(pi: any) {
+    this.getData(pi);
+  }
+
+  getData(take?: number) {
     this.db.list('/big-table').snapshotChanges()
       .pipe(
         map(changes => {
           return changes.map(x =>
             ({
-              ...x.payload.val(),
-              key: x.key,
+              count: x.payload.numChildren(),
             })
           );
         })
       )
-      .subscribe((res: BigTableModel[]) => {
-        this.dataResult.setData(res);
-        this.dataSearchResult.setData(res);
-      }, (error: any) => {
-        this.dataResult.setError(error);
+      .subscribe((r: any) => {
+        const query = take ?
+          this.db.list('/big-table', ref => ref.startAt(
+            this.dataResult.data[this.dataResult.data.length - 1].key
+            ).limitToFirst(this.pageInfo.itemsPerPage)) :
+          this.db.list('/big-table', ref => ref.limitToFirst(this.pageInfo.itemsPerPage));
+        query.snapshotChanges()
+          .pipe(
+            map(changes => {
+              return changes.map(x =>
+                ({
+                  ...x.payload.val(),
+                  key: x.key,
+                })
+              );
+            })
+          )
+          .subscribe((res1: BigTableModel[]) => {
+            this.dataResult.setData(res1);
+            this.dataSearchResult.setData(res1);
+            this.pageInfo.pageNumber = [];
+            for (let index = 0; index < r.length / this.pageInfo.itemsPerPage; index++) {
+              this.pageInfo.pageNumber.push(index + 1);
+            }
+          }, (error: any) => {
+            this.dataResult.setError(error);
+          });
       });
   }
 
   addItems(no: number) {
     let lastId =
       (this.dataResult.data && this.dataResult.data.length > 0) ?
-        this.dataResult.data.length - 1 :
+        this.dataResult.data.length :
         0;
     for (let index = 0; index < no; index++) {
       const item = {

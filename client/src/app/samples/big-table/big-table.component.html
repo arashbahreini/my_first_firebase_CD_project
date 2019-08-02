@@ -100,5 +100,25 @@
         <button class="btn btn-danger fa fa-trash" (click)="delete(student)"></button>
       </td>
     </tr>
+    <tr *ngIf="pageInfo.pageNumber">
+      <td class="text-center"></td>
+      <td class="text-center"></td>
+      <td class="text-center"></td>
+      <td class="text-center">
+        <span *ngFor="let pi of pageInfo.pageNumber">
+          <button class="btn btn-info mr-1" (click)="changePage(pi)">{{pi}}</button>
+        </span>
+      </td>
+      <td class="text-center">
+        <mat-form-field>
+          <mat-label>Items per page</mat-label>
+          <mat-select (selectionChange)="onPageInfoChange()" [(ngModel)]="targetPage">
+            <mat-option *ngFor="let pi of pagesInfo" [value]="pi">
+              {{pi}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
   </table>
 </div>
