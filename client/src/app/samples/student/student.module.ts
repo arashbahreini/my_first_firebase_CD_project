@@ -13,7 +13,11 @@ import { SearchValueComponent } from './search-value/search-value.component';
 import { PrimeNgModule } from 'src/app/shared/prime-ng/prime-ng.module';
 
 @NgModule({
-  declarations: [StudentComponent, AddEditDialogComponent, SearchValueComponent],
+  declarations: [
+    StudentComponent,
+    AddEditDialogComponent,
+
+  ],
   imports: [
     CommonModule,
     StudentRoutingModule,

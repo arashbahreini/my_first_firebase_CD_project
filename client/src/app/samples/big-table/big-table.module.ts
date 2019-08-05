@@ -10,7 +10,9 @@ import { PrimeNgModule } from 'src/app/shared/prime-ng/prime-ng.module';
 import { CommonComponentModule } from 'src/app/shared/common-component/common-component.module';
 
 @NgModule({
-  declarations: [BigTableComponent, SearchValueComponent],
+  declarations: [
+    BigTableComponent
+  ],
   imports: [
     MaterialModule,
     FormsModule,
