@@ -1,0 +1,57 @@
+[debug] [2019-11-03T18:00:57.039Z] ----------------------------------------------------------------------
+[debug] [2019-11-03T18:00:57.041Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\arash\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-11-03T18:00:57.041Z] CLI Version:   7.6.2
+[debug] [2019-11-03T18:00:57.041Z] Platform:      win32
+[debug] [2019-11-03T18:00:57.041Z] Node Version:  v10.16.3
+[debug] [2019-11-03T18:00:57.041Z] Time:          Sun Nov 03 2019 19:00:57 GMT+0100 (Central European Standard Time)
+[debug] [2019-11-03T18:00:57.042Z] ----------------------------------------------------------------------
+[debug] [2019-11-03T18:00:57.042Z] 
+[debug] [2019-11-03T18:00:57.048Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-11-03T18:00:57.049Z] > authorizing via signed-in user
+[debug] [2019-11-03T18:00:57.049Z] [iam] checking project me-arash for permissions ["firebase.projects.get"]
+[debug] [2019-11-03T18:00:57.050Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-11-03T18:00:57.050Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-11-03T18:00:57.282Z] <<< HTTP RESPONSE 200
+[debug] [2019-11-03T18:00:57.296Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/me-arash:testIamPermissions  
+
+[debug] [2019-11-03T18:00:58.111Z] <<< HTTP RESPONSE 200
+[debug] [2019-11-03T18:00:58.113Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/me-arash  
+ 
+[debug] [2019-11-03T18:00:58.420Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Work\me'...
+[info] 
+[debug] [2019-11-03T18:00:58.449Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/me-arash/webApps/-/config  
+ 
+[debug] [2019-11-03T18:00:59.265Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: client/dist/firebase-CD-project
+[info] +  hosting: Local server: http://localhost:5000
+[warn] !  Your requested "node" version "8" doesn't match your global version "10"
+[info] +  functions: Emulator started at http://localhost:5001
+[info] i  functions: Watching "C:\Work\me\functions" for Cloud Functions...
+[debug] [2019-11-03T18:01:00.988Z] [worker-~diagnostic~-e55468d6-d4c2-4a55-b87d-1997cba548e6]: BUSY
+[debug] [2019-11-03T18:01:01.366Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\Work\\me\\functions","node_version":"10.16.3"}
+[debug] [2019-11-03T18:01:01.367Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[warn] !  The Cloud Functions emulator requires the module "firebase-admin" to be installed. This package is in your package.json, but it's not available. You probably need to run "npm install" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2019-11-03T18:01:01.387Z] [worker-~diagnostic~-e55468d6-d4c2-4a55-b87d-1997cba548e6]: exited
+[debug] [2019-11-03T18:01:01.387Z] [worker-~diagnostic~-e55468d6-d4c2-4a55-b87d-1997cba548e6]: FINISHED
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[debug] [2019-11-03T18:01:10.425Z] Accepted request POST /me-arash/us-central1/logApp/log/add --> logApp
+[debug] [2019-11-03T18:01:10.434Z] [worker-logApp-2bbd4ee0-946f-4591-9666-a1410d88e1a5]: BUSY
+[debug] [2019-11-03T18:01:10.850Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\Work\\me\\functions","node_version":"10.16.3"}
+[debug] [2019-11-03T18:01:10.851Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[warn] !  The Cloud Functions emulator requires the module "firebase-admin" to be installed. This package is in your package.json, but it's not available. You probably need to run "npm install" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2019-11-03T18:01:10.872Z] [worker-logApp-2bbd4ee0-946f-4591-9666-a1410d88e1a5]: exited
+[debug] [2019-11-03T18:01:10.872Z] [worker-logApp-2bbd4ee0-946f-4591-9666-a1410d88e1a5]: FINISHED
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[debug] [2019-11-03T18:01:51.465Z] Accepted request POST /me-arash/us-central1/logApp/log/add --> logApp
+[debug] [2019-11-03T18:01:51.474Z] [worker-logApp-774111d3-3fdb-4142-831a-403dfcf531ca]: BUSY
+[debug] [2019-11-03T18:01:52.005Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\Work\\me\\functions","node_version":"10.16.3"}
+[debug] [2019-11-03T18:01:52.008Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[warn] !  The Cloud Functions emulator requires the module "firebase-admin" to be installed. This package is in your package.json, but it's not available. You probably need to run "npm install" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2019-11-03T18:01:52.031Z] [worker-logApp-774111d3-3fdb-4142-831a-403dfcf531ca]: exited
+[debug] [2019-11-03T18:01:52.031Z] [worker-logApp-774111d3-3fdb-4142-831a-403dfcf531ca]: FINISHED

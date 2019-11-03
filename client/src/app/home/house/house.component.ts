@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CommonService} from '../../services/common.service';
 
 @Component({
   selector: 'app-house',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HouseComponent implements OnInit {
 
-  constructor() { }
+  isWithMobile: boolean;
+
+  constructor(private commonService: CommonService) {
+  }
 
   ngOnInit() {
+    this.isWithMobile = this.commonService.getUserPlatform().isWithMobile;
   }
 
 }

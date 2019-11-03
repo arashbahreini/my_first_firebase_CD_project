@@ -1,5 +1,5 @@
+
 <div style="width: 90%;margin-left:5%;margin-top: 100px;text-align: center" class="background_light">
-  <h2>
-    This page is developing
-  </h2>
+  <app-house-mobile *ngIf="isWithMobile"></app-house-mobile>
+  <app-house-web *ngIf="!isWithMobile"></app-house-web>
 </div>

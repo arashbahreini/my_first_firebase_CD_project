@@ -9,7 +9,8 @@ const routes: Routes = [
     path: '', component: HomeComponent, children: [
       { path: '', redirectTo: 'about-me', pathMatch: 'full' },
       { path: 'about-me', loadChildren: './about-me/about-me.module#AboutMeModule' },
-      { path: 'house', component: HouseComponent },
+      // { path: 'house', component: HouseComponent },
+      { path: 'house', loadChildren: './house/house.module#HouseModule'},
       { path: 'login', component: LoginComponent },
       {
         path: 'samples/student',
