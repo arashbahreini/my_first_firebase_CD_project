@@ -16,5 +16,4 @@ export class HouseComponent implements OnInit {
   ngOnInit() {
     this.isWithMobile = this.commonService.getUserPlatform().isWithMobile;
   }
-
 }
