@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-manage',
@@ -15,21 +15,35 @@ export class ManageComponent implements OnInit {
       isActive: false,
       caption: 'Users'
     },
+    {
+      route: 'rpi',
+      isActive: false,
+      caption: 'Raspberry Pie'
+    },
   ];
 
-  constructor(private router: Router) {
-    router.events.subscribe(e => {
-      this.routes.forEach(x => {
-        if (this.router.url.search(x.route) >= 0) {
-          x.isActive = true;
-        } else {
-          x.isActive = false;
-        }
-      });
-    });
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute) {
+    console.log(activatedRoute.snapshot.routeConfig.path);
+
+    const activeRoute = activatedRoute.snapshot.firstChild ? activatedRoute.snapshot.firstChild.routeConfig.path : null;
+    if (activeRoute) {
+      this.routes.find(x => x.route === activeRoute).isActive = true;
+    } else {
+      this.routes[0].isActive = true;
+    }
+
+    this.router.navigate(['/admin/manage/' + this.routes.find(x => x.isActive).route]);
   }
 
   ngOnInit() {
   }
 
+  navigateTo(route: string) {
+    this.routes.forEach(element => {
+      element.isActive = element.route === route;
+    });
+    this.router.navigate(['/admin/manage/' + route]);
+  }
 }

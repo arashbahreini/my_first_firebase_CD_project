@@ -1,42 +1,46 @@
-<div class="text-center">
-  <h3>
-    User management
-  </h3>
-</div>
-<div>
-  <div class="fa-3x text-center" *ngIf="users.isLoading">
-    <i class="fa fa-spinner fa-spin"></i>
-  </div>
-  <div *ngIf="!users.isLoading && users.hasResult">
-    <table class="table table-hover">
-      <tr>
-        <th>No</th>
-        <th>Email</th>
-        <th>Display name</th>
-        <th>Phone no</th>
-        <th>Is enable</th>
-        <th>
-          <button class="btn btn-success fa fa-plus mr-1"></button>
-          <button class="btn btn-primary fa fa-refresh" (click)="getUsers()"></button>
-        </th>
-      </tr>
-      <tr *ngFor="let user of users.data;let i=index">
-        <td>{{i}}</td>
-        <td>{{user.email}}</td>
-        <td>{{user.displayName}}</td>
-        <td>{{user.phoneNumber}}</td>
-        <td>
-          <i [ngClass]="
+<div class="row">
+  <div class="d-inline col-sm-12 border background_light">
+    <div class="text-center">
+      <h3>
+        User management
+      </h3>
+    </div>
+    <div>
+      <div class="fa-3x text-center" *ngIf="users.isLoading">
+        <i class="fa fa-spinner fa-spin"></i>
+      </div>
+      <div *ngIf="!users.isLoading && users.hasResult">
+        <table class="table table-hover">
+          <tr>
+            <th>No</th>
+            <th>Email</th>
+            <th>Display name</th>
+            <th>Phone no</th>
+            <th>Is enable</th>
+            <th>
+              <button class="btn btn-success fa fa-plus mr-1"></button>
+              <button class="btn btn-primary fa fa-refresh" (click)="getUsers()"></button>
+            </th>
+          </tr>
+          <tr *ngFor="let user of users.data;let i=index">
+            <td>{{i}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.displayName}}</td>
+            <td>{{user.phoneNumber}}</td>
+            <td>
+              <i [ngClass]="
           'btn ' +
           (user.disabled ? 'btn-danger' : 'btn-success') +
           ' fa ' +
           (user.disabled ? 'fa-times' : 'fa-check')"></i>
-        </td>
-        <td>
-          <button class="btn btn-danger fa fa-trash mr-1"></button>
-          <button class="btn btn-primary fa fa-pencil"></button>
-        </td>
-      </tr>
-    </table>
+            </td>
+            <td>
+              <button class="btn btn-danger fa fa-trash mr-1"></button>
+              <button class="btn btn-primary fa fa-pencil"></button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </div>
 </div>

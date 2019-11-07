@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="d-inline col-sm-12 border background_light">
+    <span style="font-size: x-large">
+      General information
+    </span>
+    <button style="float: right" class="btn btn-success mr-1" (click)="saveGeneralInformation()">Save</button>
+    <div *ngIf="generalInformation.isLoading">
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+    <div *ngIf="generalInformation.hasError">
+      <p style="color:red">
+        {{generalInformation.errorMessage}}
+      </p>
+    </div>
+    <div *ngIf="generalInformation.hasResult" class="mt-2">
+      <div class="col-sm-12 mb-3">
+        <mat-form-field class="col-sm-12">
+          <input matInput placeholder="Name" name="name" [(ngModel)]="generalInformation.data.name">
+        </mat-form-field>
+      </div>
+      <div class="col-sm-12 mb-3">
+        <mat-form-field class="col-sm-12">
+          <input matInput placeholder="Health check period (second)" name="healthCheckPeriod"
+                 [(ngModel)]="generalInformation.data.healthCheckPeriod">
+        </mat-form-field>
+      </div>
+      <div class="col-sm-12 mb-3">
+        <mat-form-field class="col-sm-12">
+          <input matInput placeholder="Moisture check period (second)" name="moisturePeriod"
+                 [(ngModel)]="generalInformation.data.moisturePeriod">
+        </mat-form-field>
+      </div>
+      <div class="col-sm-12 mb-3">
+        <h4>Moisture information  and situations</h4>
+        <p *ngFor="let item of generalInformation.data.moistureInformation">
+          Min: {{item.min}} , Max: {{item.max}} , Description: {{item.name}}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="d-inline col-sm-12 border mt-2 background_light">
+    <span style="font-size: x-large">
+      Database setting
+    </span>
+    <div *ngIf="generalInformation.hasResult" class="mt-2">
+      <div></div>
+    </div>
+  </div>
+</div>

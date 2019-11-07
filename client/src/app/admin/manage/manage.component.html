@@ -1,12 +1,13 @@
 <div class="row m-3">
   <div class="d-inline p-2 col-sm-2">
     <div class="list-group">
-      <a [routerLink]="route.route"
+      <a (click)="navigateTo(route.route)"
         [ngClass]="'list-group-item list-group-item-action ' + (route.isActive ? 'active' : '')"
         *ngFor="let route of routes">{{route.caption}}</a>
     </div>
   </div>
-  <div class="d-inline col-sm-10 border background_light">
-      <router-outlet></router-outlet>
+
+  <div class="col-sm-10">
+    <router-outlet></router-outlet>
   </div>
 </div>
