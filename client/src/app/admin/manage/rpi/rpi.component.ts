@@ -5,6 +5,7 @@ import {map} from 'rxjs/operators';
 import {AngularFireDatabase} from '@angular/fire/database';
 import {DatabaseInfoModel} from '../../../model/database-info.model';
 import {resolveTiming} from "@angular/animations/browser/src/util";
+import {RpiService} from "../../../services/rpi.service";
 
 @Component({
   selector: 'app-rpi',
@@ -17,7 +18,7 @@ export class RpiComponent implements OnInit {
   public databases: ResultModel<DatabaseInfoModel[]> = new ResultModel<DatabaseInfoModel[]>();
 
   constructor(
-    private db: AngularFireDatabase
+    private rpiService: RpiService
   ) {
   }
 
@@ -29,59 +30,26 @@ export class RpiComponent implements OnInit {
       name: 'test-moisture'
     });
     this.getGeneralInformation();
-    this.getDbInfo();
+    // this.getDbInfo();
   }
 
   getGeneralInformation() {
     this.generalInformation.load();
-    this.db.list('/rpi-setting').snapshotChanges()
-      .pipe(
-        map(changes => {
-          return changes.map(x =>
-            ({
-              ...x.payload.val(),
-              key: x.key,
-            })
-          );
-        })
-      )
-      .subscribe((res: RpiGeneralInformationModel[]) => {
-        this.generalInformation.setData(res[0]);
-      }, (error: any) => {
-        this.generalInformation.setError(error);
-      });
-  }
-
-  saveGeneralInformation() {
-    this.generalInformation.load();
-    this.db.list('rpi-setting/')
-      .update(this.generalInformation.data.key, this.generalInformation.data)
-      .then((res: any) => {
-        this.generalInformation.isLoading = false;
-      }, (error: any) => {
-        this.generalInformation.setError(error);
-      });
-  }
-
-  getDbInfo() {
-    this.db.list('/test-moisture').remove().then((res: any) => {
-      debugger;
-    }, (error: any) => {
-      debugger;
+    this.rpiService.getSetting().subscribe((res: RpiGeneralInformationModel) => {
+      console.log(res)
+    }, (error) => {
+      console.log(error)
     });
-    // this.databases.data.forEach(element => {
-    //   debugger;
-    //   this.db.list(`/${element.name}`).snapshotChanges()
-    //     .pipe(
-    //       map(changes => {
-    //         return changes.length;
-    //       })
-    //     )
-    //     .subscribe((res: any) => {
-    //       debugger;
-    //     }, (error: any) => {
-    //       debugger;
-    //     });
-    // });
   }
+
+  // saveGeneralInformation() {
+  //   this.generalInformation.load();
+  //   this.db.list('rpi-setting/')
+  //     .update(this.generalInformation.data.key, this.generalInformation.data)
+  //     .then((res: any) => {
+  //       this.generalInformation.isLoading = false;
+  //     }, (error: any) => {
+  //       this.generalInformation.setError(error);
+  //     });
+  // }
 }

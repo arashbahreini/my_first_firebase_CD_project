@@ -1,0 +1,293 @@
+[debug] [2019-11-20T17:23:40.425Z] ----------------------------------------------------------------------
+[debug] [2019-11-20T17:23:40.427Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\arash\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-11-20T17:23:40.427Z] CLI Version:   7.6.2
+[debug] [2019-11-20T17:23:40.427Z] Platform:      win32
+[debug] [2019-11-20T17:23:40.427Z] Node Version:  v10.16.3
+[debug] [2019-11-20T17:23:40.428Z] Time:          Wed Nov 20 2019 18:23:40 GMT+0100 (Central European Standard Time)
+[debug] [2019-11-20T17:23:40.428Z] ----------------------------------------------------------------------
+[debug] [2019-11-20T17:23:40.428Z] 
+[debug] [2019-11-20T17:23:40.435Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-11-20T17:23:40.436Z] > authorizing via signed-in user
+[debug] [2019-11-20T17:23:40.436Z] [iam] checking project me-arash for permissions ["firebase.projects.get"]
+[debug] [2019-11-20T17:23:40.438Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/me-arash:testIamPermissions  
+
+[debug] [2019-11-20T17:23:41.362Z] <<< HTTP RESPONSE 200
+[debug] [2019-11-20T17:23:41.364Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/me-arash  
+ 
+[debug] [2019-11-20T17:23:41.666Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Work\me'...
+[info] 
+[debug] [2019-11-20T17:23:41.671Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/me-arash/webApps/-/config  
+ 
+[debug] [2019-11-20T17:23:42.687Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: client/dist/firebase-CD-project
+[info] +  hosting: Local server: http://localhost:5000
+[warn] !  Your requested "node" version "8" doesn't match your global version "10"
+[info] +  functions: Emulator started at http://localhost:5001
+[info] i  functions: Watching "C:\Work\me\functions" for Cloud Functions...
+[debug] [2019-11-20T17:23:44.220Z] [worker-~diagnostic~-b5df23ef-f945-449a-ba30-9ce322ed6475]: BUSY
+[debug] [2019-11-20T17:23:44.611Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\Work\\me\\functions","node_version":"10.16.3"}
+[debug] [2019-11-20T17:23:44.612Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-20T17:23:44.616Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.2.0","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-20T17:23:44.618Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-20T17:23:44.618Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[info] +  functions[app]: http function initialized (http://localhost:5001/me-arash/us-central1/app).
+[info] +  functions[userApp]: http function initialized (http://localhost:5001/me-arash/us-central1/userApp).
+[info] +  functions[logApp]: http function initialized (http://localhost:5001/me-arash/us-central1/logApp).
+[debug] [2019-11-20T17:23:45.297Z] [worker-~diagnostic~-b5df23ef-f945-449a-ba30-9ce322ed6475]: exited
+[debug] [2019-11-20T17:23:45.297Z] [worker-~diagnostic~-b5df23ef-f945-449a-ba30-9ce322ed6475]: FINISHED
+[info] [hosting] Rewriting /rpi/getCurrentHealth to http://localhost:5001/me-arash/us-central1/rpiApp for local Function rpiApp
+[debug] [2019-11-20T17:23:49.437Z] Accepted request GET /me-arash/us-central1/rpiApp/rpi/getCurrentHealth --> rpiApp
+[debug] [2019-11-20T17:23:49.445Z] [worker-rpiApp-8cc48599-0339-4532-a73c-ef93aedc04a9]: BUSY
+[debug] [2019-11-20T17:23:49.869Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\Work\\me\\functions","node_version":"10.16.3"}
+[debug] [2019-11-20T17:23:49.870Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-20T17:23:49.874Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.2.0","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-20T17:23:49.876Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-20T17:23:49.877Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Could not find trigger "rpiApp" in your functions directory.
+[warn] !  Your function was killed because it raised an unhandled error.
+[info] i  functions: Beginning execution of "rpiApp"
+[warn] !  functions: TypeError: Cannot read property 'definition' of undefined
+    at C:\Users\arash\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:648:30
+    at Generator.next (<anonymous>)
+    at C:\Users\arash\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:7:71
+    at new Promise (<anonymous>)
+    at __awaiter (C:\Users\arash\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:3:12)
+    at invokeTrigger (C:\Users\arash\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:640:12)
+    at C:\Users\arash\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:757:19
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\arash\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:4:58)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[debug] [2019-11-20T17:23:50.596Z] Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:470:11)
+    at ServerResponse.header (C:\Users\arash\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\express\lib\response.js:771:10)
+    at ServerResponse.send (C:\Users\arash\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\express\lib\response.js:170:12)
+    at EventEmitter.worker.onLogs (C:\Users\arash\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:96:37)
+    at EventEmitter.emit (events.js:203:15)
+    at EventEmitter.emit (domain.js:448:20)
+    at lines.slice.forEach (C:\Users\arash\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:526:21)
+    at Array.forEach (<anonymous>)
+    at onData (C:\Users\arash\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:524:28)
+    at ChildProcess.childProcess.on (C:\Users\arash\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:485:9)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-11-20T17:23:50.599Z] [worker-rpiApp-8cc48599-0339-4532-a73c-ef93aedc04a9]: exited
+[debug] [2019-11-20T17:23:50.599Z] [worker-rpiApp-8cc48599-0339-4532-a73c-ef93aedc04a9]: FINISHED
+[debug] [2019-11-20T17:26:07.996Z] ----------------------------------------------------------------------
+[debug] [2019-11-20T17:26:07.998Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\arash\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-11-20T17:26:07.999Z] CLI Version:   7.8.0
+[debug] [2019-11-20T17:26:07.999Z] Platform:      win32
+[debug] [2019-11-20T17:26:07.999Z] Node Version:  v10.16.3
+[debug] [2019-11-20T17:26:07.999Z] Time:          Wed Nov 20 2019 18:26:07 GMT+0100 (Central European Standard Time)
+[debug] [2019-11-20T17:26:08.000Z] ----------------------------------------------------------------------
+[debug] [2019-11-20T17:26:08.000Z] 
+[debug] [2019-11-20T17:26:08.008Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-11-20T17:26:08.009Z] > authorizing via signed-in user
+[debug] [2019-11-20T17:26:08.009Z] [iam] checking project me-arash for permissions ["firebase.projects.get"]
+[debug] [2019-11-20T17:26:08.010Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/me-arash:testIamPermissions  
+
+[debug] [2019-11-20T17:26:08.871Z] <<< HTTP RESPONSE 200
+[debug] [2019-11-20T17:26:08.872Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/me-arash  
+ 
+[debug] [2019-11-20T17:26:09.381Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Work\me'...
+[info] 
+[debug] [2019-11-20T17:26:09.401Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/me-arash/webApps/-/config  
+ 
+[debug] [2019-11-20T17:26:10.350Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: client/dist/firebase-CD-project
+[info] +  hosting: Local server: http://localhost:5000
+[warn] !  Your requested "node" version "8" doesn't match your global version "10"
+[info] +  functions: Emulator started at http://localhost:5001
+[info] i  functions: Watching "C:\Work\me\functions" for Cloud Functions...
+[debug] [2019-11-20T17:26:11.939Z] [worker-~diagnostic~-bf5e4006-a550-4923-a6d1-e3b09b88b4a6]: Assigning socketPath: \\?\pipe\C:\Work\me\functions\bf5e4006-a550-4923-a6d1-e3b09b88b4a6
+[debug] [2019-11-20T17:26:11.939Z] [worker-~diagnostic~-bf5e4006-a550-4923-a6d1-e3b09b88b4a6]: BUSY
+[debug] [2019-11-20T17:26:12.358Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\Work\\me\\functions","node_version":"10.16.3"}
+[debug] [2019-11-20T17:26:12.359Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true} {}
+[debug] [2019-11-20T17:26:12.364Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.2.0","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-20T17:26:12.365Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-20T17:26:12.366Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[info] +  functions[app]: http function initialized (http://localhost:5001/me-arash/us-central1/app).
+[info] +  functions[userApp]: http function initialized (http://localhost:5001/me-arash/us-central1/userApp).
+[info] +  functions[logApp]: http function initialized (http://localhost:5001/me-arash/us-central1/logApp).
+[info] +  functions[rpiApp]: http function initialized (http://localhost:5001/me-arash/us-central1/rpiApp).
+[debug] [2019-11-20T17:26:13.067Z] [worker-~diagnostic~-bf5e4006-a550-4923-a6d1-e3b09b88b4a6]: exited
+[debug] [2019-11-20T17:26:13.067Z] [worker-~diagnostic~-bf5e4006-a550-4923-a6d1-e3b09b88b4a6]: FINISHED
+[info] [hosting] Rewriting /rpi/getCurrentHealth to http://localhost:5001/me-arash/us-central1/rpiApp for local Function rpiApp
+[debug] [2019-11-20T17:26:17.296Z] Accepted request GET /me-arash/us-central1/rpiApp/rpi/getCurrentHealth --> rpiApp
+[debug] [2019-11-20T17:26:17.302Z] [worker-rpiApp-c8cfa8a6-9bd1-48b3-b27e-c2431c830e6a]: Assigning socketPath: \\?\pipe\C:\Work\me\functions\c8cfa8a6-9bd1-48b3-b27e-c2431c830e6a
+[debug] [2019-11-20T17:26:17.302Z] [worker-rpiApp-c8cfa8a6-9bd1-48b3-b27e-c2431c830e6a]: BUSY
+[debug] [2019-11-20T17:26:17.714Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\Work\\me\\functions","node_version":"10.16.3"}
+[debug] [2019-11-20T17:26:17.716Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true} {}
+[debug] [2019-11-20T17:26:17.722Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.2.0","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-20T17:26:17.724Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-20T17:26:17.725Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-20T17:26:18.416Z] [runtime-status] Trigger "rpiApp" has been found, beginning invocation! {}
+[info] i  functions: Beginning execution of "rpiApp"
+[debug] [2019-11-20T17:26:18.417Z] [runtime-status]  {"httpsTrigger":{},"name":"rpiApp","entryPoint":"rpiApp"}
+[debug] [2019-11-20T17:26:18.417Z] [runtime-status] Running rpiApp in mode HTTPS {}
+[debug] [2019-11-20T17:26:18.424Z] [functions] Runtime ready! Sending request!
+[debug] [2019-11-20T17:26:18.431Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-11-20T17:26:18.440Z] [runtime-status] Ephemeral server survived. {}
+[info] i  functions: Finished "rpiApp" in ~1s
+[debug] [2019-11-20T17:26:18.442Z] [worker-rpiApp-c8cfa8a6-9bd1-48b3-b27e-c2431c830e6a]: IDLE
+[debug] [2019-11-20T17:27:49.583Z] File C:\Work\me\functions\rpi-api.js changed, reloading triggers
+[debug] [2019-11-20T17:27:50.586Z] [worker-pool]: Shutting down IDLE worker (rpiApp)
+[debug] [2019-11-20T17:27:50.594Z] [worker-~diagnostic~-d4f8f131-6592-46b6-85a6-45d3757bb80b]: Assigning socketPath: \\?\pipe\C:\Work\me\functions\d4f8f131-6592-46b6-85a6-45d3757bb80b
+[debug] [2019-11-20T17:27:50.594Z] [worker-~diagnostic~-d4f8f131-6592-46b6-85a6-45d3757bb80b]: BUSY
+[debug] [2019-11-20T17:27:50.596Z] [worker-rpiApp-c8cfa8a6-9bd1-48b3-b27e-c2431c830e6a]: exited
+[debug] [2019-11-20T17:27:50.596Z] [worker-rpiApp-c8cfa8a6-9bd1-48b3-b27e-c2431c830e6a]: FINISHED
+[debug] [2019-11-20T17:27:50.846Z] File C:\Work\me\functions\rpi-api.js changed, reloading triggers
+[debug] [2019-11-20T17:27:51.045Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\Work\\me\\functions","node_version":"10.16.3"}
+[debug] [2019-11-20T17:27:51.048Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true} {}
+[debug] [2019-11-20T17:27:51.053Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.2.0","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-20T17:27:51.055Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-20T17:27:51.056Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  Error: The default Firebase app already exists. This means you called initializeApp() more than once without providing an app name as the second argument. In most cases you only need to call initializeApp() once. But if you do want to initialize multiple apps, pass a second argument to initializeApp() to give each app a unique name.
+    at FirebaseAppError.FirebaseError [as constructor] (C:\Work\me\functions\node_modules\firebase-admin\lib\utils\error.js:42:28)
+    at FirebaseAppError.PrefixedFirebaseError [as constructor] (C:\Work\me\functions\node_modules\firebase-admin\lib\utils\error.js:88:28)
+    at new FirebaseAppError (C:\Work\me\functions\node_modules\firebase-admin\lib\utils\error.js:122:28)
+    at FirebaseNamespaceInternals.initializeApp (C:\Work\me\functions\node_modules\firebase-admin\lib\firebase-namespace.js:68:23)
+    at FirebaseNamespace.initializeApp (C:\Work\me\functions\node_modules\firebase-admin\lib\firebase-namespace.js:392:30)
+    at Object.<anonymous> (C:\Work\me\functions\rpi-api.js:7:7)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2019-11-20T17:27:51.799Z] [worker-~diagnostic~-d4f8f131-6592-46b6-85a6-45d3757bb80b]: exited
+[debug] [2019-11-20T17:27:51.799Z] [worker-~diagnostic~-d4f8f131-6592-46b6-85a6-45d3757bb80b]: FINISHED
+[debug] [2019-11-20T17:27:51.860Z] [worker-~diagnostic~-889ecac7-6cde-481b-9508-d95467f8f78b]: Assigning socketPath: \\?\pipe\C:\Work\me\functions\889ecac7-6cde-481b-9508-d95467f8f78b
+[debug] [2019-11-20T17:27:51.860Z] [worker-~diagnostic~-889ecac7-6cde-481b-9508-d95467f8f78b]: BUSY
+[debug] [2019-11-20T17:27:52.325Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\Work\\me\\functions","node_version":"10.16.3"}
+[debug] [2019-11-20T17:27:52.326Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true} {}
+[debug] [2019-11-20T17:27:52.332Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.2.0","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-20T17:27:52.334Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-20T17:27:52.336Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  Error: The default Firebase app already exists. This means you called initializeApp() more than once without providing an app name as the second argument. In most cases you only need to call initializeApp() once. But if you do want to initialize multiple apps, pass a second argument to initializeApp() to give each app a unique name.
+    at FirebaseAppError.FirebaseError [as constructor] (C:\Work\me\functions\node_modules\firebase-admin\lib\utils\error.js:42:28)
+    at FirebaseAppError.PrefixedFirebaseError [as constructor] (C:\Work\me\functions\node_modules\firebase-admin\lib\utils\error.js:88:28)
+    at new FirebaseAppError (C:\Work\me\functions\node_modules\firebase-admin\lib\utils\error.js:122:28)
+    at FirebaseNamespaceInternals.initializeApp (C:\Work\me\functions\node_modules\firebase-admin\lib\firebase-namespace.js:68:23)
+    at FirebaseNamespace.initializeApp (C:\Work\me\functions\node_modules\firebase-admin\lib\firebase-namespace.js:392:30)
+    at Object.<anonymous> (C:\Work\me\functions\rpi-api.js:7:7)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2019-11-20T17:27:53.057Z] [worker-~diagnostic~-889ecac7-6cde-481b-9508-d95467f8f78b]: exited
+[debug] [2019-11-20T17:27:53.057Z] [worker-~diagnostic~-889ecac7-6cde-481b-9508-d95467f8f78b]: FINISHED
+[debug] [2019-11-20T17:28:14.968Z] File C:\Work\me\functions\rpi-api.js changed, reloading triggers
+[debug] [2019-11-20T17:28:15.974Z] [worker-~diagnostic~-a1c79314-b077-46e1-aef7-0dabcf431a14]: Assigning socketPath: \\?\pipe\C:\Work\me\functions\a1c79314-b077-46e1-aef7-0dabcf431a14
+[debug] [2019-11-20T17:28:15.974Z] [worker-~diagnostic~-a1c79314-b077-46e1-aef7-0dabcf431a14]: BUSY
+[debug] [2019-11-20T17:28:16.396Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\Work\\me\\functions","node_version":"10.16.3"}
+[debug] [2019-11-20T17:28:16.398Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true} {}
+[debug] [2019-11-20T17:28:16.402Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.2.0","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-20T17:28:16.404Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-20T17:28:16.405Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  Error: The default Firebase app already exists. This means you called initializeApp() more than once without providing an app name as the second argument. In most cases you only need to call initializeApp() once. But if you do want to initialize multiple apps, pass a second argument to initializeApp() to give each app a unique name.
+    at FirebaseAppError.FirebaseError [as constructor] (C:\Work\me\functions\node_modules\firebase-admin\lib\utils\error.js:42:28)
+    at FirebaseAppError.PrefixedFirebaseError [as constructor] (C:\Work\me\functions\node_modules\firebase-admin\lib\utils\error.js:88:28)
+    at new FirebaseAppError (C:\Work\me\functions\node_modules\firebase-admin\lib\utils\error.js:122:28)
+    at FirebaseNamespaceInternals.initializeApp (C:\Work\me\functions\node_modules\firebase-admin\lib\firebase-namespace.js:68:23)
+    at FirebaseNamespace.initializeApp (C:\Work\me\functions\node_modules\firebase-admin\lib\firebase-namespace.js:392:30)
+    at Object.<anonymous> (C:\Work\me\functions\rpi-api.js:8:7)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2019-11-20T17:28:17.170Z] [worker-~diagnostic~-a1c79314-b077-46e1-aef7-0dabcf431a14]: exited
+[debug] [2019-11-20T17:28:17.170Z] [worker-~diagnostic~-a1c79314-b077-46e1-aef7-0dabcf431a14]: FINISHED
+[debug] [2019-11-20T17:28:51.045Z] File C:\Work\me\functions\rpi-api.js changed, reloading triggers
+[debug] [2019-11-20T17:28:52.054Z] [worker-~diagnostic~-c00eedb4-43a1-41a5-a737-efd14682cc44]: Assigning socketPath: \\?\pipe\C:\Work\me\functions\c00eedb4-43a1-41a5-a737-efd14682cc44
+[debug] [2019-11-20T17:28:52.054Z] [worker-~diagnostic~-c00eedb4-43a1-41a5-a737-efd14682cc44]: BUSY
+[debug] [2019-11-20T17:28:52.485Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\Work\\me\\functions","node_version":"10.16.3"}
+[debug] [2019-11-20T17:28:52.487Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true} {}
+[debug] [2019-11-20T17:28:52.491Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.2.0","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-20T17:28:52.493Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-20T17:28:52.494Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  Error: The default Firebase app already exists. This means you called initializeApp() more than once without providing an app name as the second argument. In most cases you only need to call initializeApp() once. But if you do want to initialize multiple apps, pass a second argument to initializeApp() to give each app a unique name.
+    at FirebaseAppError.FirebaseError [as constructor] (C:\Work\me\functions\node_modules\firebase-admin\lib\utils\error.js:42:28)
+    at FirebaseAppError.PrefixedFirebaseError [as constructor] (C:\Work\me\functions\node_modules\firebase-admin\lib\utils\error.js:88:28)
+    at new FirebaseAppError (C:\Work\me\functions\node_modules\firebase-admin\lib\utils\error.js:122:28)
+    at FirebaseNamespaceInternals.initializeApp (C:\Work\me\functions\node_modules\firebase-admin\lib\firebase-namespace.js:68:23)
+    at FirebaseNamespace.initializeApp (C:\Work\me\functions\node_modules\firebase-admin\lib\firebase-namespace.js:392:30)
+    at Object.<anonymous> (C:\Work\me\functions\rpi-api.js:8:7)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2019-11-20T17:28:53.197Z] [worker-~diagnostic~-c00eedb4-43a1-41a5-a737-efd14682cc44]: exited
+[debug] [2019-11-20T17:28:53.197Z] [worker-~diagnostic~-c00eedb4-43a1-41a5-a737-efd14682cc44]: FINISHED
+[debug] [2019-11-20T17:29:13.377Z] File C:\Work\me\functions\rpi-api.js changed, reloading triggers
+[debug] [2019-11-20T17:29:14.386Z] [worker-~diagnostic~-cbb917bd-120c-49de-a075-d5617015b3e0]: Assigning socketPath: \\?\pipe\C:\Work\me\functions\cbb917bd-120c-49de-a075-d5617015b3e0
+[debug] [2019-11-20T17:29:14.386Z] [worker-~diagnostic~-cbb917bd-120c-49de-a075-d5617015b3e0]: BUSY
+[debug] [2019-11-20T17:29:14.798Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\Work\\me\\functions","node_version":"10.16.3"}
+[debug] [2019-11-20T17:29:14.799Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true} {}
+[debug] [2019-11-20T17:29:14.804Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.2.0","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-20T17:29:14.805Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-20T17:29:14.806Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  Error: The default Firebase app already exists. This means you called initializeApp() more than once without providing an app name as the second argument. In most cases you only need to call initializeApp() once. But if you do want to initialize multiple apps, pass a second argument to initializeApp() to give each app a unique name.
+    at FirebaseAppError.FirebaseError [as constructor] (C:\Work\me\functions\node_modules\firebase-admin\lib\utils\error.js:42:28)
+    at FirebaseAppError.PrefixedFirebaseError [as constructor] (C:\Work\me\functions\node_modules\firebase-admin\lib\utils\error.js:88:28)
+    at new FirebaseAppError (C:\Work\me\functions\node_modules\firebase-admin\lib\utils\error.js:122:28)
+    at FirebaseNamespaceInternals.initializeApp (C:\Work\me\functions\node_modules\firebase-admin\lib\firebase-namespace.js:68:23)
+    at FirebaseNamespace.initializeApp (C:\Work\me\functions\node_modules\firebase-admin\lib\firebase-namespace.js:392:30)
+    at Object.<anonymous> (C:\Work\me\functions\rpi-api.js:8:7)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2019-11-20T17:29:15.508Z] [worker-~diagnostic~-cbb917bd-120c-49de-a075-d5617015b3e0]: exited
+[debug] [2019-11-20T17:29:15.508Z] [worker-~diagnostic~-cbb917bd-120c-49de-a075-d5617015b3e0]: FINISHED
+[info] [hosting] Rewriting /rpi/getCurrentHealth to http://localhost:5001/me-arash/us-central1/rpiApp for local Function rpiApp
+[debug] [2019-11-20T17:29:18.738Z] Accepted request GET /me-arash/us-central1/rpiApp/rpi/getCurrentHealth --> rpiApp
+[debug] [2019-11-20T17:29:18.746Z] [worker-rpiApp-4e7bfc55-cf76-4aa8-8ed7-2ff7e03fd637]: Assigning socketPath: \\?\pipe\C:\Work\me\functions\4e7bfc55-cf76-4aa8-8ed7-2ff7e03fd637
+[debug] [2019-11-20T17:29:18.746Z] [worker-rpiApp-4e7bfc55-cf76-4aa8-8ed7-2ff7e03fd637]: BUSY
+[debug] [2019-11-20T17:29:19.273Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\Work\\me\\functions","node_version":"10.16.3"}
+[debug] [2019-11-20T17:29:19.275Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true} {}
+[debug] [2019-11-20T17:29:19.282Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.2.0","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-20T17:29:19.284Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-20T17:29:19.285Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  Error: The default Firebase app already exists. This means you called initializeApp() more than once without providing an app name as the second argument. In most cases you only need to call initializeApp() once. But if you do want to initialize multiple apps, pass a second argument to initializeApp() to give each app a unique name.
+    at FirebaseAppError.FirebaseError [as constructor] (C:\Work\me\functions\node_modules\firebase-admin\lib\utils\error.js:42:28)
+    at FirebaseAppError.PrefixedFirebaseError [as constructor] (C:\Work\me\functions\node_modules\firebase-admin\lib\utils\error.js:88:28)
+    at new FirebaseAppError (C:\Work\me\functions\node_modules\firebase-admin\lib\utils\error.js:122:28)
+    at FirebaseNamespaceInternals.initializeApp (C:\Work\me\functions\node_modules\firebase-admin\lib\firebase-namespace.js:68:23)
+    at FirebaseNamespace.initializeApp (C:\Work\me\functions\node_modules\firebase-admin\lib\firebase-namespace.js:392:30)
+    at Object.<anonymous> (C:\Work\me\functions\rpi-api.js:8:7)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2019-11-20T17:29:20.038Z] [worker-rpiApp-4e7bfc55-cf76-4aa8-8ed7-2ff7e03fd637]: exited
+[debug] [2019-11-20T17:29:20.038Z] [worker-rpiApp-4e7bfc55-cf76-4aa8-8ed7-2ff7e03fd637]: FINISHED
+[debug] [2019-11-20T17:30:41.790Z] File C:\Work\me\functions\user.js changed, reloading triggers
+[debug] [2019-11-20T17:30:42.798Z] [worker-~diagnostic~-03a5368e-8937-40b6-8c51-cf78ee880ffd]: Assigning socketPath: \\?\pipe\C:\Work\me\functions\03a5368e-8937-40b6-8c51-cf78ee880ffd
+[debug] [2019-11-20T17:30:42.799Z] [worker-~diagnostic~-03a5368e-8937-40b6-8c51-cf78ee880ffd]: BUSY
+[debug] [2019-11-20T17:30:43.219Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\Work\\me\\functions","node_version":"10.16.3"}
+[debug] [2019-11-20T17:30:43.221Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true} {}
+[debug] [2019-11-20T17:30:43.225Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.2.0","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-20T17:30:43.227Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-20T17:30:43.228Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  Error: The default Firebase app already exists. This means you called initializeApp() more than once without providing an app name as the second argument. In most cases you only need to call initializeApp() once. But if you do want to initialize multiple apps, pass a second argument to initializeApp() to give each app a unique name.
+    at FirebaseAppError.FirebaseError [as constructor] (C:\Work\me\functions\node_modules\firebase-admin\lib\utils\error.js:42:28)
+    at FirebaseAppError.PrefixedFirebaseError [as constructor] (C:\Work\me\functions\node_modules\firebase-admin\lib\utils\error.js:88:28)
+    at new FirebaseAppError (C:\Work\me\functions\node_modules\firebase-admin\lib\utils\error.js:122:28)
+    at FirebaseNamespaceInternals.initializeApp (C:\Work\me\functions\node_modules\firebase-admin\lib\firebase-namespace.js:68:23)
+    at FirebaseNamespace.initializeApp (C:\Work\me\functions\node_modules\firebase-admin\lib\firebase-namespace.js:392:30)
+    at Object.<anonymous> (C:\Work\me\functions\rpi-api.js:8:7)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2019-11-20T17:30:43.941Z] [worker-~diagnostic~-03a5368e-8937-40b6-8c51-cf78ee880ffd]: exited
+[debug] [2019-11-20T17:30:43.941Z] [worker-~diagnostic~-03a5368e-8937-40b6-8c51-cf78ee880ffd]: FINISHED

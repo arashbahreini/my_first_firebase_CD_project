@@ -30,7 +30,11 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login(this.user).subscribe((res) => {
       this.routes.navigate(['./admin']);
     }, (error) => {
-      this.loginResult.setError(error);
+      if (error.status === 500) {
+        this.loginResult.setError('Server error!!!');
+      } else {
+        this.loginResult.setError(error);
+      }
     });
   }
 }

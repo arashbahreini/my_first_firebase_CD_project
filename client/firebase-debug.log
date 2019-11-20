@@ -1,0 +1,60 @@
+[debug] [2019-11-20T19:06:10.869Z] ----------------------------------------------------------------------
+[debug] [2019-11-20T19:06:10.871Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\arash\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-11-20T19:06:10.872Z] CLI Version:   7.8.0
+[debug] [2019-11-20T19:06:10.872Z] Platform:      win32
+[debug] [2019-11-20T19:06:10.872Z] Node Version:  v10.16.3
+[debug] [2019-11-20T19:06:10.873Z] Time:          Wed Nov 20 2019 20:06:10 GMT+0100 (Central European Standard Time)
+[debug] [2019-11-20T19:06:10.873Z] ----------------------------------------------------------------------
+[debug] [2019-11-20T19:06:10.873Z] 
+[debug] [2019-11-20T19:06:10.882Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-11-20T19:06:10.883Z] > authorizing via signed-in user
+[debug] [2019-11-20T19:06:10.883Z] [iam] checking project me-arash for permissions ["firebase.projects.get"]
+[debug] [2019-11-20T19:06:10.884Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/me-arash:testIamPermissions  
+
+[debug] [2019-11-20T19:06:11.705Z] <<< HTTP RESPONSE 200
+[debug] [2019-11-20T19:06:11.707Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/me-arash  
+ 
+[debug] [2019-11-20T19:06:12.033Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Work\me'...
+[info] 
+[debug] [2019-11-20T19:06:12.038Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/me-arash/webApps/-/config  
+ 
+[debug] [2019-11-20T19:06:12.718Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: client/dist/firebase-CD-project
+[info] +  hosting: Local server: http://localhost:5000
+[info] [hosting] Rewriting /log/add to https://us-central1-me-arash.cloudfunctions.net/logApp for local Function logApp
+[warn] !  Your requested "node" version "8" doesn't match your global version "10"
+[info] +  functions: Emulator started at http://localhost:5001
+[info] i  functions: Watching "C:\Work\me\functions" for Cloud Functions...
+[debug] [2019-11-20T19:06:14.586Z] [worker-~diagnostic~-416074b2-1628-408a-82bf-8a46c001ca59]: Assigning socketPath: \\?\pipe\C:\Work\me\functions\416074b2-1628-408a-82bf-8a46c001ca59
+[debug] [2019-11-20T19:06:14.586Z] [worker-~diagnostic~-416074b2-1628-408a-82bf-8a46c001ca59]: BUSY
+[debug] [2019-11-20T19:06:14.984Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\Work\\me\\functions","node_version":"10.16.3"}
+[debug] [2019-11-20T19:06:14.986Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true} {}
+[debug] [2019-11-20T19:06:14.990Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.2.0","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-20T19:06:14.992Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-20T19:06:14.993Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[info] +  functions[app]: http function initialized (http://localhost:5001/me-arash/us-central1/app).
+[info] +  functions[userApp]: http function initialized (http://localhost:5001/me-arash/us-central1/userApp).
+[info] +  functions[logApp]: http function initialized (http://localhost:5001/me-arash/us-central1/logApp).
+[info] +  functions[rpiApp]: http function initialized (http://localhost:5001/me-arash/us-central1/rpiApp).
+[debug] [2019-11-20T19:06:15.701Z] [worker-~diagnostic~-416074b2-1628-408a-82bf-8a46c001ca59]: exited
+[debug] [2019-11-20T19:06:15.702Z] [worker-~diagnostic~-416074b2-1628-408a-82bf-8a46c001ca59]: FINISHED
+[info] [hosting] Rewriting /log/add to http://localhost:5001/me-arash/us-central1/logApp for local Function logApp
+[debug] [2019-11-20T19:06:45.741Z] Accepted request POST /me-arash/us-central1/logApp/log/add --> logApp
+[debug] [2019-11-20T19:06:45.749Z] [worker-logApp-ff32f384-4189-4d69-8dac-0d959cf83334]: Assigning socketPath: \\?\pipe\C:\Work\me\functions\ff32f384-4189-4d69-8dac-0d959cf83334
+[debug] [2019-11-20T19:06:45.749Z] [worker-logApp-ff32f384-4189-4d69-8dac-0d959cf83334]: BUSY
+[debug] [2019-11-20T19:06:46.148Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\Work\\me\\functions","node_version":"10.16.3"}
+[debug] [2019-11-20T19:06:46.150Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true} {}
+[debug] [2019-11-20T19:06:46.154Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.2.0","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-20T19:06:46.156Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-20T19:06:46.157Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.0.2","resolution":"C:\\Work\\me\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-20T19:06:46.834Z] [runtime-status] Trigger "logApp" has been found, beginning invocation! {}
+[info] i  functions: Beginning execution of "logApp"
+[debug] [2019-11-20T19:06:46.835Z] [runtime-status]  {"httpsTrigger":{},"name":"logApp","entryPoint":"logApp"}
+[debug] [2019-11-20T19:06:46.835Z] [runtime-status] Running logApp in mode HTTPS {}
+[debug] [2019-11-20T19:06:46.842Z] [functions] Runtime ready! Sending request!
+[debug] [2019-11-20T19:06:46.862Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-11-20T19:06:46.883Z] [runtime-status] Ephemeral server survived. {}
+[info] i  functions: Finished "logApp" in ~1s
+[debug] [2019-11-20T19:06:46.885Z] [worker-logApp-ff32f384-4189-4d69-8dac-0d959cf83334]: IDLE

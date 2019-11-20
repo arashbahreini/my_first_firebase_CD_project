@@ -23,6 +23,10 @@
         "function": "logApp"
       },
       {
+        "source": "/rpi/**",
+        "function": "rpiApp"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
