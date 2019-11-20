@@ -4,8 +4,8 @@ import {ResultModel} from '../../../model/result.model';
 import {map} from 'rxjs/operators';
 import {AngularFireDatabase} from '@angular/fire/database';
 import {DatabaseInfoModel} from '../../../model/database-info.model';
-import {resolveTiming} from "@angular/animations/browser/src/util";
-import {RpiService} from "../../../services/rpi.service";
+import {resolveTiming} from '@angular/animations/browser/src/util';
+import {RpiService} from '../../../services/rpi.service';
 
 @Component({
   selector: 'app-rpi',
@@ -36,9 +36,9 @@ export class RpiComponent implements OnInit {
   getGeneralInformation() {
     this.generalInformation.load();
     this.rpiService.getSetting().subscribe((res: RpiGeneralInformationModel) => {
-      console.log(res)
+      console.log(res);
     }, (error) => {
-      console.log(error)
+      console.log(error);
     });
   }
 
