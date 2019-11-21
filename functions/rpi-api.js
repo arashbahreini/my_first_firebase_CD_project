@@ -87,5 +87,25 @@ rpiApp.get('/rpi/getSettings', (req, res) => {
             res.send(err);
         });
 });
+rpiApp.post('/rpi/saveSettings', (req, res) => {
+    if (!admin.apps.length) {
+        admin.initializeApp({
+            credential: admin.credential.applicationDefault()
+        }, 'rpi-app');
+    }
+    const db = admin.firestore();
+    try {
+        db.collection('rpi-setting').doc('healthCheckPeriod').update(req.body.healthCheckPeriod);
+        db.collection('rpi-setting').doc('moisturePeriod').update(req.body.moisturePeriod);
+        db.collection('rpi-setting').doc('name').update(req.body.name);
+        res.send({'success': true})
+    } catch (e) {
+        res.send({
+            'success': false,
+            'message': e.toString(),
+        })
+    }
+});
+
 
 exports.rpiApp = functions.https.onRequest(rpiApp);
