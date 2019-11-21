@@ -42,14 +42,14 @@ export class RpiComponent implements OnInit {
     });
   }
 
-  // saveGeneralInformation() {
-  //   this.generalInformation.load();
-  //   this.db.list('rpi-setting/')
-  //     .update(this.generalInformation.data.key, this.generalInformation.data)
-  //     .then((res: any) => {
-  //       this.generalInformation.isLoading = false;
-  //     }, (error: any) => {
-  //       this.generalInformation.setError(error);
-  //     });
-  // }
+  saveGeneralInformation() {
+    // this.generalInformation.load();
+    // this.db.list('rpi-setting/')
+    //   .update(this.generalInformation.data.key, this.generalInformation.data)
+    //   .then((res: any) => {
+    //     this.generalInformation.isLoading = false;
+    //   }, (error: any) => {
+    //     this.generalInformation.setError(error);
+    //   });
+  }
 }
