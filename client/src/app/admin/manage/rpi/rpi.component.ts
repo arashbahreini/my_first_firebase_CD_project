@@ -36,20 +36,20 @@ export class RpiComponent implements OnInit {
   getGeneralInformation() {
     this.generalInformation.load();
     this.rpiService.getSetting().subscribe((res: RpiGeneralInformationModel) => {
-      console.log(res);
+      this.generalInformation.setData(res);
     }, (error) => {
-      console.log(error);
+      this.generalInformation.setError(error);
     });
   }
 
   saveGeneralInformation() {
-    // this.generalInformation.load();
-    // this.db.list('rpi-setting/')
-    //   .update(this.generalInformation.data.key, this.generalInformation.data)
-    //   .then((res: any) => {
-    //     this.generalInformation.isLoading = false;
-    //   }, (error: any) => {
-    //     this.generalInformation.setError(error);
-    //   });
+    this.generalInformation.load();
+    this.rpiService.saveSetting(this.generalInformation.data).subscribe(
+      (res: any) => {
+        this.getGeneralInformation();
+      }, (error: any) => {
+        this.generalInformation.setError(error);
+      }
+    );
   }
 }

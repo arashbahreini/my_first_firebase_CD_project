@@ -3,8 +3,9 @@
     <span style="font-size: x-large">
       General information
     </span>
-    <button style="float: right" class="btn btn-success mr-1" (click)="getGeneralInformation()">Save</button>
-    <div *ngIf="generalInformation.isLoading">
+    <button style="float: right" class="btn btn-success mr-1" (click)="saveGeneralInformation()">Save</button>
+    <button style="float: right" class="btn btn-info mr-1" (click)="getGeneralInformation()">Refresh</button>
+    <div *ngIf="generalInformation.isLoading" class="mt-4 mb-2">
       <mat-progress-bar mode="indeterminate"></mat-progress-bar>
     </div>
     <div *ngIf="generalInformation.hasError">
@@ -15,25 +16,26 @@
     <div *ngIf="generalInformation.hasResult" class="mt-2">
       <div class="col-sm-12 mb-3">
         <mat-form-field class="col-sm-12">
-          <input matInput placeholder="Name" name="name" [(ngModel)]="generalInformation.data.name">
+          <input matInput placeholder="Name" name="name" [(ngModel)]="generalInformation.data.name.value">
         </mat-form-field>
       </div>
       <div class="col-sm-12 mb-3">
         <mat-form-field class="col-sm-12">
           <input matInput placeholder="Health check period (second)" name="healthCheckPeriod"
-                 [(ngModel)]="generalInformation.data.healthCheckPeriod">
+                 [(ngModel)]="generalInformation.data.healthCheckPeriod.value">
         </mat-form-field>
       </div>
       <div class="col-sm-12 mb-3">
         <mat-form-field class="col-sm-12">
           <input matInput placeholder="Moisture check period (second)" name="moisturePeriod"
-                 [(ngModel)]="generalInformation.data.moisturePeriod">
+                 [(ngModel)]="generalInformation.data.moisturePeriod.value">
         </mat-form-field>
       </div>
+      <hr>
       <div class="col-sm-12 mb-3">
-        <h4>Moisture information  and situations</h4>
-        <p *ngFor="let item of generalInformation.data.moistureInformation">
-          Min: {{item.min}} , Max: {{item.max}} , Description: {{item.name}}
+        <span style="font-size: x-large">Moisture information  and situations</span>
+        <p class="mt-4" *ngFor="let item of generalInformation.data.moistureInformation | keyvalue">
+          Min: {{item.value.min}} , Max: {{item.value.max}} , Description: {{item.value.name}}
         </p>
       </div>
     </div>
