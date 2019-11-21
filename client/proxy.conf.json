@@ -6,5 +6,9 @@
   "/log": {
     "target": "http://localhost:5000",
     "secure": false
+  },
+  "/rpi": {
+    "target": "http://localhost:5000",
+    "secure": false
   }
 }

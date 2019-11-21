@@ -13,7 +13,7 @@ export class RpiService {
   }
 
   public getSetting(): Observable<RpiGeneralInformationModel> {
-    return this.http.get<RpiGeneralInformationModel>(environment.serverUrl + 'rpi/getSettings');
+    return this.http.get<RpiGeneralInformationModel>('rpi/getSettings');
 
   }
 }

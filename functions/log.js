@@ -14,7 +14,6 @@ logApp.post('/log/add', (req, res) => {
   myRef.set(req.body)
   res.send(req.body);
 });
-
 logApp.post('/log/getIpInformation', (req, res) => {
   request.get('http://api.ipstack.com/' + req.body.ip + '?access_key=9f79482ae6aca6a14914c07978b51b29')
   .on('data',(result) => {
