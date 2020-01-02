@@ -14,20 +14,4 @@ describe('CommonService', () => {
     commonService = new CommonService(httpClientSpy as any, deviceDetectorService);
   });
 
-  // it('should return an appropriate form of data', () => {
-  //   // Arrange
-  //   const expectedValue = { ip : '91.99.5.103'};
-  //   debugger;
-  //   // Act
-  //   httpClientSpy.get.and.returnValue(expectedValue);
-
-  //   // Assert
-  //   commonService.getIp().subscribe(x => {
-  //     debugger;
-  //   });
-  // });
-  // it('should be created', () => {
-  //   const service: CommonService = TestBed.get(CommonService);
-  //   expect(service).toBeTruthy();
-  // });
 });

@@ -1,3 +1,7 @@
+export class ValueModel {
+  public value: any;
+}
+
 export class RpiGeneralInformationModel {
   public name: ValueModel;
   public healthCheckPeriod: ValueModel;
@@ -10,10 +14,6 @@ export class RpiGeneralInformationModel {
     this.healthCheckPeriod = new ValueModel();
     this.moisturePeriod = new ValueModel();
   }
-}
-
-export class ValueModel {
-  public value: any;
 }
 
 export class MoistureInformation {

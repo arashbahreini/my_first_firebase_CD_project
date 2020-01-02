@@ -10,7 +10,6 @@ describe('workspace-project App', () => {
 
   it('Should display welcome message', () => {
     page.navigateTo();
-    browser.ignoreSynchronization = true;
     expect(page.getMenuByName(0, 'app-bio h2').getText()).toEqual(`Arash's biography`);
   });
 

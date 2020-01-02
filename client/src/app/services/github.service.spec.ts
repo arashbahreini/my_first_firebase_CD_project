@@ -24,24 +24,4 @@ describe('GithubService', () => {
     gitHubService = new GithubService(httpClient);
   });
 
-  // it('Should return appropriate data from Github API', () => {
-  //   // Arrenge
-  //   // https://api.github.com/users/arashbahreini/events
-  //   const expectedValue = [
-  //     { public: true }
-  //   ];
-
-  //   httpClient.get<any>(`https://api.stackexchange.com/2.2/users/3773888/answers?page=1&pagesize=5&order
-  //   =desc&sort=votes&site=stackoverflow`).subscribe(data => {
-  //     // expect(data[0].public).toEqual(false);
-  //     debugger;
-  //   });
-
-  //   // Act
-  //   httpClientSpy.get.and.returnValue(of(expectedValue));
-  //   // gitHubService.getGithubEvents().subscribe(x => {
-  //   //   debugger;
-  //   // });
-  //   // Aassert
-  // });
 });

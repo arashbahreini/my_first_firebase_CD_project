@@ -149,7 +149,6 @@ export class BigTableComponent implements OnInit {
         // return;
       }
       const key = this.dataResult.data[this.dataResult.data.length - (index + 1)].key;
-      debugger;
       this.db.list(`/big-table/${key}`).remove();
     }
   }
