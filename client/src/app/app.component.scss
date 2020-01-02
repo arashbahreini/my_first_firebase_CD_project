@@ -1,5 +1,5 @@
-table , tr , td{
-  border:solid 1px gray;
+table, tr, td {
+  border: solid 1px gray;
 }
 
 table {
@@ -17,6 +17,19 @@ table {
 }
 
 .element {
-  margin:10px;
+  margin: 10px;
+}
 
+.alert__div {
+  background-color: #1C2833;
+  color: #CACFD2;
+  padding-bottom: 2px;
+}
+
+.alert__div:hover {
+  background-color: #273746;
+}
+
+.alert_close_button:hover {
+  cursor: pointer;
 }

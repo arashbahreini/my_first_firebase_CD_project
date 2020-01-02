@@ -1,2 +1,6 @@
+<div *ngIf="showMainAlert" class="alert__div text-center">
+  <span>The first page of the website (Me) is for introducing myself and others are just for test and education proposes</span>
+  <span class="fa fa-times alert_close_button" (click)="hideAlert()" style="margin-left:5px;"></span>
+</div>
 <router-outlet></router-outlet>
 

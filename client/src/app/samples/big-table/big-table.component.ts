@@ -146,9 +146,10 @@ export class BigTableComponent implements OnInit {
   deleteItems(no: number) {
     for (let index = 0; index < no; index++) {
       if (!this.dataResult.data[this.dataResult.data.length - (index + 1)]) {
-        return;
+        // return;
       }
       const key = this.dataResult.data[this.dataResult.data.length - (index + 1)].key;
+      debugger;
       this.db.list(`/big-table/${key}`).remove();
     }
   }

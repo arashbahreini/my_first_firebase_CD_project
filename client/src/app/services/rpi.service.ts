@@ -16,6 +16,10 @@ export class RpiService {
     return this.http.get<RpiGeneralInformationModel>('rpi/getSettings');
   }
 
+  public getCatalogs(): Observable<any> {
+    return this.http.get<any>('rpi/getCatalogs');
+  }
+
   public saveSetting(data: RpiGeneralInformationModel): Observable<any> {
     return this.http.post<RpiGeneralInformationModel>('rpi/saveSettings', data);
   }

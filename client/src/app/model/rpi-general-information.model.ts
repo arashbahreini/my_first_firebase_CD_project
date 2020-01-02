@@ -4,6 +4,12 @@ export class RpiGeneralInformationModel {
   public moisturePeriod: ValueModel;
   public moistureInformation: MoistureInformation[];
   public key: string;
+
+  constructor() {
+    this.name = new ValueModel();
+    this.healthCheckPeriod = new ValueModel();
+    this.moisturePeriod = new ValueModel();
+  }
 }
 
 export class ValueModel {

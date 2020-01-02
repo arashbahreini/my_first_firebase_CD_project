@@ -26,11 +26,7 @@ rpiApp.get('/rpi/getCurrentHealth', (req, res) => {
         });
 });
 rpiApp.get('/rpi/getAllHealthData', (req, res) => {
-    if (!admin.apps.length) {
-        admin.initializeApp({
-            credential: admin.credential.applicationDefault()
-        }, 'rpi-app');
-    }
+    dbInit();
     const db = admin.firestore();
     db.collection('RPI-health')
         .get()
@@ -45,12 +41,24 @@ rpiApp.get('/rpi/getAllHealthData', (req, res) => {
             res.send(err);
         });
 });
+rpiApp.get('/rpi/getCatalogs', (req, res) => {
+    dbInit();
+    const db = admin.firestore();
+    db.collection('db-catalogs')
+        .get()
+        .then(snapshot => {
+            let result = {};
+            snapshot.forEach((doc) => {
+                result[doc.id] = doc.data();
+            });
+            res.send(result);
+        })
+        .catch((err) => {
+            res.send(err);
+        });
+});
 rpiApp.post('/rpi/getHealthByDate', (req, res) => {
-    if (!admin.apps.length) {
-        admin.initializeApp({
-            credential: admin.credential.applicationDefault()
-        }, 'rpi-app');
-    }
+    dbInit();
     const db = admin.firestore();
     db.collection('RPI-health')
         .where('time', '>=', req.startDate)
@@ -68,11 +76,7 @@ rpiApp.post('/rpi/getHealthByDate', (req, res) => {
         });
 });
 rpiApp.get('/rpi/getSettings', (req, res) => {
-    if (!admin.apps.length) {
-        admin.initializeApp({
-            credential: admin.credential.applicationDefault()
-        }, 'rpi-app');
-    }
+    dbInit();
     const db = admin.firestore();
     db.collection('rpi-setting')
         .get()
@@ -88,11 +92,7 @@ rpiApp.get('/rpi/getSettings', (req, res) => {
         });
 });
 rpiApp.post('/rpi/saveSettings', (req, res) => {
-    if (!admin.apps.length) {
-        admin.initializeApp({
-            credential: admin.credential.applicationDefault()
-        }, 'rpi-app');
-    }
+    dbInit();
     const db = admin.firestore();
     try {
         db.collection('rpi-setting').doc('healthCheckPeriod').update(req.body.healthCheckPeriod);
@@ -106,6 +106,17 @@ rpiApp.post('/rpi/saveSettings', (req, res) => {
         })
     }
 });
+rpiApp.post('/rpi/removeCollection', (req,res) => {
+    dbInit();
 
+});
+
+function dbInit() {
+    if (!admin.apps.length) {
+        admin.initializeApp({
+            credential: admin.credential.applicationDefault()
+        }, 'rpi-app');
+    }
+}
 
 exports.rpiApp = functions.https.onRequest(rpiApp);

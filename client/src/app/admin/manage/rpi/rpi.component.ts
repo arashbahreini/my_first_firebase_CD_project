@@ -1,11 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {RpiGeneralInformationModel} from '../../../model/rpi-general-information.model';
 import {ResultModel} from '../../../model/result.model';
-import {map} from 'rxjs/operators';
-import {AngularFireDatabase} from '@angular/fire/database';
-import {DatabaseInfoModel} from '../../../model/database-info.model';
-import {resolveTiming} from '@angular/animations/browser/src/util';
 import {RpiService} from '../../../services/rpi.service';
+import {DbCatalogsModel} from '../../../model/catalogs.model';
 
 @Component({
   selector: 'app-rpi',
@@ -15,7 +12,7 @@ import {RpiService} from '../../../services/rpi.service';
 export class RpiComponent implements OnInit {
 
   public generalInformation: ResultModel<RpiGeneralInformationModel> = new ResultModel<RpiGeneralInformationModel>();
-  public databases: ResultModel<DatabaseInfoModel[]> = new ResultModel<DatabaseInfoModel[]>();
+  public catalogs: ResultModel<DbCatalogsModel> = new ResultModel<DbCatalogsModel>();
 
   constructor(
     private rpiService: RpiService
@@ -23,14 +20,8 @@ export class RpiComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.databases.data = [];
-    this.databases.data.push({
-      name: 'RPI-health'
-    }, {
-      name: 'test-moisture'
-    });
     this.getGeneralInformation();
-    // this.getDbInfo();
+    this.getCatalogs();
   }
 
   getGeneralInformation() {
@@ -40,6 +31,23 @@ export class RpiComponent implements OnInit {
     }, (error) => {
       this.generalInformation.setError(error);
     });
+  }
+
+  getCatalogs() {
+    this.catalogs.load();
+    this.rpiService.getCatalogs().subscribe((res: any) => {
+      this.catalogs.setData({
+        rpiHealth: res['RPI-health'],
+        rpiMoisture: res['RPI-moisture']
+      });
+      this.catalogs.setData(res);
+    }, (error) => {
+      this.catalogs.setError(error);
+    });
+  }
+
+  removeCollection(key) {
+
   }
 
   saveGeneralInformation() {

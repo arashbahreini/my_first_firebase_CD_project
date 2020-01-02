@@ -34,21 +34,28 @@
       <hr>
       <div class="col-sm-12 mb-3">
         <span style="font-size: x-large">Moisture information  and situations</span>
-        <p class="mt-4" *ngFor="let item of generalInformation.data.moistureInformation | keyvalue">
-          Min: {{item.value.min}} , Max: {{item.value.max}} , Description: {{item.value.name}}
+        <p class="mt-4" *ngFor="let item of generalInformation?.data?.moistureInformation | keyvalue">
+          Min: {{item?.value?.min}} , Max: {{item?.value?.max}} , Description: {{item?.value?.name}}
         </p>
       </div>
     </div>
   </div>
   <div class="d-inline col-sm-12 border mt-2 background_light">
     <span style="font-size: x-large">
-      Database setting
+      General information
     </span>
-    <div *ngIf="generalInformation.hasResult" class="mt-2">
-      <div>
+    <button style="float: right" class="btn btn-info mr-1" (click)="getCatalogs()">Refresh</button>
+    <div *ngIf="catalogs.isLoading" class="mt-4 mb-2">
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+    <div *ngIf="catalogs.hasResult" class="mt-2">
+      <div *ngFor="let catalog of catalogs.data | keyvalue">
         <h4>
-          <span></span>
+          <button class="btn btn-danger mr-1" (click)="removeCollection(catalog.key)">Remove</button>
+          <span>{{catalog.key}}</span>
+          <span> has {{catalog?.value?.count}} item. </span>
         </h4>
+        <hr>
       </div>
     </div>
   </div>
